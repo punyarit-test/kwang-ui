@@ -1,0 +1,29 @@
+{
+  "name": "@cortex-ui/core",
+  "version": "0.0.1",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Punyarit/cortex-ui.git"
+  },
+  "keywords": [
+    "Cortex-UI"
+  ],
+  "author": "Punyarit",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Punyarit/cortex-ui/issues"
+  },
+  "homepage": "https://github.com/Punyarit/cortex-ui#readme",
+  "files": [
+    "**/*.js",
+    "**/*.d.ts"
+  ],
+  "dependencies": {
+    "lit": "^2.2.7"
+  }
+}
