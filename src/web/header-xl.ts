@@ -1,5 +1,5 @@
 import {css, html, LitElement} from 'lit';
-import {customElement} from 'lit/decorators.js';
+import {customElement, property} from 'lit/decorators.js';
 import {ClassAttributes, HTMLAttributes} from 'react';
 import {IGray, IPrimary} from '../types/colors.type';
 import {ISizes} from '../types/size.type';
@@ -17,12 +17,10 @@ export class HeaderXl extends LitElement {
     }
   `;
 
+  @property({type: String}) p?: string;
+
   render() {
-    return html`
-      <span class="font">
-        <slot></slot>
-      </span>
-    `;
+    return html` <span class="font">${this.p}<slot></slot></span> `;
   }
 
   updated() {
@@ -39,7 +37,9 @@ declare global {
         ClassAttributes<JSX.CTxtHeader>,
         IPrimary,
         IGray,
-        ISizes {}
+        ISizes {
+      p?: string;
+    }
 
     interface IntrinsicElements {
       [element.name]: CTxtHeader;

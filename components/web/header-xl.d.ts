@@ -7,12 +7,14 @@ declare enum element {
 }
 export declare class HeaderXl extends LitElement {
     static styles: import("lit").CSSResult;
+    p?: string;
     render(): import("lit-html").TemplateResult<1>;
     updated(): void;
 }
 declare global {
     namespace JSX {
         interface CTxtHeader extends Omit<HTMLAttributes<JSX.CTxtHeader>, 'color' | 'placeholder'>, ClassAttributes<JSX.CTxtHeader>, IPrimary, IGray, ISizes {
+            p?: string;
         }
         interface IntrinsicElements {
             [element.name]: CTxtHeader;
