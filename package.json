@@ -21,7 +21,7 @@
   "homepage": "https://github.com/Punyarit/cortex-ui#readme",
   "files": [
     "**/*.js",
-    "**/*.map.js",
+    "**/*.js.map",
     "**/*.d.ts"
   ],
   "dependencies": {
