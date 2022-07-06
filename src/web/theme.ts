@@ -2,18 +2,13 @@ import {css, html, LitElement} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
 import {ClassAttributes, HTMLAttributes} from 'react';
 
-enum Element {
-  name = 'c-button',
+enum element {
+  name = 'c-theme',
 }
 
-@customElement('c-button')
-export class Button extends LitElement {
+@customElement(element.name)
+export class Theme extends LitElement {
   static styles = css``;
-
-  @property({
-    type: String,
-  })
-  efx?: string;
 
   render() {
     return html`
@@ -26,12 +21,12 @@ export class Button extends LitElement {
 
 declare global {
   namespace JSX {
-    interface CButton
-      extends Omit<HTMLAttributes<JSX.CButton>, ''>,
-        ClassAttributes<JSX.CButton> {}
+    interface CTheme
+      extends Omit<HTMLAttributes<JSX.CTheme>, 'color' | 'placeholder'>,
+        ClassAttributes<JSX.CTheme> {}
 
     interface IntrinsicElements {
-      [Element.name]: CButton;
+      [element.name]: CTheme;
     }
   }
 }
