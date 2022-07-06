@@ -2,11 +2,11 @@ import {css, html, LitElement} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
 import {ClassAttributes, HTMLAttributes} from 'react';
 
-enum Element {
+enum element {
   name = 'efx-done',
 }
 
-@customElement(Element.name)
+@customElement(element.name)
 export class EfxDone extends LitElement {
   static styles = css`
     .bubbly-efx {
@@ -159,7 +159,7 @@ declare global {
     }
 
     interface IntrinsicElements {
-      [Element.name]: CEfxDone;
+      [element.name]: CEfxDone;
     }
   }
 }

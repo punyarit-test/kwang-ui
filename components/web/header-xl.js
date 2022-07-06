@@ -9,10 +9,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.HeaderXl = void 0;
 const lit_1 = require("lit");
 const decorators_js_1 = require("lit/decorators.js");
-var Element;
-(function (Element) {
-    Element["name"] = "header-xl";
-})(Element || (Element = {}));
+var element;
+(function (element) {
+    element["name"] = "header-xl";
+})(element || (element = {}));
 let HeaderXl = class HeaderXl extends lit_1.LitElement {
     render() {
         return (0, lit_1.html) `
@@ -34,7 +34,7 @@ HeaderXl.styles = (0, lit_1.css) `
     }
   `;
 HeaderXl = __decorate([
-    (0, decorators_js_1.customElement)(Element.name)
+    (0, decorators_js_1.customElement)(element.name)
 ], HeaderXl);
 exports.HeaderXl = HeaderXl;
 //# sourceMappingURL=header-xl.js.map

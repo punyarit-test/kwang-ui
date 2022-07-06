@@ -2,7 +2,7 @@ import { LitElement } from 'lit';
 import { ClassAttributes, HTMLAttributes } from 'react';
 import { IGray, IPrimary } from '../types/colors.type';
 import { ISizes } from '../types/size.type';
-declare enum Element {
+declare enum element {
     name = "header-xl"
 }
 export declare class HeaderXl extends LitElement {
@@ -15,7 +15,7 @@ declare global {
         interface CTxtHeader extends Omit<HTMLAttributes<JSX.CTxtHeader>, 'color' | 'placeholder'>, ClassAttributes<JSX.CTxtHeader>, IPrimary, IGray, ISizes {
         }
         interface IntrinsicElements {
-            [Element.name]: CTxtHeader;
+            [element.name]: CTxtHeader;
         }
     }
 }

@@ -1,6 +1,6 @@
 import { LitElement } from 'lit';
 import { ClassAttributes, HTMLAttributes } from 'react';
-declare enum Element {
+declare enum element {
     name = "efx-done"
 }
 export declare class EfxDone extends LitElement {
@@ -17,7 +17,7 @@ declare global {
             disabled?: boolean;
         }
         interface IntrinsicElements {
-            [Element.name]: CEfxDone;
+            [element.name]: CEfxDone;
         }
     }
 }

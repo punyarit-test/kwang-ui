@@ -1,6 +1,6 @@
 import { LitElement } from 'lit';
 import { ClassAttributes, HTMLAttributes } from 'react';
-declare enum Element {
+declare enum element {
     name = "c-button"
 }
 export declare class Button extends LitElement {
@@ -13,7 +13,7 @@ declare global {
         interface CButton extends Omit<HTMLAttributes<JSX.CButton>, ''>, ClassAttributes<JSX.CButton> {
         }
         interface IntrinsicElements {
-            [Element.name]: CButton;
+            [element.name]: CButton;
         }
     }
 }

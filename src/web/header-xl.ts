@@ -4,11 +4,11 @@ import {ClassAttributes, HTMLAttributes} from 'react';
 import {IGray, IPrimary} from '../types/colors.type';
 import {ISizes} from '../types/size.type';
 
-enum Element {
+enum element {
   name = 'header-xl',
 }
 
-@customElement(Element.name)
+@customElement(element.name)
 export class HeaderXl extends LitElement {
   static styles = css`
     .font {
@@ -42,7 +42,7 @@ declare global {
         ISizes {}
 
     interface IntrinsicElements {
-      [Element.name]: CTxtHeader;
+      [element.name]: CTxtHeader;
     }
   }
 }

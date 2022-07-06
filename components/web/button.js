@@ -12,10 +12,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Button = void 0;
 const lit_1 = require("lit");
 const decorators_js_1 = require("lit/decorators.js");
-var Element;
-(function (Element) {
-    Element["name"] = "c-button";
-})(Element || (Element = {}));
+var element;
+(function (element) {
+    element["name"] = "c-button";
+})(element || (element = {}));
 let Button = class Button extends lit_1.LitElement {
     render() {
         return (0, lit_1.html) `
@@ -33,7 +33,7 @@ __decorate([
     __metadata("design:type", String)
 ], Button.prototype, "efx", void 0);
 Button = __decorate([
-    (0, decorators_js_1.customElement)('c-button')
+    (0, decorators_js_1.customElement)(element.name)
 ], Button);
 exports.Button = Button;
 //# sourceMappingURL=button.js.map

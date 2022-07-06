@@ -12,10 +12,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.EfxDone = void 0;
 const lit_1 = require("lit");
 const decorators_js_1 = require("lit/decorators.js");
-var Element;
-(function (Element) {
-    Element["name"] = "efx-done";
-})(Element || (Element = {}));
+var element;
+(function (element) {
+    element["name"] = "efx-done";
+})(element || (element = {}));
 let EfxDone = class EfxDone extends lit_1.LitElement {
     render() {
         return this.disabled
@@ -146,7 +146,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], EfxDone.prototype, "render", null);
 EfxDone = __decorate([
-    (0, decorators_js_1.customElement)(Element.name)
+    (0, decorators_js_1.customElement)(element.name)
 ], EfxDone);
 exports.EfxDone = EfxDone;
 //# sourceMappingURL=efx-done.js.map

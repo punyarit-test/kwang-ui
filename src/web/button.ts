@@ -2,11 +2,11 @@ import {css, html, LitElement} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
 import {ClassAttributes, HTMLAttributes} from 'react';
 
-enum Element {
+enum element {
   name = 'c-button',
 }
 
-@customElement('c-button')
+@customElement(element.name)
 export class Button extends LitElement {
   static styles = css``;
 
@@ -31,7 +31,7 @@ declare global {
         ClassAttributes<JSX.CButton> {}
 
     interface IntrinsicElements {
-      [Element.name]: CButton;
+      [element.name]: CButton;
     }
   }
 }
