@@ -1,8 +1,8 @@
 import {css, html, LitElement} from 'lit';
 import {customElement} from 'lit/decorators.js';
 import {ClassAttributes, HTMLAttributes} from 'react';
-import {IGray, IPrimary} from './types/colors.type';
-import {ISizes} from './types/size.type';
+import {IGray, IPrimary} from '../types/colors.type';
+import {ISizes} from '../types/size.type';
 
 enum Element {
   name = 'header-xl',

@@ -1,7 +1,7 @@
 import { LitElement } from 'lit';
 import { ClassAttributes, HTMLAttributes } from 'react';
-import { IGray, IPrimary } from './types/colors.type';
-import { ISizes } from './types/size.type';
+import { IGray, IPrimary } from '../types/colors.type';
+import { ISizes } from '../types/size.type';
 declare enum Element {
     name = "header-xl"
 }
