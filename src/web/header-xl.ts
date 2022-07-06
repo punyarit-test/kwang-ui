@@ -25,8 +25,8 @@ export class HeaderXl extends LitElement {
 
   updated() {
     const [fontWeight, color] = this.attributes;
-    this.style.setProperty(`--font-weight`, fontWeight.name);
-    this.style.setProperty(`--color`, color.name);
+    this.style.setProperty(`--font-weight`, fontWeight?.name || 'regular');
+    this.style.setProperty(`--color`, color?.name || 'gray-500');
   }
 }
 
