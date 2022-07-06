@@ -32,3 +32,4 @@ Button = __decorate([
     (0, decorators_js_1.customElement)('c-button')
 ], Button);
 exports.Button = Button;
+//# sourceMappingURL=button.js.map

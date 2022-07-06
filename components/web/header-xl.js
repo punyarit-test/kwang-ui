@@ -37,3 +37,4 @@ HeaderXl = __decorate([
     (0, decorators_js_1.customElement)(Element.name)
 ], HeaderXl);
 exports.HeaderXl = HeaderXl;
+//# sourceMappingURL=header-xl.js.map

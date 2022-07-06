@@ -1,6 +1,6 @@
 {
   "name": "@cortex-ui/core",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "",
   "main": "",
   "scripts": {
@@ -21,6 +21,7 @@
   "homepage": "https://github.com/Punyarit/cortex-ui#readme",
   "files": [
     "**/*.js",
+    "**/*.map.js",
     "**/*.d.ts"
   ],
   "dependencies": {
