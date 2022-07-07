@@ -1,19 +1,18 @@
 import { LitElement } from 'lit';
 import { ClassAttributes, HTMLAttributes } from 'react';
-declare enum element {
-    name = "c-button"
-}
+declare const ELEMENT_NAME = "c-button";
 export declare class Button extends LitElement {
     static styles: import("lit").CSSResult;
-    efx?: string;
     render(): import("lit-html").TemplateResult<1>;
 }
 declare global {
-    namespace JSX {
-        interface CButton extends Omit<HTMLAttributes<JSX.CButton>, ''>, ClassAttributes<JSX.CButton> {
+    namespace CButton {
+        interface Ref extends Omit<HTMLAttributes<Ref>, 'color' | 'placeholder'>, ClassAttributes<Ref> {
         }
+    }
+    namespace JSX {
         interface IntrinsicElements {
-            [element.name]: CButton;
+            [ELEMENT_NAME]: CButton.Ref;
         }
     }
 }

@@ -4,11 +4,9 @@ import {ClassAttributes, HTMLAttributes} from 'react';
 import {IGray, IPrimary} from '../types/colors.type';
 import {TIcons} from '../types/icons.type';
 
-enum element {
-  name = 'c-icon',
-}
+const ELEMENT_NAME = 'c-icon';
 
-@customElement(element.name)
+@customElement(ELEMENT_NAME)
 export class Icon extends LitElement {
   static styles = css`
     .icon {
@@ -35,20 +33,26 @@ export class Icon extends LitElement {
       <span class="icon">&#xe800;</span>
     `;
   }
+
+  firstUpdated() {}
 }
 
 declare global {
-  namespace JSX {
-    interface CIcon
-      extends Omit<HTMLAttributes<JSX.CIcon>, 'color' | 'placeholder'>,
-        ClassAttributes<JSX.CIcon> {
+  namespace CIcon {
+    interface Ref
+      extends Omit<HTMLAttributes<Ref>, 'color' | 'placeholder'>,
+        ClassAttributes<Ref> {
       icon: TIcons;
       size?: string;
       color?: IPrimary | IGray;
     }
+  }
 
+  namespace JSX {
     interface IntrinsicElements {
-      [element.name]: CIcon;
+      [ELEMENT_NAME]: CIcon.Ref;
     }
   }
+
+  namespace C {}
 }

@@ -19,4 +19,4 @@ BodyLg = __decorate([
     (0, decorators_js_1.customElement)(element.name)
 ], BodyLg);
 exports.BodyLg = BodyLg;
-//# sourceMappingURL=Body-lg.js.map
+//# sourceMappingURL=body-lg.js.map

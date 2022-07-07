@@ -119,24 +119,28 @@ export class EfxDone extends LitElement {
     const bubblyButtons =
       this.shadowRoot?.querySelector<HTMLElement>('.bubbly-efx');
 
-    bubblyButtons?.addEventListener(
-      'mousedown',
-      () => this.animateEfx(bubblyButtons),
-      false
-    );
+    if (!this.disabled) {
+      bubblyButtons?.addEventListener(
+        'mousedown',
+        () => this.animateEfx(bubblyButtons),
+        false
+      );
+    }
   }
 
   private animateEfx(e: HTMLElement): void {
+    clearTimeout(this.setTimeEfx(e));
     //reset animation
-    e.style.pointerEvents = 'none';
     e.classList.remove('animate');
-
     e.classList.add('animate');
+
+    this.setTimeEfx(e);
+  }
+
+  private setTimeEfx = (e: HTMLElement) =>
     setTimeout(function () {
       e.classList.remove('animate');
-      e.style.pointerEvents = 'auto';
     }, 700);
-  }
 }
 
 /*

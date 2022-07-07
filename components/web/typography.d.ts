@@ -2,9 +2,7 @@ import { LitElement } from 'lit';
 import { ClassAttributes, HTMLAttributes } from 'react';
 import { IGray, IPrimary } from '../types/colors.type';
 import { ISizes } from '../types/size.type';
-declare enum element {
-    name = "c-typography"
-}
+declare const ELEMENT_NAME = "c-typography";
 export declare class Typography extends LitElement {
     static styles: import("lit").CSSResult;
     p?: string;
@@ -14,12 +12,14 @@ export declare class Typography extends LitElement {
     private setBooleanAttributes;
 }
 declare global {
-    namespace JSX {
-        interface CTypography extends Omit<HTMLAttributes<JSX.CTypography>, 'color' | 'placeholder'>, ClassAttributes<JSX.CTypography>, IPrimary, IGray, ISizes {
+    namespace CTypography {
+        interface Ref extends Omit<HTMLAttributes<Ref>, 'color' | 'placeholder'>, ClassAttributes<CTypography.Ref>, IPrimary, IGray, ISizes {
             p?: string;
         }
+    }
+    namespace JSX {
         interface IntrinsicElements {
-            [element.name]: CTypography;
+            [ELEMENT_NAME]: CTypography.Ref;
         }
     }
 }

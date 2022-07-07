@@ -9,11 +9,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Icon = void 0;
+exports.Test = void 0;
 const lit_1 = require("lit");
 const decorators_js_1 = require("lit/decorators.js");
-const ELEMENT_NAME = 'c-icon';
-let Icon = class Icon extends lit_1.LitElement {
+const helpers_1 = require("../utils/helpers");
+const ELEMENT_NAME = 'c-test';
+const TEST_EVENT = 'test-event';
+const TEST_EVENT2 = 'test-event-2';
+const TEST_EVENT3 = 'test-event-3';
+let Test = class Test extends lit_1.LitElement {
     constructor() {
         super(...arguments);
         this.size = '16px';
@@ -29,12 +33,26 @@ let Icon = class Icon extends lit_1.LitElement {
         }
       </style>
 
+      <div @click="${this.testEvent}" style="color:white">test</div>
       <span class="icon">&#xe800;</span>
     `;
     }
     firstUpdated() { }
+    testEvent() {
+        (0, helpers_1.customEvent)(this, TEST_EVENT, { test: 'test' });
+        // this.dispatchEvent(
+        //   new CustomEvent('test-event', {
+        //     detail: {
+        //       test: 'test',
+        //     },
+        //     bubbles: true,
+        //   })
+        // );
+        // customEvent(this, TEST_EVENT2, {test2: 'test2'});
+        // customEvent(this, TEST_EVENT3, {test3: 'test3'});
+    }
 };
-Icon.styles = (0, lit_1.css) `
+Test.styles = (0, lit_1.css) `
     .icon {
       font-family: var(--icon);
       font-size: var(--size);
@@ -44,17 +62,17 @@ Icon.styles = (0, lit_1.css) `
 __decorate([
     (0, decorators_js_1.property)({ type: String }),
     __metadata("design:type", String)
-], Icon.prototype, "icon", void 0);
+], Test.prototype, "icon", void 0);
 __decorate([
     (0, decorators_js_1.property)({ type: String }),
     __metadata("design:type", Object)
-], Icon.prototype, "size", void 0);
+], Test.prototype, "size", void 0);
 __decorate([
     (0, decorators_js_1.property)({ type: String }),
     __metadata("design:type", Object)
-], Icon.prototype, "color", void 0);
-Icon = __decorate([
+], Test.prototype, "color", void 0);
+Test = __decorate([
     (0, decorators_js_1.customElement)(ELEMENT_NAME)
-], Icon);
-exports.Icon = Icon;
-//# sourceMappingURL=icon.js.map
+], Test);
+exports.Test = Test;
+//# sourceMappingURL=test.js.map

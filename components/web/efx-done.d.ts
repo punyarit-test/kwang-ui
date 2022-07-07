@@ -10,6 +10,7 @@ export declare class EfxDone extends LitElement {
     firstUpdated(): void;
     private initEfx;
     private animateEfx;
+    private setTimeEfx;
 }
 declare global {
     namespace JSX {

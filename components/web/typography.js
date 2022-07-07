@@ -12,10 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Typography = void 0;
 const lit_1 = require("lit");
 const decorators_js_1 = require("lit/decorators.js");
-var element;
-(function (element) {
-    element["name"] = "c-typography";
-})(element || (element = {}));
+const ELEMENT_NAME = 'c-typography';
 let Typography = class Typography extends lit_1.LitElement {
     render() {
         return (0, lit_1.html) ` <span class="font"><slot></slot>${this.p}</span> `;
@@ -89,7 +86,7 @@ __decorate([
     __metadata("design:type", String)
 ], Typography.prototype, "p", void 0);
 Typography = __decorate([
-    (0, decorators_js_1.customElement)(element.name)
+    (0, decorators_js_1.customElement)(ELEMENT_NAME)
 ], Typography);
 exports.Typography = Typography;
 //# sourceMappingURL=typography.js.map

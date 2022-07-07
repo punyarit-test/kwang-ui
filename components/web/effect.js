@@ -6,26 +6,22 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Theme = void 0;
+exports.Effect = void 0;
 const lit_1 = require("lit");
 const decorators_js_1 = require("lit/decorators.js");
-const ELEMENT_NAME = 'c-theme';
+const ELEMENT_NAME = 'c-effect';
 /*
   const EVENT_ONE = 'event-1'
   interface EventOneProp {}
 */
-let Theme = class Theme extends lit_1.LitElement {
+let Effect = class Effect extends lit_1.LitElement {
     render() {
-        return (0, lit_1.html) `
-      <div>
-        <slot></slot>
-      </div>
-    `;
+        return (0, lit_1.html) ` <div>c-effect component was created!!</div> `;
     }
 };
-Theme.styles = (0, lit_1.css) ``;
-Theme = __decorate([
+Effect.styles = (0, lit_1.css) ``;
+Effect = __decorate([
     (0, decorators_js_1.customElement)(ELEMENT_NAME)
-], Theme);
-exports.Theme = Theme;
-//# sourceMappingURL=theme.js.map
+], Effect);
+exports.Effect = Effect;
+//# sourceMappingURL=effect.js.map

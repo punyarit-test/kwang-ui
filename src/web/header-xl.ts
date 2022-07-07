@@ -11,7 +11,7 @@ export class HeaderXl extends Typography {}
 declare global {
   namespace JSX {
     interface IntrinsicElements {
-      [element.name]: CTypography;
+      [element.name]: CTypography.Ref;
     }
   }
 }

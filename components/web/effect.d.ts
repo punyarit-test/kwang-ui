@@ -1,18 +1,18 @@
 import { LitElement } from 'lit';
 import { ClassAttributes, HTMLAttributes } from 'react';
-declare const ELEMENT_NAME = "c-theme";
-export declare class Theme extends LitElement {
+declare const ELEMENT_NAME = "c-effect";
+export declare class Effect extends LitElement {
     static styles: import("lit").CSSResult;
     render(): import("lit-html").TemplateResult<1>;
 }
 declare global {
-    namespace CTheme {
+    namespace CEffect {
         interface Ref extends Omit<HTMLAttributes<Ref>, 'color' | 'placeholder'>, ClassAttributes<Ref> {
         }
     }
     namespace JSX {
         interface IntrinsicElements {
-            [ELEMENT_NAME]: CTheme.Ref;
+            [ELEMENT_NAME]: CEffect.Ref;
         }
     }
 }

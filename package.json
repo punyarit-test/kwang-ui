@@ -1,10 +1,9 @@
 {
   "name": "@cortex-ui/core",
-  "version": "0.0.10",
-  "description": "",
+  "version": "0.0.11",
+  "description": "Cortex-UI is Web Component that fully support React with strong type and flexible in use. And components design followed by Cortex-Design (by H LAB Designer Team)",
   "main": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
     "dev": "tsc -w --declaration"
   },

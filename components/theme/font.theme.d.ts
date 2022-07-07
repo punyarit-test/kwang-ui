@@ -1,1 +1,1 @@
-export declare const font: {};
+export declare const fontTheme: import("lit").CSSResult;

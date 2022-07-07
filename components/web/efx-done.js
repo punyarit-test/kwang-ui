@@ -17,6 +17,12 @@ var element;
     element["name"] = "efx-done";
 })(element || (element = {}));
 let EfxDone = class EfxDone extends lit_1.LitElement {
+    constructor() {
+        super(...arguments);
+        this.setTimeEfx = (e) => setTimeout(function () {
+            e.classList.remove('animate');
+        }, 700);
+    }
     render() {
         return this.disabled
             ? (0, lit_1.html) `<slot></slot> `
@@ -29,17 +35,16 @@ let EfxDone = class EfxDone extends lit_1.LitElement {
     }
     initEfx() {
         const bubblyButtons = this.shadowRoot?.querySelector('.bubbly-efx');
-        bubblyButtons?.addEventListener('mousedown', () => this.animateEfx(bubblyButtons), false);
+        if (!this.disabled) {
+            bubblyButtons?.addEventListener('mousedown', () => this.animateEfx(bubblyButtons), false);
+        }
     }
     animateEfx(e) {
+        clearTimeout(this.setTimeEfx(e));
         //reset animation
-        e.style.pointerEvents = 'none';
         e.classList.remove('animate');
         e.classList.add('animate');
-        setTimeout(function () {
-            e.classList.remove('animate');
-            e.style.pointerEvents = 'auto';
-        }, 700);
+        this.setTimeEfx(e);
     }
 };
 EfxDone.styles = (0, lit_1.css) `
