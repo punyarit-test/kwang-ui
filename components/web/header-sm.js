@@ -6,17 +6,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.HeaderXl = void 0;
+exports.HeaderSm = void 0;
 const decorators_js_1 = require("lit/decorators.js");
 const typography_1 = require("./typography");
 var element;
 (function (element) {
-    element["name"] = "header-xl";
+    element["name"] = "header-sm";
 })(element || (element = {}));
-let HeaderXl = class HeaderXl extends typography_1.Typography {
+let HeaderSm = class HeaderSm extends typography_1.Typography {
 };
-HeaderXl = __decorate([
+HeaderSm = __decorate([
     (0, decorators_js_1.customElement)(element.name)
-], HeaderXl);
-exports.HeaderXl = HeaderXl;
-//# sourceMappingURL=header-xl.js.map
+], HeaderSm);
+exports.HeaderSm = HeaderSm;
+//# sourceMappingURL=header-sm.js.map

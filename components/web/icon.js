@@ -9,29 +9,54 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Button = void 0;
+exports.Icon = void 0;
 const lit_1 = require("lit");
 const decorators_js_1 = require("lit/decorators.js");
 var element;
 (function (element) {
-    element["name"] = "c-button";
+    element["name"] = "c-icon";
 })(element || (element = {}));
-let Button = class Button extends lit_1.LitElement {
+let Icon = class Icon extends lit_1.LitElement {
+    constructor() {
+        super(...arguments);
+        this.size = '16px';
+        this.color = 'gray-500';
+    }
     render() {
         return (0, lit_1.html) `
-      <div>
-        <slot></slot>
-      </div>
+      <style>
+        :host {
+          --icon: ${this.icon};
+          --size: ${this.size};
+          --color: ${this.color};
+        }
+      </style>
+
+      <span class="icon">&#xe800;</span>
     `;
     }
 };
-Button.styles = (0, lit_1.css) ``;
+Icon.styles = (0, lit_1.css) `
+    .icon {
+      font-family: var(--icon);
+      font-size: var(--size);
+      color: var(--color);
+    }
+  `;
 __decorate([
     (0, decorators_js_1.property)({ type: String }),
     __metadata("design:type", String)
-], Button.prototype, "efx", void 0);
-Button = __decorate([
+], Icon.prototype, "icon", void 0);
+__decorate([
+    (0, decorators_js_1.property)({ type: String }),
+    __metadata("design:type", Object)
+], Icon.prototype, "size", void 0);
+__decorate([
+    (0, decorators_js_1.property)({ type: String }),
+    __metadata("design:type", Object)
+], Icon.prototype, "color", void 0);
+Icon = __decorate([
     (0, decorators_js_1.customElement)(element.name)
-], Button);
-exports.Button = Button;
-//# sourceMappingURL=button.js.map
+], Icon);
+exports.Icon = Icon;
+//# sourceMappingURL=icon.js.map

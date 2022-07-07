@@ -1,1 +1,1 @@
-export interface IIcons {}
+export type TIcons = 'i001';

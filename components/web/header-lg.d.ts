@@ -1,8 +1,8 @@
 import { Typography } from './typography';
 declare enum element {
-    name = "header-xl"
+    name = "header-lg"
 }
-export declare class HeaderXl extends Typography {
+export declare class HeaderLg extends Typography {
 }
 declare global {
     namespace JSX {

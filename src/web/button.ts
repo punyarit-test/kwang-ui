@@ -10,10 +10,7 @@ enum element {
 export class Button extends LitElement {
   static styles = css``;
 
-  @property({
-    type: String,
-  })
-  efx?: string;
+  @property({type: String}) public efx?: string;
 
   render() {
     return html`

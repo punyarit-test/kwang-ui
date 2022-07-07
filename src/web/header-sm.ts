@@ -2,11 +2,11 @@ import {customElement} from 'lit/decorators.js';
 import {Typography} from './typography';
 
 enum element {
-  name = 'header-xl',
+  name = 'header-sm',
 }
 
 @customElement(element.name)
-export class HeaderXl extends Typography {}
+export class HeaderSm extends Typography {}
 
 declare global {
   namespace JSX {

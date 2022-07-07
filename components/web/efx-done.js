@@ -134,9 +134,7 @@ EfxDone.styles = (0, lit_1.css) `
     }
   `;
 __decorate([
-    (0, decorators_js_1.property)({
-        type: Boolean,
-    }),
+    (0, decorators_js_1.property)({ type: Boolean }),
     __metadata("design:type", Boolean)
 ], EfxDone.prototype, "disabled", void 0);
 __decorate([

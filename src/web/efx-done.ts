@@ -100,10 +100,7 @@ export class EfxDone extends LitElement {
     }
   `;
 
-  @property({
-    type: Boolean,
-  })
-  public disabled?: boolean;
+  @property({type: Boolean}) public disabled?: boolean;
 
   @property()
   render() {
