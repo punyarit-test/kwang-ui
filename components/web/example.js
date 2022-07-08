@@ -24,4 +24,3 @@ Example = __decorate([
     (0, decorators_js_1.customElement)(ELEMENT_NAME)
 ], Example);
 exports.Example = Example;
-//# sourceMappingURL=example.js.map

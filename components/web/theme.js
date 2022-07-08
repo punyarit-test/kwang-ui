@@ -33,4 +33,3 @@ Theme = __decorate([
     (0, decorators_js_1.customElement)(ELEMENT_NAME)
 ], Theme);
 exports.Theme = Theme;
-//# sourceMappingURL=theme.js.map

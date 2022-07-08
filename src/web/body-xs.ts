@@ -7,6 +7,7 @@ const ELEMENT_NAME = 'body-xs';
 export class BodyXs extends Typography {
   firstUpdated() {
     this.setFontSize('var(--fs-12)');
+    this.setFontStyle();
   }
 }
 

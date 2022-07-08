@@ -1,1 +1,0 @@
-{"version":3,"file":"header-lg.js","sourceRoot":"","sources":["../../src/web/header-lg.ts"],"names":[],"mappings":";;;;;;;;;AAAA,qDAAgD;AAChD,6CAAwC;AAExC,MAAM,YAAY,GAAG,WAAW,CAAC;AAGjC,IAAa,QAAQ,GAArB,MAAa,QAAS,SAAQ,uBAAU;IACtC,YAAY;QACV,IAAI,CAAC,WAAW,CAAC,cAAc,CAAC,CAAC;IACnC,CAAC;CACF,CAAA;AAJY,QAAQ;IADpB,IAAA,6BAAa,EAAC,YAAY,CAAC;GACf,QAAQ,CAIpB;AAJY,4BAAQ"}

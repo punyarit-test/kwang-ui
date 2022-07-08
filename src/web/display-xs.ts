@@ -7,6 +7,7 @@ const ELEMENT_NAME = 'display-xs';
 export class DisplayXs extends Typography {
   firstUpdated() {
     this.setFontSize('var(--fs-72)');
+    this.setFontStyle();
   }
 }
 

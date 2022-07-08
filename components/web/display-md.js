@@ -13,10 +13,10 @@ const ELEMENT_NAME = 'display-md';
 let DisplayMd = class DisplayMd extends typography_1.Typography {
     firstUpdated() {
         this.setFontSize('var(--fs-124)');
+        this.setFontStyle();
     }
 };
 DisplayMd = __decorate([
     (0, decorators_js_1.customElement)(ELEMENT_NAME)
 ], DisplayMd);
 exports.DisplayMd = DisplayMd;
-//# sourceMappingURL=display-md.js.map

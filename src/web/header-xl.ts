@@ -7,6 +7,7 @@ const ELEMENT_NAME = 'header-xl';
 export class HeaderXl extends Typography {
   firstUpdated() {
     this.setFontSize('var(--fs-60)');
+    this.setFontStyle();
   }
 }
 

@@ -13,10 +13,10 @@ const ELEMENT_NAME = 'body-xs';
 let BodyXs = class BodyXs extends typography_1.Typography {
     firstUpdated() {
         this.setFontSize('var(--fs-12)');
+        this.setFontStyle();
     }
 };
 BodyXs = __decorate([
     (0, decorators_js_1.customElement)(ELEMENT_NAME)
 ], BodyXs);
 exports.BodyXs = BodyXs;
-//# sourceMappingURL=body-xs.js.map

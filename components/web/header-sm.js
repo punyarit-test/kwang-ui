@@ -13,10 +13,10 @@ const ELEMENT_NAME = 'header-sm';
 let HeaderSm = class HeaderSm extends typography_1.Typography {
     firstUpdated() {
         this.setFontSize('var(--fs-32)');
+        this.setFontStyle();
     }
 };
 HeaderSm = __decorate([
     (0, decorators_js_1.customElement)(ELEMENT_NAME)
 ], HeaderSm);
 exports.HeaderSm = HeaderSm;
-//# sourceMappingURL=header-sm.js.map

@@ -7,9 +7,8 @@ export declare class Typography extends LitElement {
     static styles: import("lit").CSSResult;
     p?: string;
     render(): import("lit-html").TemplateResult<1>;
-    firstUpdated(): void;
     protected setFontSize(fontSize: string): void;
-    private setFontStyle;
+    protected setFontStyle(): void;
 }
 declare global {
     namespace CTypography {

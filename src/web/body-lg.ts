@@ -7,6 +7,7 @@ const ELEMENT_NAME = 'body-lg';
 export class BodyLg extends Typography {
   firstUpdated() {
     this.setFontSize('var(--fs-18)');
+    this.setFontStyle();
   }
 }
 

@@ -7,6 +7,7 @@ const ELEMENT_NAME = 'body-sm';
 export class BodySm extends Typography {
   firstUpdated() {
     this.setFontSize('var(--fs-14)');
+    this.setFontStyle();
   }
 }
 

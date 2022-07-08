@@ -22,17 +22,13 @@ export class Typography extends LitElement {
     return html` <span class="font"><slot></slot>${this.p}</span> `;
   }
 
-  firstUpdated() {
-    // set size
-    this.setFontStyle();
-  }
-
   protected setFontSize(fontSize: string): void {
     this.style.fontSize = fontSize;
   }
 
-  private setFontStyle(): void {
+  protected setFontStyle(): void {
     const [fontFamily, color] = this.attributes;
+
     // set font weight from type of Sarabun such as Sarabun <Regular> | <Bold> ..
     this.style.fontFamily = `var(--${fontFamily?.name || 'regular'})`;
     this.style.color = `var(--${color?.name || 'gray-500'})`;

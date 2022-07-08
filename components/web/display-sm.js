@@ -13,10 +13,10 @@ const ELEMENT_NAME = 'display-sm';
 let DisplaySm = class DisplaySm extends typography_1.Typography {
     firstUpdated() {
         this.setFontSize('var(--fs-96)');
+        this.setFontStyle();
     }
 };
 DisplaySm = __decorate([
     (0, decorators_js_1.customElement)(ELEMENT_NAME)
 ], DisplaySm);
 exports.DisplaySm = DisplaySm;
-//# sourceMappingURL=display-sm.js.map

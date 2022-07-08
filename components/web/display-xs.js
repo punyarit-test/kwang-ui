@@ -13,10 +13,10 @@ const ELEMENT_NAME = 'display-xs';
 let DisplayXs = class DisplayXs extends typography_1.Typography {
     firstUpdated() {
         this.setFontSize('var(--fs-72)');
+        this.setFontStyle();
     }
 };
 DisplayXs = __decorate([
     (0, decorators_js_1.customElement)(ELEMENT_NAME)
 ], DisplayXs);
 exports.DisplayXs = DisplayXs;
-//# sourceMappingURL=display-xs.js.map

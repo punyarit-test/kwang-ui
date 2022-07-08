@@ -42,4 +42,3 @@ Icon2 = __decorate([
     (0, decorators_js_1.customElement)(ELEMENT_NAME)
 ], Icon2);
 exports.Icon2 = Icon2;
-//# sourceMappingURL=icon.js.map

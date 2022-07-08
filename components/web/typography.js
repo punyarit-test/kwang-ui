@@ -17,10 +17,6 @@ let Typography = class Typography extends lit_1.LitElement {
     render() {
         return (0, lit_1.html) ` <span class="font"><slot></slot>${this.p}</span> `;
     }
-    firstUpdated() {
-        // set size
-        this.setFontStyle();
-    }
     setFontSize(fontSize) {
         this.style.fontSize = fontSize;
     }
@@ -46,4 +42,3 @@ Typography = __decorate([
     (0, decorators_js_1.customElement)(ELEMENT_NAME)
 ], Typography);
 exports.Typography = Typography;
-//# sourceMappingURL=typography.js.map

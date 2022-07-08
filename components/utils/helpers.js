@@ -10,4 +10,3 @@ const customEvent = (element, event, data) => {
     }));
 };
 exports.customEvent = customEvent;
-//# sourceMappingURL=helpers.js.map

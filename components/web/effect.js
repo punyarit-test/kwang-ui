@@ -24,4 +24,3 @@ Effect = __decorate([
     (0, decorators_js_1.customElement)(ELEMENT_NAME)
 ], Effect);
 exports.Effect = Effect;
-//# sourceMappingURL=effect.js.map

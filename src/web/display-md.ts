@@ -7,6 +7,7 @@ const ELEMENT_NAME = 'display-md';
 export class DisplayMd extends Typography {
   firstUpdated() {
     this.setFontSize('var(--fs-124)');
+    this.setFontStyle();
   }
 }
 

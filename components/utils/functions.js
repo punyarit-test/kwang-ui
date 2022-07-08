@@ -11,4 +11,3 @@ const clr = (component, eventName, callback) => {
     component.removeEventListener(eventName, callback);
 };
 exports.clr = clr;
-//# sourceMappingURL=functions.js.map

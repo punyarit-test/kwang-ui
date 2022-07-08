@@ -1,1 +1,0 @@
-{"version":3,"file":"display-md.js","sourceRoot":"","sources":["../../src/web/display-md.ts"],"names":[],"mappings":";;;;;;;;;AAAA,qDAAgD;AAChD,6CAAwC;AAExC,MAAM,YAAY,GAAG,YAAY,CAAC;AAGlC,IAAa,SAAS,GAAtB,MAAa,SAAU,SAAQ,uBAAU;IACvC,YAAY;QACV,IAAI,CAAC,WAAW,CAAC,eAAe,CAAC,CAAC;IACpC,CAAC;CACF,CAAA;AAJY,SAAS;IADrB,IAAA,6BAAa,EAAC,YAAY,CAAC;GACf,SAAS,CAIrB;AAJY,8BAAS"}
