@@ -1,15 +1,11 @@
 import {css, html, LitElement} from 'lit';
-import {customElement, property} from 'lit/decorators.js';
+import {customElement} from 'lit/decorators.js';
 import {ClassAttributes, HTMLAttributes} from 'react';
 import {IGray, IPrimary} from '../types/colors.type';
 import {IIcons} from '../types/icons.type';
 import {ISizes} from '../types/sizes.type';
 
 const ELEMENT_NAME = 'c-icon';
-/*
-  const EVENT_ONE = 'event-1'
-  interface EventOneProp {}
-*/
 
 @customElement(ELEMENT_NAME)
 export class Icon2 extends LitElement {
@@ -31,9 +27,6 @@ export class Icon2 extends LitElement {
 
   private setIconAttr(): void {
     const [icon, color, size] = this.attributes;
-    console.log('icon |icon|', icon);
-    console.log('icon |color|', color);
-    console.log('icon |size|', size);
     this.style.setProperty(`--icon`, icon?.name || 'cortex');
     this.style.setProperty(`--color`, color?.name || 'gray-500');
     this.style.setProperty(`--size`, size?.name || 'regular');

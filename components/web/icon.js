@@ -10,10 +10,6 @@ exports.Icon2 = void 0;
 const lit_1 = require("lit");
 const decorators_js_1 = require("lit/decorators.js");
 const ELEMENT_NAME = 'c-icon';
-/*
-  const EVENT_ONE = 'event-1'
-  interface EventOneProp {}
-*/
 let Icon2 = class Icon2 extends lit_1.LitElement {
     render() {
         return (0, lit_1.html) ` <span class="icon">&#xe800;</span> `;
@@ -23,9 +19,6 @@ let Icon2 = class Icon2 extends lit_1.LitElement {
     }
     setIconAttr() {
         const [icon, color, size] = this.attributes;
-        console.log('icon |icon|', icon);
-        console.log('icon |color|', color);
-        console.log('icon |size|', size);
         this.style.setProperty(`--icon`, icon?.name || 'cortex');
         this.style.setProperty(`--color`, color?.name || 'gray-500');
         this.style.setProperty(`--size`, size?.name || 'regular');

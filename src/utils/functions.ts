@@ -14,7 +14,7 @@ export const evt = <Y>(
 export const clr = <Y>(
   component: unknown,
   eventName: keyof Y,
-  callback: (e: CustomEvent<any>) => void
+  callback: (e: CustomEvent) => void
 ): void => {
   (<HTMLElement>component).removeEventListener(
     <keyof HTMLElementEventMap>eventName,
