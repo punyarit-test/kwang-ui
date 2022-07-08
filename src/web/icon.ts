@@ -2,6 +2,7 @@ import {css, html, LitElement} from 'lit';
 import {customElement} from 'lit/decorators.js';
 import {ClassAttributes, HTMLAttributes} from 'react';
 import {IColors} from '../types/colors.type';
+import {IFontSize} from '../types/fontsizes.type';
 import {IIcons} from '../types/icons.type';
 import {ISizes} from '../types/sizes.type';
 
@@ -40,7 +41,8 @@ declare global {
         ClassAttributes<CTypography.Ref>,
         IIcons,
         IColors,
-        ISizes {}
+        ISizes,
+        IFontSize {}
   }
   namespace JSX {
     interface IntrinsicElements {

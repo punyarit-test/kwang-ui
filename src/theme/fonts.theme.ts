@@ -12,11 +12,19 @@ export const fonts = css`
     --extrabold: Sarabun-ExtraBold;
   }
 
-  :host(.tiny) {
+  :host(.medium) {
+    --fs-8: 0.5rem;
+    --fs-9: 0.563rem;
+    --fs-10: 0.625rem;
+    --fs-11: 0.688rem;
     --fs-12: 0.75rem;
+    --fs-13: 0.813rem;
     --fs-14: 0.875rem;
+    --fs-15: 0.938rem;
     --fs-16: 1rem;
+    --fs-17: 1.063rem;
     --fs-18: 1.125rem;
+    --fs-19: 1.188rem;
     --fs-20: 1.25rem;
     --fs-22: 1.375rem;
     --fs-24: 1.5rem;
@@ -26,33 +34,36 @@ export const fonts = css`
     --fs-32: 2rem;
     --fs-34: 2.125rem;
     --fs-36: 2.25rem;
+    --fs-38: 2.375rem;
+    --fs-40: 2.5rem;
+    --fs-42: 2.625rem;
+    --fs-44: 2.75rem;
+    --fs-46: 2.875rem;
     --fs-48: 3rem;
-    --fs-64: 4rem;
+    --fs-50: 3.125rem;
+    --fs-52: 3.25rem;
+    --fs-54: 3.375rem;
+    --fs-56: 3.5rem;
+    --fs-58: 3.625rem;
+    --fs-60: 3.75rem;
+    --fs-72: 4.5rem;
+    --fs-96: 6rem;
+    --fs-124: 7.75rem;
   }
 
-  :host(.small) {
-    --fs-12: 0.875rem;
-    --fs-14: 1rem;
-    --fs-16: 1.125rem;
-    --fs-18: 1.25rem;
-    --fs-20: 1.375rem;
-    --fs-22: 1.5rem;
-    --fs-24: 1.625rem;
-    --fs-26: 1.75rem;
-    --fs-28: 1.875rem;
-    --fs-30: 2rem;
-    --fs-32: 2.125rem;
-    --fs-34: 2.25rem;
-    --fs-36: 2.375rem;
-    --fs-48: 3.125rem;
-    --fs-64: 4.125rem;
-  }
-
-  :host(.medium) {
+  :host(.large) {
+    --fs-8: 0.75rem;
+    --fs-9: 0.813rem;
+    --fs-10: 0.875rem;
+    --fs-11: 0.938rem;
     --fs-12: 1rem;
+    --fs-13: 1.063rem;
     --fs-14: 1.125rem;
+    --fs-15: 1.188rem;
     --fs-16: 1.25rem;
+    --fs-17: 1.313rem;
     --fs-18: 1.375rem;
+    --fs-19: 1.438rem;
     --fs-20: 1.5rem;
     --fs-22: 1.625rem;
     --fs-24: 1.75rem;
@@ -62,33 +73,35 @@ export const fonts = css`
     --fs-32: 2.25rem;
     --fs-34: 2.375rem;
     --fs-36: 2.5rem;
+    --fs-38: 2.625rem;
+    --fs-40: 2.75rem;
+    --fs-42: 2.875rem;
+    --fs-44: 3rem;
+    --fs-46: 3.125rem;
     --fs-48: 3.25rem;
-    --fs-64: 4.25rem;
+    --fs-50: 3.375rem;
+    --fs-52: 3.5rem;
+    --fs-54: 3.625rem;
+    --fs-56: 3.75rem;
+    --fs-58: 3.875rem;
+    --fs-60: 4rem;
+    --fs-72: 4.75rem;
+    --fs-96: 6.25rem;
+    --fs-124: 8rem;
   }
 
-  :host(.large) {
-    --fs-12: 1.125rem;
-    --fs-14: 1.25rem;
-    --fs-16: 1.375rem;
-    --fs-18: 1.5rem;
-    --fs-20: 1.625rem;
-    --fs-22: 1.75rem;
-    --fs-24: 1.875rem;
-    --fs-26: 2rem;
-    --fs-28: 2.125rem;
-    --fs-30: 2.25rem;
-    --fs-32: 2.375rem;
-    --fs-34: 2.5rem;
-    --fs-36: 2.625rem;
-    --fs-48: 3.375rem;
-    --fs-64: 4.375rem;
-  }
-
-  :host(.huge) {
+  :host(.hurge) {
+    --fs-8: 1rem;
+    --fs-9: 1.063rem;
+    --fs-10: 1.125rem;
+    --fs-11: 1.188rem;
     --fs-12: 1.25rem;
+    --fs-13: 1.313rem;
     --fs-14: 1.375rem;
     --fs-16: 1.5rem;
+    --fs-17: 1.563rem;
     --fs-18: 1.625rem;
+    --fs-19: 1.688rem;
     --fs-20: 1.75rem;
     --fs-22: 1.875rem;
     --fs-24: 2rem;
@@ -98,7 +111,20 @@ export const fonts = css`
     --fs-32: 2.5rem;
     --fs-34: 2.625rem;
     --fs-36: 2.75rem;
+    --fs-38: 2.875rem;
+    --fs-40: 3rem;
+    --fs-42: 3.125rem;
+    --fs-44: 3.25rem;
+    --fs-46: 3.375rem;
     --fs-48: 3.5rem;
-    --fs-64: 4.5rem;
+    --fs-50: 3.625rem;
+    --fs-52: 3.75rem;
+    --fs-54: 3.875rem;
+    --fs-56: 4rem;
+    --fs-58: 4.125rem;
+    --fs-60: 4.25rem;
+    --fs-72: 5rem;
+    --fs-96: 6.5rem;
+    --fs-124: 8.25rem;
   }
 `;
