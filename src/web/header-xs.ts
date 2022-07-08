@@ -1,17 +1,19 @@
 import {customElement} from 'lit/decorators.js';
 import {Typography} from './typography';
 
-enum element {
-  name = 'header-xs',
-}
+const ELEMENT_NAME = 'header-xs';
 
-@customElement(element.name)
-export class HeaderXs extends Typography {}
+@customElement(ELEMENT_NAME)
+export class HeaderXs extends Typography {
+  firstUpdated() {
+    this.setFontSize('var(--fs-24)');
+  }
+}
 
 declare global {
   namespace JSX {
     interface IntrinsicElements {
-      [element.name]: CTypography.Ref;
+      [ELEMENT_NAME]: CTypography.Ref;
     }
   }
 }

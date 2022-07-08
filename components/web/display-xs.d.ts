@@ -1,13 +1,12 @@
 import { Typography } from './typography';
-declare enum element {
-    name = "display-xs"
-}
+declare const ELEMENT_NAME = "display-xs";
 export declare class DisplayXs extends Typography {
+    firstUpdated(): void;
 }
 declare global {
     namespace JSX {
         interface IntrinsicElements {
-            [element.name]: CTypography.Ref;
+            [ELEMENT_NAME]: CTypography.Ref;
         }
     }
 }

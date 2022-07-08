@@ -1,13 +1,12 @@
 import { Typography } from './typography';
-declare enum element {
-    name = "body-md"
-}
+declare const ELEMENT_NAME = "body-md";
 export declare class BodyMd extends Typography {
+    firstUpdated(): void;
 }
 declare global {
     namespace JSX {
         interface IntrinsicElements {
-            [element.name]: CTypography.Ref;
+            [ELEMENT_NAME]: CTypography.Ref;
         }
     }
 }

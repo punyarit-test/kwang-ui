@@ -19,53 +19,10 @@ let Typography = class Typography extends lit_1.LitElement {
     }
     firstUpdated() {
         // set size
-        this.setFontSizeByTagName();
         this.setFontStyle();
     }
-    setFontSizeByTagName() {
-        switch (this.tagName) {
-            case 'DISPLAY-MD':
-                this.style.fontSize = 'var(--fs-124)';
-                break;
-            case 'DISPLAY-SM':
-                this.style.fontSize = 'var(--fs-96)';
-                break;
-            case 'DISPLAY-XS':
-                this.style.fontSize = 'var(--fs-72)';
-                break;
-            case 'HEADER-XL':
-                this.style.fontSize = 'var(--fs-60)';
-                break;
-            case 'HEADER-LG':
-                this.style.fontSize = 'var(--fs-48)';
-                break;
-            case 'HEADER-MD':
-                this.style.fontSize = 'var(--fs-36)';
-                break;
-            case 'HEADER-SM':
-                this.style.fontSize = 'var(--fs-32)';
-                break;
-            case 'HEADER-XS':
-                this.style.fontSize = 'var(--fs-24)';
-                break;
-            case 'BODY-XL':
-                this.style.fontSize = 'var(--fs-20)';
-                break;
-            case 'BODY-LG':
-                this.style.fontSize = 'var(--fs-18)';
-                break;
-            // Default is body-md.
-            default:
-            case 'BODY-MD':
-                this.style.fontSize = 'var(--fs-16)';
-                break;
-            case 'BODY-SM':
-                this.style.fontSize = 'var(--fs-14)';
-                break;
-            case 'BODY-XS':
-                this.style.fontSize = 'var(--fs-12)';
-                break;
-        }
+    setFontSize(fontSize) {
+        this.style.fontSize = fontSize;
     }
     setFontStyle() {
         const [fontFamily, color] = this.attributes;

@@ -8,7 +8,7 @@ export declare class Typography extends LitElement {
     p?: string;
     render(): import("lit-html").TemplateResult<1>;
     firstUpdated(): void;
-    private setFontSizeByTagName;
+    protected setFontSize(fontSize: string): void;
     private setFontStyle;
 }
 declare global {

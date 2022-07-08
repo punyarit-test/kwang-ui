@@ -9,14 +9,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.HeaderLg = void 0;
 const decorators_js_1 = require("lit/decorators.js");
 const typography_1 = require("./typography");
-var element;
-(function (element) {
-    element["name"] = "header-lg";
-})(element || (element = {}));
+const ELEMENT_NAME = 'header-lg';
 let HeaderLg = class HeaderLg extends typography_1.Typography {
+    firstUpdated() {
+        this.setFontSize('var(--fs-48)');
+    }
 };
 HeaderLg = __decorate([
-    (0, decorators_js_1.customElement)(element.name)
+    (0, decorators_js_1.customElement)(ELEMENT_NAME)
 ], HeaderLg);
 exports.HeaderLg = HeaderLg;
 //# sourceMappingURL=header-lg.js.map
