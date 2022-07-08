@@ -23,7 +23,8 @@
   "files": [
     "**/*.js",
     "**/*.js.map",
-    "**/*.d.ts"
+    "**/*.d.ts",
+    "**/*.css"
   ],
   "dependencies": {
     "lit": "^2.2.7"

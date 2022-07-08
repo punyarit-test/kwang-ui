@@ -31,6 +31,9 @@ export class Icon2 extends LitElement {
 
   private setIconAttr(): void {
     const [icon, color, size] = this.attributes;
+    console.log('icon |icon|', icon);
+    console.log('icon |color|', color);
+    console.log('icon |size|', size);
     this.style.setProperty(`--icon`, icon?.name || 'cortex');
     this.style.setProperty(`--color`, color?.name || 'gray-500');
     this.style.setProperty(`--size`, size?.name || 'regular');
