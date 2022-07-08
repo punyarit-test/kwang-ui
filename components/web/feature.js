@@ -6,32 +6,25 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Icon2 = void 0;
+exports.Feature = void 0;
 const lit_1 = require("lit");
 const decorators_js_1 = require("lit/decorators.js");
-const ELEMENT_NAME = 'c-icon';
-let Icon2 = class Icon2 extends lit_1.LitElement {
+const ELEMENT_NAME = 'c-feature';
+/*
+  const EVENT_ONE = 'event-1'
+  interface EventOneProp {}
+*/
+let Feature = class Feature extends lit_1.LitElement {
     render() {
-        return (0, lit_1.html) ` <span class="icon">&#xe800;</span> `;
+        return (0, lit_1.html) ` <slot></slot> `;
     }
-    firstUpdated() {
-        this.setIconAttr();
-    }
-    setIconAttr() {
-        const [icon, color, size] = this.attributes;
-        this.style.setProperty(`--icon`, icon?.name || 'cortex');
-        this.style.setProperty(`--color`, `var(--${color?.name || 'gray-500'})`);
-        this.style.setProperty(`--size`, `var(--${size?.name || 'regular'})`);
+    connectedCallback() {
+        super.connectedCallback();
+        const [flags] = this.attributes;
+        sessionStorage.setItem('flags', flags.value);
     }
 };
-Icon2.styles = (0, lit_1.css) `
-    .icon {
-      font-family: var(--icon);
-      font-size: var(--size);
-      color: var(--color) !important;
-    }
-  `;
-Icon2 = __decorate([
+Feature = __decorate([
     (0, decorators_js_1.customElement)(ELEMENT_NAME)
-], Icon2);
-exports.Icon2 = Icon2;
+], Feature);
+exports.Feature = Feature;

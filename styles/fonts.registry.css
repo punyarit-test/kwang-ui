@@ -37,3 +37,8 @@
   font-family: 'Sarabun-Thin';
   src: url('../assets/fonts/Sarabun-Thin.ttf') format('truetype');
 }
+
+/* init font family */
+c-theme {
+  font-family: var(--regular);
+}

@@ -166,7 +166,6 @@ export interface IIcons {
     ['u_user-small']?: boolean;
     ['u_user-square']?: boolean;
     ['u_venus']?: boolean;
-    ['u-times']?: boolean;
     ['whiteboard']?: boolean;
     ['x-circle-input']?: boolean;
 }

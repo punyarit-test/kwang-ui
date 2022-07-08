@@ -1,7 +1,7 @@
 import {css, html, LitElement} from 'lit';
 import {customElement} from 'lit/decorators.js';
 import {ClassAttributes, HTMLAttributes} from 'react';
-import {IGray, IPrimary} from '../types/colors.type';
+import {IColors} from '../types/colors.type';
 import {IIcons} from '../types/icons.type';
 import {ISizes} from '../types/sizes.type';
 
@@ -13,7 +13,7 @@ export class Icon2 extends LitElement {
     .icon {
       font-family: var(--icon);
       font-size: var(--size);
-      color: var(--color);
+      color: var(--color) !important;
     }
   `;
 
@@ -28,8 +28,8 @@ export class Icon2 extends LitElement {
   private setIconAttr(): void {
     const [icon, color, size] = this.attributes;
     this.style.setProperty(`--icon`, icon?.name || 'cortex');
-    this.style.setProperty(`--color`, color?.name || 'gray-500');
-    this.style.setProperty(`--size`, size?.name || 'regular');
+    this.style.setProperty(`--color`, `var(--${color?.name || 'gray-500'})`);
+    this.style.setProperty(`--size`, `var(--${size?.name || 'regular'})`);
   }
 }
 
@@ -39,8 +39,7 @@ declare global {
       extends Omit<HTMLAttributes<Ref>, 'color' | 'placeholder'>,
         ClassAttributes<CTypography.Ref>,
         IIcons,
-        IPrimary,
-        IGray,
+        IColors,
         ISizes {}
   }
   namespace JSX {
