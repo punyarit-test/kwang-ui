@@ -13,12 +13,14 @@ export declare class EfxDone extends LitElement {
     private setTimeEfx;
 }
 declare global {
-    namespace JSX {
-        interface CEfxDone extends Omit<HTMLAttributes<JSX.CEfxDone>, 'color' | 'placeholder'>, ClassAttributes<JSX.CEfxDone> {
+    namespace CEfxDone {
+        interface Ref extends Omit<HTMLAttributes<Ref>, 'color' | 'placeholder'>, ClassAttributes<Ref> {
             disabled?: boolean;
         }
+    }
+    namespace JSX {
         interface IntrinsicElements {
-            [element.name]: CEfxDone;
+            [element.name]: CEfxDone.Ref;
         }
     }
 }

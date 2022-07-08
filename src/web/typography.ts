@@ -87,10 +87,10 @@ export class Typography extends LitElement {
   }
 
   private setBooleanAttributes(): void {
-    const [fontWeight, color] = this.attributes;
+    const [color, fontWeight] = this.attributes;
+    this.style.setProperty(`--color`, color?.name || 'gray-500');
     // set font weight from type of Sarabun such as Sarabun <Regular> | <Bold> ..
     this.style.setProperty(`--font-weight`, fontWeight?.name || 'regular');
-    this.style.setProperty(`--color`, color?.name || 'gray-500');
   }
 }
 

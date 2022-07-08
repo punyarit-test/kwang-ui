@@ -3,7 +3,7 @@ export const val = <T>(value: T): string => JSON.stringify(value);
 export const evt = <Y>(
   component: unknown,
   eventName: keyof Y,
-  callback: (e: CustomEvent<any>) => void
+  callback: (e: CustomEvent) => void
 ): void => {
   (<HTMLElement>component).addEventListener(
     <keyof HTMLElementEventMap>eventName,

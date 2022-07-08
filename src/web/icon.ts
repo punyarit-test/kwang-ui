@@ -2,12 +2,17 @@ import {css, html, LitElement} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
 import {ClassAttributes, HTMLAttributes} from 'react';
 import {IGray, IPrimary} from '../types/colors.type';
-import {TIcons} from '../types/icons.type';
+import {IIcons} from '../types/icons.type';
+import {ISizes} from '../types/size.type';
 
 const ELEMENT_NAME = 'c-icon';
+/*
+  const EVENT_ONE = 'event-1'
+  interface EventOneProp {}
+*/
 
 @customElement(ELEMENT_NAME)
-export class Icon extends LitElement {
+export class Icon2 extends LitElement {
   static styles = css`
     .icon {
       font-family: var(--icon);
@@ -16,43 +21,35 @@ export class Icon extends LitElement {
     }
   `;
 
-  @property({type: String}) public icon!: string;
-  @property({type: String}) public size = '16px';
-  @property({type: String}) public color = 'gray-500';
-
   render() {
-    return html`
-      <style>
-        :host {
-          --icon: ${this.icon};
-          --size: ${this.size};
-          --color: ${this.color};
-        }
-      </style>
-
-      <span class="icon">&#xe800;</span>
-    `;
+    return html` <span class="icon">&#xe800;</span> `;
   }
 
-  firstUpdated() {}
+  firstUpdated() {
+    this.setIconAttr();
+  }
+
+  private setIconAttr(): void {
+    const [icon, color, size] = this.attributes;
+    this.style.setProperty(`--icon`, icon?.name || 'cortex');
+    this.style.setProperty(`--color`, color?.name || 'gray-500');
+    this.style.setProperty(`--size`, size?.name || 'regular');
+  }
 }
 
 declare global {
   namespace CIcon {
     interface Ref
       extends Omit<HTMLAttributes<Ref>, 'color' | 'placeholder'>,
-        ClassAttributes<Ref> {
-      icon: TIcons;
-      size?: string;
-      color?: IPrimary | IGray;
-    }
+        ClassAttributes<CTypography.Ref>,
+        IIcons,
+        IPrimary,
+        IGray,
+        ISizes {}
   }
-
   namespace JSX {
     interface IntrinsicElements {
       [ELEMENT_NAME]: CIcon.Ref;
     }
   }
-
-  namespace C {}
 }

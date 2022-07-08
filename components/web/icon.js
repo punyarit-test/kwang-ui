@@ -5,56 +5,38 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Icon = void 0;
+exports.Icon2 = void 0;
 const lit_1 = require("lit");
 const decorators_js_1 = require("lit/decorators.js");
 const ELEMENT_NAME = 'c-icon';
-let Icon = class Icon extends lit_1.LitElement {
-    constructor() {
-        super(...arguments);
-        this.size = '16px';
-        this.color = 'gray-500';
-    }
+/*
+  const EVENT_ONE = 'event-1'
+  interface EventOneProp {}
+*/
+let Icon2 = class Icon2 extends lit_1.LitElement {
     render() {
-        return (0, lit_1.html) `
-      <style>
-        :host {
-          --icon: ${this.icon};
-          --size: ${this.size};
-          --color: ${this.color};
-        }
-      </style>
-
-      <span class="icon">&#xe800;</span>
-    `;
+        return (0, lit_1.html) ` <span class="icon">&#xe800;</span> `;
     }
-    firstUpdated() { }
+    firstUpdated() {
+        this.setIconAttr();
+    }
+    setIconAttr() {
+        const [icon, color, size] = this.attributes;
+        this.style.setProperty(`--icon`, icon?.name || 'cortex');
+        this.style.setProperty(`--color`, color?.name || 'gray-500');
+        this.style.setProperty(`--size`, size?.name || 'regular');
+    }
 };
-Icon.styles = (0, lit_1.css) `
+Icon2.styles = (0, lit_1.css) `
     .icon {
       font-family: var(--icon);
       font-size: var(--size);
       color: var(--color);
     }
   `;
-__decorate([
-    (0, decorators_js_1.property)({ type: String }),
-    __metadata("design:type", String)
-], Icon.prototype, "icon", void 0);
-__decorate([
-    (0, decorators_js_1.property)({ type: String }),
-    __metadata("design:type", Object)
-], Icon.prototype, "size", void 0);
-__decorate([
-    (0, decorators_js_1.property)({ type: String }),
-    __metadata("design:type", Object)
-], Icon.prototype, "color", void 0);
-Icon = __decorate([
+Icon2 = __decorate([
     (0, decorators_js_1.customElement)(ELEMENT_NAME)
-], Icon);
-exports.Icon = Icon;
+], Icon2);
+exports.Icon2 = Icon2;
 //# sourceMappingURL=icon.js.map

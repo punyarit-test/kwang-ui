@@ -152,15 +152,22 @@ for decide dialog
 
 */
 declare global {
-  namespace JSX {
-    interface CEfxDone
-      extends Omit<HTMLAttributes<JSX.CEfxDone>, 'color' | 'placeholder'>,
-        ClassAttributes<JSX.CEfxDone> {
+  namespace CEfxDone {
+    interface Ref
+      extends Omit<HTMLAttributes<Ref>, 'color' | 'placeholder'>,
+        ClassAttributes<Ref> {
       disabled?: boolean;
     }
-
+    /*
+      interface Event {
+        [EVENT_ONE]: CustomEvent<EventOneProp>
+      }
+      interface EventOne extends CustomEvent<EventOneProp> {}
+    */
+  }
+  namespace JSX {
     interface IntrinsicElements {
-      [element.name]: CEfxDone;
+      [element.name]: CEfxDone.Ref;
     }
   }
 }
