@@ -1,8 +1,8 @@
 import {html, LitElement} from 'lit';
 import {customElement} from 'lit/decorators.js';
 import {ClassAttributes, HTMLAttributes} from 'react';
-import {colors} from '../theme/color.theme';
-import {fonts} from '../theme/font.theme';
+import {colors} from '../theme/colors.theme';
+import {fonts} from '../theme/fonts.theme';
 import {ITheme} from '../types/theme.type';
 
 const ELEMENT_NAME = 'c-theme';

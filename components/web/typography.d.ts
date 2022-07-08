@@ -1,7 +1,7 @@
 import { LitElement } from 'lit';
 import { ClassAttributes, HTMLAttributes } from 'react';
 import { IGray, IPrimary } from '../types/colors.type';
-import { ISizes } from '../types/size.type';
+import { ISizes } from '../types/sizes.type';
 declare const ELEMENT_NAME = "c-typography";
 export declare class Typography extends LitElement {
     static styles: import("lit").CSSResult;

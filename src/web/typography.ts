@@ -2,7 +2,7 @@ import {css, html, LitElement} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
 import {ClassAttributes, HTMLAttributes} from 'react';
 import {IGray, IPrimary} from '../types/colors.type';
-import {ISizes} from '../types/size.type';
+import {ISizes} from '../types/sizes.type';
 
 const ELEMENT_NAME = 'c-typography';
 

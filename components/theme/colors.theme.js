@@ -26,4 +26,4 @@ exports.colors = (0, lit_1.css) `
     --color-1-100: var(--base-4-100);
   }
 `;
-//# sourceMappingURL=color.theme.js.map
+//# sourceMappingURL=colors.theme.js.map
