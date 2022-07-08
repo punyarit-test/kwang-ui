@@ -1,6 +1,6 @@
 {
   "name": "@cortex-ui/core",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "Cortex-UI is Web Component that fully support React with strong type and flexible in use. And components design followed by Cortex-Design (by H LAB Designer Team)",
   "main": "",
   "scripts": {
@@ -26,7 +26,7 @@
     "**/*.js.map",
     "**/*.d.ts",
     "**/*.css",
-    "**/*.tft",
+    "**/*.ttf",
     "**/*.woff2"
   ],
   "dependencies": {
