@@ -49,7 +49,6 @@ let EfxDone = class EfxDone extends lit_1.LitElement {
 };
 EfxDone.styles = (0, lit_1.css) `
     .bubbly-efx {
-      font-family: 'Helvetica', 'Arial', sans-serif;
       display: inline-block;
       border-radius: 4px;
       position: relative;

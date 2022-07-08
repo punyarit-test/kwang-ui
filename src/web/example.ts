@@ -10,10 +10,12 @@ interface EventOneProp {
 
 @customElement(ELEMENT_NAME)
 export class Example extends LitElement {
-  static styles = css``;
-
   render() {
-    return html` <div>c-example component was created!!</div> `;
+    return html`
+      <div style="font-family:var(--regular)">
+        c-example component was created!!
+      </div>
+    `;
   }
 }
 

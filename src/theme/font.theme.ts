@@ -1,12 +1,15 @@
 import {css} from 'lit';
 
-export const fontTheme = css`
+export const fonts = css`
   :host {
-    --font-family: Sarabun-Regular;
-    --font-regular: 400;
-    --font-medium: 500;
-    --font-semibold: 600;
-    --font-bold: 700;
+    --thin: Sarabun-Thin;
+    --extralight: Sarabun-ExtraLight;
+    --light: Sarabun-Light;
+    --regular: Sarabun-Regular;
+    --medium: Sarabun-Medium;
+    --semibold: Sarabun-SemiBold;
+    --bold: Sarabun-Bold;
+    --extrabold: Sarabun-ExtraBold;
   }
 
   :host(.tiny) {

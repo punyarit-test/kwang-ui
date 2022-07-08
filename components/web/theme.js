@@ -9,6 +9,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Theme = void 0;
 const lit_1 = require("lit");
 const decorators_js_1 = require("lit/decorators.js");
+const color_theme_1 = require("../theme/color.theme");
+const font_theme_1 = require("../theme/font.theme");
 const ELEMENT_NAME = 'c-theme';
 /*
   const EVENT_ONE = 'event-1'
@@ -16,14 +18,17 @@ const ELEMENT_NAME = 'c-theme';
 */
 let Theme = class Theme extends lit_1.LitElement {
     render() {
-        return (0, lit_1.html) `
-      <div>
-        <slot></slot>
-      </div>
-    `;
+        return (0, lit_1.html) ` <slot></slot> `;
+    }
+    firstUpdated() {
+        this.setThemeStyles();
+    }
+    setThemeStyles() {
+        const [fontTheme, colorTheme] = this.attributes;
+        this.classList.add(fontTheme.name || 'tiny', colorTheme.name || 'standard');
     }
 };
-Theme.styles = (0, lit_1.css) ``;
+Theme.styles = [color_theme_1.colors, font_theme_1.fonts];
 Theme = __decorate([
     (0, decorators_js_1.customElement)(ELEMENT_NAME)
 ], Theme);

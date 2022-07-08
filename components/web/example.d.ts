@@ -6,7 +6,6 @@ interface EventOneProp {
     test: string;
 }
 export declare class Example extends LitElement {
-    static styles: import("lit").CSSResult;
     render(): import("lit-html").TemplateResult<1>;
 }
 declare global {

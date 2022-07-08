@@ -10,7 +10,6 @@ enum element {
 export class EfxDone extends LitElement {
   static styles = css`
     .bubbly-efx {
-      font-family: 'Helvetica', 'Arial', sans-serif;
       display: inline-block;
       border-radius: 4px;
       position: relative;

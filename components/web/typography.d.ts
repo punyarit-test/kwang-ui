@@ -9,7 +9,7 @@ export declare class Typography extends LitElement {
     render(): import("lit-html").TemplateResult<1>;
     firstUpdated(): void;
     private setFontSizeByTagName;
-    private setBooleanAttributes;
+    private setFontStyle;
 }
 declare global {
     namespace CTypography {

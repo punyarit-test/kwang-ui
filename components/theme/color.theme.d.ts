@@ -1,1 +1,1 @@
-export declare const color: {};
+export declare const colors: import("lit").CSSResult;

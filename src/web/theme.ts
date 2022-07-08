@@ -1,6 +1,9 @@
-import {css, html, LitElement} from 'lit';
-import {customElement, property} from 'lit/decorators.js';
+import {html, LitElement} from 'lit';
+import {customElement} from 'lit/decorators.js';
 import {ClassAttributes, HTMLAttributes} from 'react';
+import {colors} from '../theme/color.theme';
+import {fonts} from '../theme/font.theme';
+import {ITheme} from '../types/theme.type';
 
 const ELEMENT_NAME = 'c-theme';
 /*
@@ -10,14 +13,19 @@ const ELEMENT_NAME = 'c-theme';
 
 @customElement(ELEMENT_NAME)
 export class Theme extends LitElement {
-  static styles = css``;
+  static styles = [colors, fonts];
 
   render() {
-    return html`
-      <div>
-        <slot></slot>
-      </div>
-    `;
+    return html` <slot></slot> `;
+  }
+
+  firstUpdated() {
+    this.setThemeStyles();
+  }
+
+  private setThemeStyles(): void {
+    const [fontTheme, colorTheme] = this.attributes;
+    this.classList.add(fontTheme.name || 'tiny', colorTheme.name || 'standard');
   }
 }
 
@@ -25,7 +33,8 @@ declare global {
   namespace CTheme {
     interface Ref
       extends Omit<HTMLAttributes<Ref>, 'color' | 'placeholder'>,
-        ClassAttributes<Ref> {}
+        ClassAttributes<Ref>,
+        ITheme {}
     /*
       interface Event {
         [EVENT_ONE]: CustomEvent<EventOneProp>

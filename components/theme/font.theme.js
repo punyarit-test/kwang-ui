@@ -1,14 +1,17 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.fontTheme = void 0;
+exports.fonts = void 0;
 const lit_1 = require("lit");
-exports.fontTheme = (0, lit_1.css) `
+exports.fonts = (0, lit_1.css) `
   :host {
-    --font-family: Sarabun-Regular;
-    --font-regular: 400;
-    --font-medium: 500;
-    --font-semibold: 600;
-    --font-bold: 700;
+    --thin: Sarabun-Thin;
+    --extralight: Sarabun-ExtraLight;
+    --light: Sarabun-Light;
+    --regular: Sarabun-Regular;
+    --medium: Sarabun-Medium;
+    --semibold: Sarabun-SemiBold;
+    --bold: Sarabun-Bold;
+    --extrabold: Sarabun-ExtraBold;
   }
 
   :host(.tiny) {

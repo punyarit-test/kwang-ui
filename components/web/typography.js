@@ -20,65 +20,65 @@ let Typography = class Typography extends lit_1.LitElement {
     firstUpdated() {
         // set size
         this.setFontSizeByTagName();
-        this.setBooleanAttributes();
+        this.setFontStyle();
     }
     setFontSizeByTagName() {
         switch (this.tagName) {
             case 'DISPLAY-MD':
-                this.style.setProperty(`--font-size`, 'var(--fs-124)');
+                this.style.fontSize = 'var(--fs-124)';
                 break;
             case 'DISPLAY-SM':
-                this.style.setProperty(`--font-size`, 'var(--fs-96)');
+                this.style.fontSize = 'var(--fs-96)';
                 break;
             case 'DISPLAY-XS':
-                this.style.setProperty(`--font-size`, 'var(--fs-72)');
+                this.style.fontSize = 'var(--fs-72)';
                 break;
             case 'HEADER-XL':
-                this.style.setProperty(`--font-size`, 'var(--fs-60)');
+                this.style.fontSize = 'var(--fs-60)';
                 break;
             case 'HEADER-LG':
-                this.style.setProperty(`--font-size`, 'var(--fs-48)');
+                this.style.fontSize = 'var(--fs-48)';
                 break;
             case 'HEADER-MD':
-                this.style.setProperty(`--font-size`, 'var(--fs-36)');
+                this.style.fontSize = 'var(--fs-36)';
                 break;
             case 'HEADER-SM':
-                this.style.setProperty(`--font-size`, 'var(--fs-32)');
+                this.style.fontSize = 'var(--fs-32)';
                 break;
             case 'HEADER-XS':
-                this.style.setProperty(`--font-size`, 'var(--fs-24)');
+                this.style.fontSize = 'var(--fs-24)';
                 break;
             case 'BODY-XL':
-                this.style.setProperty(`--font-size`, 'var(--fs-20)');
+                this.style.fontSize = 'var(--fs-20)';
                 break;
             case 'BODY-LG':
-                this.style.setProperty(`--font-size`, 'var(--fs-18)');
+                this.style.fontSize = 'var(--fs-18)';
                 break;
             // Default is body-md.
             default:
             case 'BODY-MD':
-                this.style.setProperty(`--font-size`, 'var(--fs-16)');
+                this.style.fontSize = 'var(--fs-16)';
                 break;
             case 'BODY-SM':
-                this.style.setProperty(`--font-size`, 'var(--fs-14)');
+                this.style.fontSize = 'var(--fs-14)';
                 break;
             case 'BODY-XS':
-                this.style.setProperty(`--font-size`, 'var(--fs-12)');
+                this.style.fontSize = 'var(--fs-12)';
                 break;
         }
     }
-    setBooleanAttributes() {
-        const [color, fontWeight] = this.attributes;
-        this.style.setProperty(`--color`, color?.name || 'gray-500');
+    setFontStyle() {
+        const [fontFamily, color] = this.attributes;
         // set font weight from type of Sarabun such as Sarabun <Regular> | <Bold> ..
-        this.style.setProperty(`--font-weight`, fontWeight?.name || 'regular');
+        this.style.fontFamily = `var(--${fontFamily?.name || 'regular'})`;
+        this.style.color = `var(--${color?.name || 'gray-500'})`;
     }
 };
 Typography.styles = (0, lit_1.css) `
     .font {
-      font-weight: var(--font-weight);
-      color: var(--color);
-      font-size: var(--font-size);
+      font-family: var(--font-family) !important;
+      color: var(--color) !important;
+      font-size: var(--font-size) !important;
     }
   `;
 __decorate([

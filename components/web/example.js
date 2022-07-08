@@ -13,10 +13,13 @@ const ELEMENT_NAME = 'c-example';
 const EVENT_ONE = 'event-1';
 let Example = class Example extends lit_1.LitElement {
     render() {
-        return (0, lit_1.html) ` <div>c-example component was created!!</div> `;
+        return (0, lit_1.html) `
+      <div style="font-family:var(--regular)">
+        c-example component was created!!
+      </div>
+    `;
     }
 };
-Example.styles = (0, lit_1.css) ``;
 Example = __decorate([
     (0, decorators_js_1.customElement)(ELEMENT_NAME)
 ], Example);
