@@ -25,7 +25,9 @@ export class Theme extends LitElement {
 
   private setThemeStyles(): void {
     const [fontTheme, colorTheme] = this.attributes;
-    this.classList.add(fontTheme.name || 'tiny', colorTheme.name || 'standard');
+    this.className = `${fontTheme.name || 'normal'} ${
+      colorTheme.name || 'standard'
+    }`;
   }
 }
 

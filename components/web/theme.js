@@ -25,7 +25,7 @@ let Theme = class Theme extends lit_1.LitElement {
     }
     setThemeStyles() {
         const [fontTheme, colorTheme] = this.attributes;
-        this.classList.add(fontTheme.name || 'tiny', colorTheme.name || 'standard');
+        this.className = `${fontTheme.name || 'normal'} ${colorTheme.name || 'standard'}`;
     }
 };
 Theme.styles = [colors_theme_1.colors, fonts_theme_1.fonts];

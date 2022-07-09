@@ -1,5 +1,5 @@
 export interface IFontTheme {
-    medium?: boolean;
+    normal?: boolean;
     large?: boolean;
     huge?: boolean;
 }

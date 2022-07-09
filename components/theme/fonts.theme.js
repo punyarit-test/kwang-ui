@@ -14,7 +14,7 @@ exports.fonts = (0, lit_1.css) `
     --extrabold: Sarabun-ExtraBold;
   }
 
-  :host(.medium) {
+  :host(.normal) {
     --fs-6: 0.375rem;
     --fs-7: 0.438rem;
     --fs-8: 0.5rem;
