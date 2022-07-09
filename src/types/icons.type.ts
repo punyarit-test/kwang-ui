@@ -169,3 +169,5 @@ export interface IIcons {
   ['whiteboard']?: boolean;
   ['x-circle-input']?: boolean;
 }
+
+export type TIconKeys = keyof IIcons;

@@ -7,7 +7,7 @@ const ELEMENT_NAME = 'header-md';
 export class HeaderMd extends Typography {
   connectedCallback() {
     super.connectedCallback();
-    this.setFontStyle('fs-36');
+    this.setFontStyle('size-36');
   }
 }
 

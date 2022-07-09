@@ -13,7 +13,7 @@ const ELEMENT_NAME = 'body-lg';
 let BodyLg = class BodyLg extends typography_1.Typography {
     connectedCallback() {
         super.connectedCallback();
-        this.setFontStyle('fs-18');
+        this.setFontStyle('size-18');
     }
 };
 BodyLg = __decorate([

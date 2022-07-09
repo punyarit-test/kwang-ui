@@ -7,7 +7,7 @@ const ELEMENT_NAME = 'body-xs';
 export class BodyXs extends Typography {
   connectedCallback() {
     super.connectedCallback();
-    this.setFontStyle('fs-12');
+    this.setFontStyle('size-12');
   }
 }
 

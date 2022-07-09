@@ -13,7 +13,7 @@ const ELEMENT_NAME = 'header-md';
 let HeaderMd = class HeaderMd extends typography_1.Typography {
     connectedCallback() {
         super.connectedCallback();
-        this.setFontStyle('fs-36');
+        this.setFontStyle('size-36');
     }
 };
 HeaderMd = __decorate([

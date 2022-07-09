@@ -6,17 +6,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DisplaySm = void 0;
+exports.Sidebar = void 0;
+const lit_1 = require("lit");
 const decorators_js_1 = require("lit/decorators.js");
-const typography_1 = require("./typography");
-const ELEMENT_NAME = 'display-sm';
-let DisplaySm = class DisplaySm extends typography_1.Typography {
-    connectedCallback() {
-        super.connectedCallback();
-        this.setFontStyle('size-96');
+const ELEMENT_NAME = 'c-sidebar';
+/*
+  const EVENT_ONE = 'event-1'
+  interface EventOneProp {}
+*/
+let Sidebar = class Sidebar extends lit_1.LitElement {
+    render() {
+        return (0, lit_1.html) ` <div>c-sidebar component was created!!</div> `;
     }
 };
-DisplaySm = __decorate([
+Sidebar.styles = (0, lit_1.css) ``;
+Sidebar = __decorate([
     (0, decorators_js_1.customElement)(ELEMENT_NAME)
-], DisplaySm);
-exports.DisplaySm = DisplaySm;
+], Sidebar);
+exports.Sidebar = Sidebar;
