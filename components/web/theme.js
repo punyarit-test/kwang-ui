@@ -11,16 +11,12 @@ const lit_1 = require("lit");
 const decorators_js_1 = require("lit/decorators.js");
 const colors_theme_1 = require("../theme/colors.theme");
 const fonts_theme_1 = require("../theme/fonts.theme");
+const theme_type_1 = require("../types/theme.type");
 const ELEMENT_NAME = 'c-theme';
 /*
   const EVENT_ONE = 'event-1'
   interface EventOneProp {}
 */
-var ThemeIndex;
-(function (ThemeIndex) {
-    ThemeIndex[ThemeIndex["size"] = 0] = "size";
-    ThemeIndex[ThemeIndex["color"] = 1] = "color";
-})(ThemeIndex || (ThemeIndex = {}));
 let Theme = class Theme extends lit_1.LitElement {
     render() {
         return (0, lit_1.html) ` <slot></slot> `;
@@ -30,11 +26,11 @@ let Theme = class Theme extends lit_1.LitElement {
         this.setThemeStyles();
     }
     onSetSize(size) {
-        const currentColor = this.getClassName(ThemeIndex.color);
+        const currentColor = this.getClassName(theme_type_1.ThemeIndex.color);
         this.setClassName(size, currentColor);
     }
     onSetTheme(color) {
-        const currentSize = this.getClassName(ThemeIndex.size);
+        const currentSize = this.getClassName(theme_type_1.ThemeIndex.size);
         this.setClassName(currentSize, color);
     }
     getClassName(index) {

@@ -3,17 +3,19 @@ import {customElement} from 'lit/decorators.js';
 import {ClassAttributes, HTMLAttributes} from 'react';
 import {colors} from '../theme/colors.theme';
 import {fonts} from '../theme/fonts.theme';
-import {ColorThemeAttr, SizeThemeAttr, ThemeAttr} from '../types/theme.type';
+import {
+  ColorThemeAttr,
+  SizeThemeAttr,
+  ThemeAttr,
+  ThemeIndex,
+} from '../types/theme.type';
 
 const ELEMENT_NAME = 'c-theme';
 /*
   const EVENT_ONE = 'event-1'
   interface EventOneProp {}
 */
-enum ThemeIndex {
-  size,
-  color,
-}
+
 @customElement(ELEMENT_NAME)
 export class Theme extends LitElement {
   static styles = [colors, fonts];

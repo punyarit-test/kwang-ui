@@ -11,3 +11,7 @@ export interface ColorThemeAttr {
 }
 export interface ThemeAttr extends SizeThemeAttr, ColorThemeAttr {
 }
+export declare enum ThemeIndex {
+    size = 0,
+    color = 1
+}
