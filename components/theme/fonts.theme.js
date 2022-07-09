@@ -15,6 +15,8 @@ exports.fonts = (0, lit_1.css) `
   }
 
   :host(.medium) {
+    --fs-6: 0.375rem;
+    --fs-7: 0.438rem;
     --fs-8: 0.5rem;
     --fs-9: 0.563rem;
     --fs-10: 0.625rem;
@@ -64,6 +66,8 @@ exports.fonts = (0, lit_1.css) `
   }
 
   :host(.large) {
+    --fs-6: 0.625rem;
+    --fs-7: 0.688rem;
     --fs-8: 0.75rem;
     --fs-9: 0.813rem;
     --fs-10: 0.875rem;
@@ -113,6 +117,8 @@ exports.fonts = (0, lit_1.css) `
   }
 
   :host(.hurge) {
+    --fs-6: 0.875rem;
+    --fs-7: 0.938rem;
     --fs-8: 1rem;
     --fs-9: 1.063rem;
     --fs-10: 1.125rem;

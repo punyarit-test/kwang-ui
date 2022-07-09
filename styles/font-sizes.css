@@ -1,3 +1,11 @@
+.fs-6 {
+  font-size: var(--fs-6);
+}
+
+.fs-7 {
+  font-size: var(--fs-7);
+}
+
 .fs-8 {
   font-size: var(--fs-8);
 }

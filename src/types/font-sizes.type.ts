@@ -1,4 +1,6 @@
 export interface IFontSize {
+  ['fs-6']?: boolean;
+  ['fs-7']?: boolean;
   ['fs-8']?: boolean;
   ['fs-9']?: boolean;
   ['fs-10']?: boolean;

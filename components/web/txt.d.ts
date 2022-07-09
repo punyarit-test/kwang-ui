@@ -2,7 +2,7 @@ import { LitElement } from 'lit';
 import { ClassAttributes, HTMLAttributes } from 'react';
 import { IColors } from '../types/colors.type';
 import { IFontSize } from '../types/font-sizes.type';
-import { ISizes } from '../types/sizes.type';
+import { ISizes } from '../types/weights.type';
 declare const ELEMENT_NAME = "c-txt";
 export declare class Txt extends LitElement {
     static styles: import("lit").CSSResult;

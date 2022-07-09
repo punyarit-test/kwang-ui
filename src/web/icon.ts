@@ -4,7 +4,7 @@ import {ClassAttributes, HTMLAttributes} from 'react';
 import {IColors} from '../types/colors.type';
 import {IFontSize} from '../types/font-sizes.type';
 import {IIcons} from '../types/icons.type';
-import {ISizes} from '../types/sizes.type';
+import {ISizes} from '../types/weights.type';
 
 const ELEMENT_NAME = 'c-icon';
 
