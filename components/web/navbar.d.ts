@@ -1,13 +1,13 @@
-import { LitElement } from 'lit';
-import { ClassAttributes, HTMLAttributes } from 'react';
+import { NavbarPosition } from '../types/navbar.type';
+import { Bar } from './bar';
 declare const ELEMENT_NAME = "c-navbar";
-export declare class Navbar extends LitElement {
+export declare class Navbar extends Bar {
     static styles: import("lit").CSSResult;
     render(): import("lit-html").TemplateResult<1>;
 }
 declare global {
     namespace CNavbar {
-        interface Ref extends Omit<HTMLAttributes<Ref>, 'color' | 'placeholder'>, ClassAttributes<Ref> {
+        interface Ref extends NavbarPosition, CBar.Ref {
         }
     }
     namespace JSX {

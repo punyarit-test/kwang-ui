@@ -1,6 +1,7 @@
 import {LitElement} from 'lit';
 import {customElement} from 'lit/decorators.js';
 import {ClassAttributes, HTMLAttributes} from 'react';
+import {SizesAttr} from '../types/sizes.type';
 
 const ELEMENT_NAME = 'c-bar';
 /*
@@ -15,7 +16,8 @@ declare global {
   namespace CBar {
     interface Ref
       extends Omit<HTMLAttributes<Ref>, 'color' | 'placeholder'>,
-        ClassAttributes<Ref> {}
+        ClassAttributes<Ref>,
+        SizesAttr {}
     /*
       interface Event {
         [EVENT_ONE]: CustomEvent<EventOneProp>

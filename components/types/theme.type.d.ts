@@ -1,4 +1,4 @@
-export interface FontThemeAttr {
+export interface SizeThemeAttr {
     normal?: boolean;
     large?: boolean;
     huge?: boolean;
@@ -9,5 +9,5 @@ export interface ColorThemeAttr {
     dim?: boolean;
     dark?: boolean;
 }
-export interface ThemeAttr extends FontThemeAttr, ColorThemeAttr {
+export interface ThemeAttr extends SizeThemeAttr, ColorThemeAttr {
 }

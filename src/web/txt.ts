@@ -2,7 +2,7 @@ import {css, html, LitElement} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
 import {ClassAttributes, HTMLAttributes} from 'react';
 import {Colors} from '../types/colors.type';
-import {FontSizeAttr} from '../types/font-sizes.type';
+import {SizesAttr} from '../types/sizes.type';
 import {WeightAttr} from '../types/weights.type';
 
 const ELEMENT_NAME = 'c-txt';
@@ -38,7 +38,7 @@ declare global {
         ClassAttributes<Ref>,
         Colors,
         WeightAttr,
-        FontSizeAttr {
+        SizesAttr {
       p?: string;
     }
   }

@@ -9,14 +9,21 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Navbar = void 0;
 const lit_1 = require("lit");
 const decorators_js_1 = require("lit/decorators.js");
+const bar_1 = require("./bar");
 const ELEMENT_NAME = 'c-navbar';
 /*
   const EVENT_ONE = 'event-1'
   interface EventOneProp {}
 */
-let Navbar = class Navbar extends lit_1.LitElement {
+let Navbar = class Navbar extends bar_1.Bar {
     render() {
-        return (0, lit_1.html) ` <div></div> `;
+        return (0, lit_1.html) `
+      <div>
+        <slot name="header"></slot>
+        <slot name="center"></slot>
+        <slot name="footer"></slot>
+      </div>
+    `;
     }
 };
 Navbar.styles = (0, lit_1.css) ``;

@@ -16,7 +16,13 @@ const ELEMENT_NAME = 'c-sidebar';
 */
 let Sidebar = class Sidebar extends lit_1.LitElement {
     render() {
-        return (0, lit_1.html) ` <div>c-sidebar component was created!!</div> `;
+        return (0, lit_1.html) `
+      <div>
+        <slot name="header"></slot>
+        <slot name="center"></slot>
+        <slot name="footer"></slot>
+      </div>
+    `;
     }
 };
 Sidebar.styles = (0, lit_1.css) ``;

@@ -1,4 +1,4 @@
-export interface FontSizeAttr {
+export interface SizesAttr {
   ['size-6']?: boolean;
   ['size-7']?: boolean;
   ['size-8']?: boolean;

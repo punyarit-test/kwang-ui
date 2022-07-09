@@ -2,7 +2,7 @@ import {css, html, LitElement} from 'lit';
 import {customElement} from 'lit/decorators.js';
 import {ClassAttributes, HTMLAttributes} from 'react';
 import {Colors} from '../types/colors.type';
-import {FontSizeAttr} from '../types/font-sizes.type';
+import {SizesAttr} from '../types/sizes.type';
 import {IconName} from '../types/icons.type';
 import {WeightAttr} from '../types/weights.type';
 
@@ -46,7 +46,7 @@ declare global {
         IconName,
         Colors,
         WeightAttr,
-        FontSizeAttr {}
+        SizesAttr {}
   }
   namespace JSX {
     interface IntrinsicElements {

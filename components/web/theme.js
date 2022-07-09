@@ -16,16 +16,36 @@ const ELEMENT_NAME = 'c-theme';
   const EVENT_ONE = 'event-1'
   interface EventOneProp {}
 */
+var ThemeIndex;
+(function (ThemeIndex) {
+    ThemeIndex[ThemeIndex["size"] = 0] = "size";
+    ThemeIndex[ThemeIndex["color"] = 1] = "color";
+})(ThemeIndex || (ThemeIndex = {}));
 let Theme = class Theme extends lit_1.LitElement {
     render() {
         return (0, lit_1.html) ` <slot></slot> `;
     }
-    firstUpdated() {
+    connectedCallback() {
+        super.connectedCallback();
         this.setThemeStyles();
     }
+    onSetSize(size) {
+        const currentColor = this.getClassName(ThemeIndex.color);
+        this.setClassName(size, currentColor);
+    }
+    onSetTheme(color) {
+        const currentSize = this.getClassName(ThemeIndex.size);
+        this.setClassName(currentSize, color);
+    }
+    getClassName(index) {
+        return this.className.split(' ')[index];
+    }
     setThemeStyles() {
-        const [fontTheme, colorTheme] = this.attributes;
-        this.className = `${fontTheme.name || 'normal'} ${colorTheme.name || 'standard'}`;
+        const [sizeTheme, colorTheme] = this.attributes;
+        this.setClassName(sizeTheme?.name, colorTheme?.name);
+    }
+    setClassName(sizeTheme, colorTheme) {
+        this.className = `${sizeTheme || 'normal'} ${colorTheme || 'standard'}`;
     }
 };
 Theme.styles = [colors_theme_1.colors, fonts_theme_1.fonts];

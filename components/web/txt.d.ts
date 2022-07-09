@@ -1,7 +1,7 @@
 import { LitElement } from 'lit';
 import { ClassAttributes, HTMLAttributes } from 'react';
 import { Colors } from '../types/colors.type';
-import { FontSizeAttr } from '../types/font-sizes.type';
+import { SizesAttr } from '../types/sizes.type';
 import { WeightAttr } from '../types/weights.type';
 declare const ELEMENT_NAME = "c-txt";
 export declare class Txt extends LitElement {
@@ -13,7 +13,7 @@ export declare class Txt extends LitElement {
 }
 declare global {
     namespace CTxt {
-        interface Ref extends Omit<HTMLAttributes<Ref>, 'color' | 'placeholder'>, ClassAttributes<Ref>, Colors, WeightAttr, FontSizeAttr {
+        interface Ref extends Omit<HTMLAttributes<Ref>, 'color' | 'placeholder'>, ClassAttributes<Ref>, Colors, WeightAttr, SizesAttr {
             p?: string;
         }
     }

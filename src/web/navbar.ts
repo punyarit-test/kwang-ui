@@ -1,6 +1,8 @@
 import {css, html, LitElement} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
 import {ClassAttributes, HTMLAttributes} from 'react';
+import {NavbarPosition} from '../types/navbar.type';
+import {Bar} from './bar';
 
 const ELEMENT_NAME = 'c-navbar';
 /*
@@ -9,19 +11,23 @@ const ELEMENT_NAME = 'c-navbar';
 */
 
 @customElement(ELEMENT_NAME)
-export class Navbar extends LitElement {
+export class Navbar extends Bar {
   static styles = css``;
 
   render() {
-    return html` <div></div> `;
+    return html`
+      <div>
+        <slot name="header"></slot>
+        <slot name="center"></slot>
+        <slot name="footer"></slot>
+      </div>
+    `;
   }
 }
 
 declare global {
   namespace CNavbar {
-    interface Ref
-      extends Omit<HTMLAttributes<Ref>, 'color' | 'placeholder'>,
-        ClassAttributes<Ref> {}
+    interface Ref extends NavbarPosition, CBar.Ref {}
     /*
       interface Event {
         [EVENT_ONE]: CustomEvent<EventOneProp>
