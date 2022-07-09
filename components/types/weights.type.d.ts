@@ -1,4 +1,4 @@
-export interface ISizes {
+export interface IWeights {
     thin?: boolean;
     extralight?: boolean;
     light?: boolean;

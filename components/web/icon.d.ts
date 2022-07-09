@@ -3,7 +3,7 @@ import { ClassAttributes, HTMLAttributes } from 'react';
 import { IColors } from '../types/colors.type';
 import { IFontSize } from '../types/font-sizes.type';
 import { IIcons } from '../types/icons.type';
-import { ISizes } from '../types/weights.type';
+import { IWeights } from '../types/weights.type';
 declare const ELEMENT_NAME = "c-icon";
 export declare class Icon2 extends LitElement {
     static styles: import("lit").CSSResult;
@@ -13,7 +13,7 @@ export declare class Icon2 extends LitElement {
 }
 declare global {
     namespace CIcon {
-        interface Ref extends Omit<HTMLAttributes<Ref>, 'color' | 'placeholder'>, ClassAttributes<CTypography.Ref>, IIcons, IColors, ISizes, IFontSize {
+        interface Ref extends Omit<HTMLAttributes<Ref>, 'color' | 'placeholder'>, ClassAttributes<CTypography.Ref>, IIcons, IColors, IWeights, IFontSize {
         }
     }
     namespace JSX {
