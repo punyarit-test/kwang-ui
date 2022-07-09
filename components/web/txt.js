@@ -9,29 +9,32 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Typography = void 0;
+exports.Txt = void 0;
 const lit_1 = require("lit");
 const decorators_js_1 = require("lit/decorators.js");
-const ELEMENT_NAME = 'c-typography';
-let Typography = class Typography extends lit_1.LitElement {
-    render() {
-        return (0, lit_1.html) `<slot></slot>${this.p}`;
+const ELEMENT_NAME = 'c-txt';
+let Txt = class Txt extends lit_1.LitElement {
+    constructor() {
+        super(...arguments);
+        this.render = () => (0, lit_1.html) ` <slot></slot>${this.p} `;
     }
-    setFontSize(fontSize) {
-        this.style.fontSize = fontSize;
+    connectedCallback() {
+        super.connectedCallback();
+        this.setFontStyle();
     }
     setFontStyle() {
-        const [fontFamily, color] = this.attributes;
+        const [fontFamily, fontSize, color] = this.attributes;
         // set font weight from type of Sarabun such as Sarabun <Regular> | <Bold> ..
         this.style.fontFamily = `var(--${fontFamily?.name || 'regular'})`;
+        this.style.fontSize = `var(--${fontSize?.name || 'fs-16'})`;
         this.style.color = `var(--${color?.name || 'gray-500'})`;
     }
 };
 __decorate([
     (0, decorators_js_1.property)({ type: String }),
     __metadata("design:type", String)
-], Typography.prototype, "p", void 0);
-Typography = __decorate([
+], Txt.prototype, "p", void 0);
+Txt = __decorate([
     (0, decorators_js_1.customElement)(ELEMENT_NAME)
-], Typography);
-exports.Typography = Typography;
+], Txt);
+exports.Txt = Txt;

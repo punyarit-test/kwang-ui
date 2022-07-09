@@ -1,7 +1,7 @@
 import { LitElement } from 'lit';
 import { ClassAttributes, HTMLAttributes } from 'react';
 import { IColors } from '../types/colors.type';
-import { IFontSize } from '../types/fontsizes.type';
+import { IFontSize } from '../types/font-sizes.type';
 import { IIcons } from '../types/icons.type';
 import { ISizes } from '../types/sizes.type';
 declare const ELEMENT_NAME = "c-icon";
