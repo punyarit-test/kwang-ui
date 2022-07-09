@@ -2,28 +2,23 @@ import {css, html, LitElement} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
 import {ClassAttributes, HTMLAttributes} from 'react';
 
-const ELEMENT_NAME = 'c-layout';
+const ELEMENT_NAME = 'menu-bar';
 /*
   const EVENT_ONE = 'event-1'
   interface EventOneProp {}
 */
 
 @customElement(ELEMENT_NAME)
-export class Layout extends LitElement {
+export class MenuBar extends LitElement {
   static styles = css``;
 
   render() {
-    return html`
-      <div>
-        <slot slot="bar"></slot>
-        <slot slot="content"></slot>
-      </div>
-    `;
+    return html` <div>c-menu-bar component was created!!</div> `;
   }
 }
 
 declare global {
-  namespace CLayout {
+  namespace CMenuBar {
     interface Ref
       extends Omit<HTMLAttributes<Ref>, 'color' | 'placeholder'>,
         ClassAttributes<Ref> {}
@@ -36,7 +31,7 @@ declare global {
   }
   namespace JSX {
     interface IntrinsicElements {
-      [ELEMENT_NAME]: CLayout.Ref;
+      [ELEMENT_NAME]: CMenuBar.Ref;
     }
   }
 }

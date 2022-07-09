@@ -16,7 +16,7 @@ const ELEMENT_NAME = 'c-navbar';
 */
 let Navbar = class Navbar extends lit_1.LitElement {
     render() {
-        return (0, lit_1.html) ` <div>c-navbar component was created!!</div> `;
+        return (0, lit_1.html) ` <div></div> `;
     }
 };
 Navbar.styles = (0, lit_1.css) ``;

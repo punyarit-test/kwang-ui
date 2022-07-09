@@ -1,3 +1,3 @@
-export interface IFlag {
+export interface FlagAttr {
   name: string;
 }

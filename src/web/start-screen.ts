@@ -1,7 +1,7 @@
 import {css, html, LitElement} from 'lit';
 import {customElement} from 'lit/decorators.js';
 import {ClassAttributes, HTMLAttributes} from 'react';
-import {IStartScreenAttr} from '../types/start-screen.type';
+import {StartScreenAttr} from '../types/start-screen.type';
 
 const ELEMENT_NAME = 'start-screen';
 /*
@@ -16,8 +16,9 @@ export class StartScreen extends LitElement {
   render() {
     return html`
       <div>
-        <slot></slot>
+        <slot name="img"></slot>
       </div>
+      <slot></slot>
     `;
   }
 }
@@ -27,9 +28,7 @@ declare global {
     interface Ref
       extends Omit<HTMLAttributes<Ref>, 'color' | 'placeholder'>,
         ClassAttributes<Ref>,
-        IStartScreenAttr {
-      img?: string;
-    }
+        StartScreenAttr {}
     /*
       interface Event {
         [EVENT_ONE]: CustomEvent<EventOneProp>

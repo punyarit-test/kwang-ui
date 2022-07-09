@@ -1,6 +1,6 @@
 import { LitElement } from 'lit';
 import { ClassAttributes, HTMLAttributes } from 'react';
-import { IStartScreenAttr } from '../types/start-screen.type';
+import { StartScreenAttr } from '../types/start-screen.type';
 declare const ELEMENT_NAME = "start-screen";
 export declare class StartScreen extends LitElement {
     static styles: import("lit").CSSResult;
@@ -8,8 +8,7 @@ export declare class StartScreen extends LitElement {
 }
 declare global {
     namespace CStartScreen {
-        interface Ref extends Omit<HTMLAttributes<Ref>, 'color' | 'placeholder'>, ClassAttributes<Ref>, IStartScreenAttr {
-            img?: string;
+        interface Ref extends Omit<HTMLAttributes<Ref>, 'color' | 'placeholder'>, ClassAttributes<Ref>, StartScreenAttr {
         }
     }
     namespace JSX {

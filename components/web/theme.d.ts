@@ -1,6 +1,6 @@
 import { LitElement } from 'lit';
 import { ClassAttributes, HTMLAttributes } from 'react';
-import { ITheme } from '../types/theme.type';
+import { ThemeAttr } from '../types/theme.type';
 declare const ELEMENT_NAME = "c-theme";
 export declare class Theme extends LitElement {
     static styles: import("lit").CSSResult[];
@@ -10,7 +10,7 @@ export declare class Theme extends LitElement {
 }
 declare global {
     namespace CTheme {
-        interface Ref extends Omit<HTMLAttributes<Ref>, 'color' | 'placeholder'>, ClassAttributes<Ref>, ITheme {
+        interface Ref extends Omit<HTMLAttributes<Ref>, 'color' | 'placeholder'>, ClassAttributes<Ref>, ThemeAttr {
         }
     }
     namespace JSX {

@@ -1,9 +1,9 @@
-export interface IBase {
+export interface Base {
   white?: boolean;
   black?: boolean;
 }
 
-export interface IGray {
+export interface Gray {
   ['gray-25']?: boolean;
   ['gray-50']?: boolean;
   ['gray-100']?: boolean;
@@ -16,7 +16,7 @@ export interface IGray {
   ['gray-800']?: boolean;
 }
 
-export interface IPrimary {
+export interface Primary {
   ['primary-25']?: boolean;
   ['primary-50']?: boolean;
   ['primary-100']?: boolean;
@@ -29,7 +29,7 @@ export interface IPrimary {
   ['primary-800']?: boolean;
 }
 
-export interface IError {
+export interface Error {
   ['error-25']?: boolean;
   ['error-50']?: boolean;
   ['error-100']?: boolean;
@@ -43,7 +43,7 @@ export interface IError {
   ['error-900']?: boolean;
 }
 
-export interface IWarning {
+export interface Warning {
   ['warning-25']?: boolean;
   ['warning-50']?: boolean;
   ['warning-100']?: boolean;
@@ -57,7 +57,7 @@ export interface IWarning {
   ['warning-900']?: boolean;
 }
 
-export interface ISuccess {
+export interface Success {
   ['success-25']?: boolean;
   ['success-50']?: boolean;
   ['success-100']?: boolean;
@@ -71,7 +71,7 @@ export interface ISuccess {
   ['success-900']?: boolean;
 }
 
-export interface IModermGreen {
+export interface ModermGreen {
   ['modern-green-25']?: boolean;
   ['modern-green-50']?: boolean;
   ['modern-green-100']?: boolean;
@@ -85,7 +85,7 @@ export interface IModermGreen {
   ['modern-green-900']?: boolean;
 }
 
-export interface ISurgeonGreen {
+export interface SurgeonGreen {
   ['surgeon-green-25']?: boolean;
   ['surgeon-green-50']?: boolean;
   ['surgeon-green-100']?: boolean;
@@ -99,7 +99,7 @@ export interface ISurgeonGreen {
   ['surgeon-green-900']?: boolean;
 }
 
-export interface IWellnessGreen {
+export interface WellnessGreen {
   ['wellness-green-25']?: boolean;
   ['wellness-green-50']?: boolean;
   ['wellness-green-100']?: boolean;
@@ -113,7 +113,7 @@ export interface IWellnessGreen {
   ['wellness-green-900']?: boolean;
 }
 
-export interface ISafeBlue {
+export interface SafeBlue {
   ['safe-blue-25']?: boolean;
   ['safe-blue-50']?: boolean;
   ['safe-blue-100']?: boolean;
@@ -127,7 +127,7 @@ export interface ISafeBlue {
   ['safe-blue-900']?: boolean;
 }
 
-export interface IBlueprint {
+export interface Blueprint {
   ['blueprint-25']?: boolean;
   ['blueprint-50']?: boolean;
   ['blueprint-100']?: boolean;
@@ -141,7 +141,7 @@ export interface IBlueprint {
   ['blueprint-900']?: boolean;
 }
 
-export interface IVioletAlert {
+export interface VioletAlert {
   ['violet-alert-25']?: boolean;
   ['violet-alert-50']?: boolean;
   ['violet-alert-100']?: boolean;
@@ -155,7 +155,7 @@ export interface IVioletAlert {
   ['violet-alert-900']?: boolean;
 }
 
-export interface IPurple {
+export interface Purple {
   ['purple-25']?: boolean;
   ['purple-50']?: boolean;
   ['purple-100']?: boolean;
@@ -169,7 +169,7 @@ export interface IPurple {
   ['purple-900']?: boolean;
 }
 
-export interface IPinky {
+export interface Pinky {
   ['pinky-25']?: boolean;
   ['pinky-50']?: boolean;
   ['pinky-100']?: boolean;
@@ -183,7 +183,7 @@ export interface IPinky {
   ['pinky-900']?: boolean;
 }
 
-export interface IRedFlag {
+export interface RedFlag {
   ['red-flag-25']?: boolean;
   ['red-flag-50']?: boolean;
   ['red-flag-100']?: boolean;
@@ -197,7 +197,7 @@ export interface IRedFlag {
   ['red-flag-900']?: boolean;
 }
 
-export interface IAlarmOrange {
+export interface AlarmOrange {
   ['alarm-orange-25']?: boolean;
   ['alarm-orange-50']?: boolean;
   ['alarm-orange-100']?: boolean;
@@ -211,7 +211,7 @@ export interface IAlarmOrange {
   ['alarm-orange-900']?: boolean;
 }
 
-export interface IWarningYellow {
+export interface WarningYellow {
   ['warning-yellow-25']?: boolean;
   ['warning-yellow-50']?: boolean;
   ['warning-yellow-100']?: boolean;
@@ -225,21 +225,21 @@ export interface IWarningYellow {
   ['warning-yellow-900']?: boolean;
 }
 
-export interface IColors
-  extends IBase,
-    IGray,
-    IPrimary,
-    IError,
-    IWarning,
-    ISuccess,
-    IModermGreen,
-    ISurgeonGreen,
-    IWellnessGreen,
-    ISafeBlue,
-    IBlueprint,
-    IVioletAlert,
-    IPurple,
-    IPinky,
-    IRedFlag,
-    IAlarmOrange,
-    IWarningYellow {}
+export interface Colors
+  extends Base,
+    Gray,
+    Primary,
+    Error,
+    Warning,
+    Success,
+    ModermGreen,
+    SurgeonGreen,
+    WellnessGreen,
+    SafeBlue,
+    Blueprint,
+    VioletAlert,
+    Purple,
+    Pinky,
+    RedFlag,
+    AlarmOrange,
+    WarningYellow {}

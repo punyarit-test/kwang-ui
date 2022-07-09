@@ -18,7 +18,8 @@ let Layout = class Layout extends lit_1.LitElement {
     render() {
         return (0, lit_1.html) `
       <div>
-        <slot></slot>
+        <slot slot="bar"></slot>
+        <slot slot="content"></slot>
       </div>
     `;
     }

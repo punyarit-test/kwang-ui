@@ -1,4 +1,4 @@
-export interface IWeights {
+export interface WeightAttr {
   thin?: boolean;
   extralight?: boolean;
   light?: boolean;

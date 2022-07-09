@@ -1,3 +1,3 @@
-export interface IFeature {
+export interface FeatureAttr {
   flags: string[];
 }

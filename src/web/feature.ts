@@ -1,7 +1,7 @@
 import {css, html, LitElement} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
 import {ClassAttributes, HTMLAttributes} from 'react';
-import {IFeature} from '../types/feature.type';
+import {FeatureAttr} from '../types/feature.type';
 
 const ELEMENT_NAME = 'c-feature';
 /*
@@ -27,7 +27,7 @@ declare global {
     interface Ref
       extends Omit<HTMLAttributes<Ref>, 'color' | 'placeholder'>,
         ClassAttributes<Ref>,
-        IFeature {
+        FeatureAttr {
       // checkFlag?: (flag: string) => boolean;
     }
     /*

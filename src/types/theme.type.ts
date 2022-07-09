@@ -1,14 +1,14 @@
-export interface IFontTheme {
+export interface FontThemeAttr {
   normal?: boolean;
   large?: boolean;
   huge?: boolean;
 }
 
-export interface IColorTheme {
+export interface ColorThemeAttr {
   standard?: boolean;
   warm?: boolean;
   dim?: boolean;
   dark?: boolean;
 }
 
-export interface ITheme extends IFontTheme, IColorTheme {}
+export interface ThemeAttr extends FontThemeAttr, ColorThemeAttr {}

@@ -1,3 +1,3 @@
-export interface IStartScreenAttr {
+export interface StartScreenAttr {
     fade?: boolean;
 }

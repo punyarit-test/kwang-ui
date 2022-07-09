@@ -1,9 +1,9 @@
 import {css, html, LitElement} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
 import {ClassAttributes, HTMLAttributes} from 'react';
-import {IColors} from '../types/colors.type';
-import {IFontSize} from '../types/font-sizes.type';
-import {IWeights} from '../types/weights.type';
+import {Colors} from '../types/colors.type';
+import {FontSizeAttr} from '../types/font-sizes.type';
+import {WeightAttr} from '../types/weights.type';
 
 const ELEMENT_NAME = 'c-txt';
 
@@ -36,9 +36,9 @@ declare global {
     interface Ref
       extends Omit<HTMLAttributes<Ref>, 'color' | 'placeholder'>,
         ClassAttributes<Ref>,
-        IColors,
-        IWeights,
-        IFontSize {
+        Colors,
+        WeightAttr,
+        FontSizeAttr {
       p?: string;
     }
   }

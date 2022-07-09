@@ -3,7 +3,7 @@ import {customElement} from 'lit/decorators.js';
 import {ClassAttributes, HTMLAttributes} from 'react';
 import {colors} from '../theme/colors.theme';
 import {fonts} from '../theme/fonts.theme';
-import {ITheme} from '../types/theme.type';
+import {ThemeAttr} from '../types/theme.type';
 
 const ELEMENT_NAME = 'c-theme';
 /*
@@ -36,7 +36,7 @@ declare global {
     interface Ref
       extends Omit<HTMLAttributes<Ref>, 'color' | 'placeholder'>,
         ClassAttributes<Ref>,
-        ITheme {}
+        ThemeAttr {}
     /*
       interface Event {
         [EVENT_ONE]: CustomEvent<EventOneProp>

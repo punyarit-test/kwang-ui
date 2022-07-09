@@ -6,26 +6,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.StartScreen = void 0;
+exports.MenuBar = void 0;
 const lit_1 = require("lit");
 const decorators_js_1 = require("lit/decorators.js");
-const ELEMENT_NAME = 'start-screen';
+const ELEMENT_NAME = 'menu-bar';
 /*
   const EVENT_ONE = 'event-1'
   interface EventOneProp {}
 */
-let StartScreen = class StartScreen extends lit_1.LitElement {
+let MenuBar = class MenuBar extends lit_1.LitElement {
     render() {
-        return (0, lit_1.html) `
-      <div>
-        <slot name="img"></slot>
-      </div>
-      <slot></slot>
-    `;
+        return (0, lit_1.html) ` <div>c-menu-bar component was created!!</div> `;
     }
 };
-StartScreen.styles = (0, lit_1.css) ``;
-StartScreen = __decorate([
+MenuBar.styles = (0, lit_1.css) ``;
+MenuBar = __decorate([
     (0, decorators_js_1.customElement)(ELEMENT_NAME)
-], StartScreen);
-exports.StartScreen = StartScreen;
+], MenuBar);
+exports.MenuBar = MenuBar;
