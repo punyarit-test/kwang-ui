@@ -5,9 +5,9 @@ const ELEMENT_NAME = 'body-sm';
 
 @customElement(ELEMENT_NAME)
 export class BodySm extends Typography {
-  firstUpdated() {
-    this.setFontSize('var(--fs-14)');
-    this.setFontStyle();
+  connectedCallback() {
+    super.connectedCallback();
+    this.setFontStyle('fs-14');
   }
 }
 

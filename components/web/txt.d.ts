@@ -5,6 +5,7 @@ import { IFontSize } from '../types/font-sizes.type';
 import { ISizes } from '../types/sizes.type';
 declare const ELEMENT_NAME = "c-txt";
 export declare class Txt extends LitElement {
+    static styles: import("lit").CSSResult;
     p?: string;
     render: () => import("lit-html").TemplateResult<1>;
     connectedCallback(): void;

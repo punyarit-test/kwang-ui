@@ -11,9 +11,9 @@ const decorators_js_1 = require("lit/decorators.js");
 const typography_1 = require("./typography");
 const ELEMENT_NAME = 'body-sm';
 let BodySm = class BodySm extends typography_1.Typography {
-    firstUpdated() {
-        this.setFontSize('var(--fs-14)');
-        this.setFontStyle();
+    connectedCallback() {
+        super.connectedCallback();
+        this.setFontStyle('fs-14');
     }
 };
 BodySm = __decorate([

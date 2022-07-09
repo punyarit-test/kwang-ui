@@ -5,9 +5,9 @@ const ELEMENT_NAME = 'body-md';
 
 @customElement(ELEMENT_NAME)
 export class BodyMd extends Typography {
-  firstUpdated() {
-    this.setFontSize('var(--fs-16)');
-    this.setFontStyle();
+  connectedCallback() {
+    super.connectedCallback();
+    this.setFontStyle('fs-16');
   }
 }
 

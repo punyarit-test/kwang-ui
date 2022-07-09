@@ -5,9 +5,9 @@ const ELEMENT_NAME = 'body-xl';
 
 @customElement(ELEMENT_NAME)
 export class BodyXl extends Typography {
-  firstUpdated() {
-    this.setFontSize('var(--fs-20)');
-    this.setFontStyle();
+  connectedCallback() {
+    super.connectedCallback();
+    this.setFontStyle('fs-20');
   }
 }
 

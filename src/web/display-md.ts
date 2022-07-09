@@ -5,9 +5,9 @@ const ELEMENT_NAME = 'display-md';
 
 @customElement(ELEMENT_NAME)
 export class DisplayMd extends Typography {
-  firstUpdated() {
-    this.setFontSize('var(--fs-124)');
-    this.setFontStyle();
+  connectedCallback() {
+    super.connectedCallback();
+    this.setFontStyle('fs-124');
   }
 }
 

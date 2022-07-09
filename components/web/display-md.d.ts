@@ -1,7 +1,7 @@
 import { Typography } from './typography';
 declare const ELEMENT_NAME = "display-md";
 export declare class DisplayMd extends Typography {
-    firstUpdated(): void;
+    connectedCallback(): void;
 }
 declare global {
     namespace JSX {

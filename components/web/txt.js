@@ -23,13 +23,15 @@ let Txt = class Txt extends lit_1.LitElement {
         this.setFontStyle();
     }
     setFontStyle() {
-        const [fontFamily, fontSize, color] = this.attributes;
-        // set font weight from type of Sarabun such as Sarabun <Regular> | <Bold> ..
-        this.style.fontFamily = `var(--${fontFamily?.name || 'regular'})`;
-        this.style.fontSize = `var(--${fontSize?.name || 'fs-16'})`;
-        this.style.color = `var(--${color?.name || 'gray-500'})`;
+        const [attr1, attr2, attr3] = this.attributes;
+        this.className = `${attr1?.name || ''}${attr2?.name ? ' ' + attr2?.name : ''}${attr3?.name ? ' ' + attr3?.name : ''}`;
     }
 };
+Txt.styles = (0, lit_1.css) `
+    :host {
+      display: inline-block;
+    }
+  `;
 __decorate([
     (0, decorators_js_1.property)({ type: String }),
     __metadata("design:type", String)

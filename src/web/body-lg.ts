@@ -5,9 +5,9 @@ const ELEMENT_NAME = 'body-lg';
 
 @customElement(ELEMENT_NAME)
 export class BodyLg extends Typography {
-  firstUpdated() {
-    this.setFontSize('var(--fs-18)');
-    this.setFontStyle();
+  connectedCallback() {
+    super.connectedCallback();
+    this.setFontStyle('fs-18');
   }
 }
 

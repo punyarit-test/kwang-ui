@@ -11,9 +11,9 @@ const decorators_js_1 = require("lit/decorators.js");
 const typography_1 = require("./typography");
 const ELEMENT_NAME = 'header-xl';
 let HeaderXl = class HeaderXl extends typography_1.Typography {
-    firstUpdated() {
-        this.setFontSize('var(--fs-60)');
-        this.setFontStyle();
+    connectedCallback() {
+        super.connectedCallback();
+        this.setFontStyle('fs-60');
     }
 };
 HeaderXl = __decorate([

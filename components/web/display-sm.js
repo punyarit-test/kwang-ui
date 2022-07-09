@@ -11,9 +11,9 @@ const decorators_js_1 = require("lit/decorators.js");
 const typography_1 = require("./typography");
 const ELEMENT_NAME = 'display-sm';
 let DisplaySm = class DisplaySm extends typography_1.Typography {
-    firstUpdated() {
-        this.setFontSize('var(--fs-96)');
-        this.setFontStyle();
+    connectedCallback() {
+        super.connectedCallback();
+        this.setFontStyle('fs-96');
     }
 };
 DisplaySm = __decorate([

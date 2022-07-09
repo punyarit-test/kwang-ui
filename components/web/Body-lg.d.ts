@@ -1,7 +1,7 @@
 import { Typography } from './typography';
 declare const ELEMENT_NAME = "body-lg";
 export declare class BodyLg extends Typography {
-    firstUpdated(): void;
+    connectedCallback(): void;
 }
 declare global {
     namespace JSX {

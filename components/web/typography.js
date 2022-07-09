@@ -17,16 +17,16 @@ let Typography = class Typography extends lit_1.LitElement {
     render() {
         return (0, lit_1.html) `<slot></slot>${this.p}`;
     }
-    setFontSize(fontSize) {
-        this.style.fontSize = fontSize;
-    }
-    setFontStyle() {
-        const [fontFamily, color] = this.attributes;
-        // set font weight from type of Sarabun such as Sarabun <Regular> | <Bold> ..
-        this.style.fontFamily = `var(--${fontFamily?.name || 'regular'})`;
-        this.style.color = `var(--${color?.name || 'gray-500'})`;
+    setFontStyle(fontSize) {
+        const [attr1, attr2] = this.attributes;
+        this.className = `${fontSize} ${attr1?.name || ''}${attr2?.name ? ' ' + attr2?.name : ''}`;
     }
 };
+Typography.styles = (0, lit_1.css) `
+    :host {
+      display: inline-block;
+    }
+  `;
 __decorate([
     (0, decorators_js_1.property)({ type: String }),
     __metadata("design:type", String)

@@ -5,9 +5,9 @@ const ELEMENT_NAME = 'header-lg';
 
 @customElement(ELEMENT_NAME)
 export class HeaderLg extends Typography {
-  firstUpdated() {
-    this.setFontSize('var(--fs-48)');
-    this.setFontStyle();
+  connectedCallback() {
+    super.connectedCallback();
+    this.setFontStyle('fs-48');
   }
 }
 

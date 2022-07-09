@@ -5,9 +5,9 @@ const ELEMENT_NAME = 'header-sm';
 
 @customElement(ELEMENT_NAME)
 export class HeaderSm extends Typography {
-  firstUpdated() {
-    this.setFontSize('var(--fs-32)');
-    this.setFontStyle();
+  connectedCallback() {
+    super.connectedCallback();
+    this.setFontStyle('fs-32');
   }
 }
 

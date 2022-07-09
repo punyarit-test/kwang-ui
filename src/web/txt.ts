@@ -9,6 +9,11 @@ const ELEMENT_NAME = 'c-txt';
 
 @customElement(ELEMENT_NAME)
 export class Txt extends LitElement {
+  static styles = css`
+    :host {
+      display: inline-block;
+    }
+  `;
   @property({type: String}) public p?: string;
   render = () => html` <slot></slot>${this.p} `;
 
@@ -18,12 +23,11 @@ export class Txt extends LitElement {
   }
 
   private setFontStyle(): void {
-    const [fontFamily, fontSize, color] = this.attributes;
+    const [attr1, attr2, attr3] = this.attributes;
 
-    // set font weight from type of Sarabun such as Sarabun <Regular> | <Bold> ..
-    this.style.fontFamily = `var(--${fontFamily?.name || 'regular'})`;
-    this.style.fontSize = `var(--${fontSize?.name || 'fs-16'})`;
-    this.style.color = `var(--${color?.name || 'gray-500'})`;
+    this.className = `${attr1?.name || ''}${
+      attr2?.name ? ' ' + attr2?.name : ''
+    }${attr3?.name ? ' ' + attr3?.name : ''}`;
   }
 }
 

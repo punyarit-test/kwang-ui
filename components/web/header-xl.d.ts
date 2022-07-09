@@ -1,7 +1,7 @@
 import { Typography } from './typography';
 declare const ELEMENT_NAME = "header-xl";
 export declare class HeaderXl extends Typography {
-    firstUpdated(): void;
+    connectedCallback(): void;
 }
 declare global {
     namespace JSX {

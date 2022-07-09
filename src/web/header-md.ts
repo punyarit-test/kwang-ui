@@ -5,9 +5,9 @@ const ELEMENT_NAME = 'header-md';
 
 @customElement(ELEMENT_NAME)
 export class HeaderMd extends Typography {
-  firstUpdated() {
-    this.setFontSize('var(--fs-36)');
-    this.setFontStyle();
+  connectedCallback() {
+    super.connectedCallback();
+    this.setFontStyle('fs-36');
   }
 }
 

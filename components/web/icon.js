@@ -18,17 +18,17 @@ let Icon2 = class Icon2 extends lit_1.LitElement {
         this.setIconAttr();
     }
     setIconAttr() {
-        const [icon, color, size] = this.attributes;
-        this.style.setProperty(`--icon`, icon?.name || 'cortex');
-        this.style.setProperty(`--color`, `var(--${color?.name || 'gray-500'})`);
-        this.style.setProperty(`--size`, `var(--${size?.name || 'regular'})`);
+        const [icon, attr1, attr2] = this.attributes;
+        this.style.setProperty(`--icon`, icon?.name || '');
+        this.className = `${attr1?.name || ''}${attr2?.name ? ' ' + attr2?.name : ''}`;
     }
 };
 Icon2.styles = (0, lit_1.css) `
+    :host {
+      display: inline-flex;
+    }
     .icon {
       font-family: var(--icon);
-      font-size: var(--size);
-      color: var(--color) !important;
     }
   `;
 Icon2 = __decorate([

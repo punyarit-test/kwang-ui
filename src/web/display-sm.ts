@@ -5,9 +5,9 @@ const ELEMENT_NAME = 'display-sm';
 
 @customElement(ELEMENT_NAME)
 export class DisplaySm extends Typography {
-  firstUpdated() {
-    this.setFontSize('var(--fs-96)');
-    this.setFontStyle();
+  connectedCallback() {
+    super.connectedCallback();
+    this.setFontStyle('fs-96');
   }
 }
 

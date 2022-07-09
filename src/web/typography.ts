@@ -1,29 +1,30 @@
 import {css, html, LitElement} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
 import {ClassAttributes, HTMLAttributes} from 'react';
-import {IGray, IPrimary} from '../types/colors.type';
+import {IColors, IGray, IPrimary} from '../types/colors.type';
 import {ISizes} from '../types/sizes.type';
 
 const ELEMENT_NAME = 'c-typography';
 
 @customElement(ELEMENT_NAME)
 export class Typography extends LitElement {
+  static styles = css`
+    :host {
+      display: inline-block;
+    }
+  `;
+
   @property({type: String}) public p?: string;
 
   render() {
     return html`<slot></slot>${this.p}`;
   }
 
-  protected setFontSize(fontSize: string): void {
-    this.style.fontSize = fontSize;
-  }
-
-  protected setFontStyle(): void {
-    const [fontFamily, color] = this.attributes;
-
-    // set font weight from type of Sarabun such as Sarabun <Regular> | <Bold> ..
-    this.style.fontFamily = `var(--${fontFamily?.name || 'regular'})`;
-    this.style.color = `var(--${color?.name || 'gray-500'})`;
+  protected setFontStyle(fontSize: string): void {
+    const [attr1, attr2] = this.attributes;
+    this.className = `${fontSize} ${attr1?.name || ''}${
+      attr2?.name ? ' ' + attr2?.name : ''
+    }`;
   }
 }
 
@@ -32,8 +33,7 @@ declare global {
     interface Ref
       extends Omit<HTMLAttributes<Ref>, 'color' | 'placeholder'>,
         ClassAttributes<CTypography.Ref>,
-        IPrimary,
-        IGray,
+        IColors,
         ISizes {
       p?: string;
     }
