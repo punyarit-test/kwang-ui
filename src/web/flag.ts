@@ -1,7 +1,7 @@
 import {css, html, LitElement} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
 import {ClassAttributes, HTMLAttributes} from 'react';
-import {IFlag} from '../types/flag.type.';
+import {IFlag} from '../types/flag.type';
 
 const ELEMENT_NAME = 'c-flag';
 /*

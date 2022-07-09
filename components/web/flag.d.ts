@@ -1,6 +1,6 @@
 import { LitElement } from 'lit';
 import { ClassAttributes, HTMLAttributes } from 'react';
-import { IFlag } from '../types/flag.type.';
+import { IFlag } from '../types/flag.type';
 declare const ELEMENT_NAME = "c-flag";
 export declare class Flag extends LitElement {
     render(): import("lit-html").TemplateResult<1>;
