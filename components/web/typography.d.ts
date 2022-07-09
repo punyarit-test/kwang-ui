@@ -4,7 +4,6 @@ import { IGray, IPrimary } from '../types/colors.type';
 import { ISizes } from '../types/sizes.type';
 declare const ELEMENT_NAME = "c-typography";
 export declare class Typography extends LitElement {
-    static styles: import("lit").CSSResult;
     p?: string;
     render(): import("lit-html").TemplateResult<1>;
     protected setFontSize(fontSize: string): void;

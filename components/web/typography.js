@@ -27,13 +27,6 @@ let Typography = class Typography extends lit_1.LitElement {
         this.style.color = `var(--${color?.name || 'gray-500'})`;
     }
 };
-Typography.styles = (0, lit_1.css) `
-    .font {
-      font-family: var(--font-family) !important;
-      color: var(--color) !important;
-      font-size: var(--font-size) !important;
-    }
-  `;
 __decorate([
     (0, decorators_js_1.property)({ type: String }),
     __metadata("design:type", String)

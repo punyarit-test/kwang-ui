@@ -8,14 +8,6 @@ const ELEMENT_NAME = 'c-typography';
 
 @customElement(ELEMENT_NAME)
 export class Typography extends LitElement {
-  static styles = css`
-    .font {
-      font-family: var(--font-family) !important;
-      color: var(--color) !important;
-      font-size: var(--font-size) !important;
-    }
-  `;
-
   @property({type: String}) public p?: string;
 
   render() {
