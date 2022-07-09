@@ -56,7 +56,7 @@ export class Theme extends LitElement {
   private setClassName(
     sizeTheme?: keyof SizeThemeAttr,
     colorTheme?: keyof ColorThemeAttr
-  ) {
+  ): void {
     this.className = `${sizeTheme || 'normal'} ${colorTheme || 'standard'}`;
   }
 }
