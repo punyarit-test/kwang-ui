@@ -215,6 +215,19 @@ exports.colors = (0, lit_1.css) `
     --base-warning-yellow-700: #344054;
     --base-warning-yellow-800: #1d2939;
     --base-warning-yellow-900: #101828;
+
+    /* bluestate */
+    --base-bluestate-25: #fdfeff;
+    --base-bluestate-50: #f8fafc;
+    --base-bluestate-100: #f1f5f9;
+    --base-bluestate-200: #e2e8f0;
+    --base-bluestate-300: #cbd5e1;
+    --base-bluestate-400: #94a3b8;
+    --base-bluestate-500: #64748b;
+    --base-bluestate-600: #475569;
+    --base-bluestate-700: #334155;
+    --base-bluestate-800: #1e293b;
+    --base-bluestate-900: #0f172a;
   }
   :host(.standard) {
     /* Base */
@@ -428,6 +441,19 @@ exports.colors = (0, lit_1.css) `
     --warning-yellow-700: var(--base-warning-yellow-700);
     --warning-yellow-800: var(--base-warning-yellow-800);
     --warning-yellow-900: var(--base-warning-yellow-900);
+
+    /* Bluestate */
+    --bluestate-25: var(--base-bluestate-25);
+    --bluestate-50: var(--base-bluestate-50);
+    --bluestate-100: var(--base-bluestate-100);
+    --bluestate-200: var(--base-bluestate-200);
+    --bluestate-300: var(--base-bluestate-300);
+    --bluestate-400: var(--base-bluestate-400);
+    --bluestate-500: var(--base-bluestate-500);
+    --bluestate-600: var(--base-bluestate-600);
+    --bluestate-700: var(--base-bluestate-700);
+    --bluestate-800: var(--base-bluestate-800);
+    --bluestate-900: var(--base-bluestate-900);
   }
 
   :host(.warm) {
@@ -642,6 +668,19 @@ exports.colors = (0, lit_1.css) `
     --warning-yellow-700: var(--base-warning-yellow-700);
     --warning-yellow-800: var(--base-warning-yellow-800);
     --warning-yellow-900: var(--base-warning-yellow-900);
+
+    /* Bluestate */
+    --bluestate-25: var(--base-bluestate-25);
+    --bluestate-50: var(--base-bluestate-50);
+    --bluestate-100: var(--base-bluestate-100);
+    --bluestate-200: var(--base-bluestate-200);
+    --bluestate-300: var(--base-bluestate-300);
+    --bluestate-400: var(--base-bluestate-400);
+    --bluestate-500: var(--base-bluestate-500);
+    --bluestate-600: var(--base-bluestate-600);
+    --bluestate-700: var(--base-bluestate-700);
+    --bluestate-800: var(--base-bluestate-800);
+    --bluestate-900: var(--base-bluestate-900);
   }
 
   :host(.dim) {
@@ -856,6 +895,19 @@ exports.colors = (0, lit_1.css) `
     --warning-yellow-700: var(--base-warning-yellow-700);
     --warning-yellow-800: var(--base-warning-yellow-800);
     --warning-yellow-900: var(--base-warning-yellow-900);
+
+    /* Bluestate */
+    --bluestate-25: var(--base-bluestate-25);
+    --bluestate-50: var(--base-bluestate-50);
+    --bluestate-100: var(--base-bluestate-100);
+    --bluestate-200: var(--base-bluestate-200);
+    --bluestate-300: var(--base-bluestate-300);
+    --bluestate-400: var(--base-bluestate-400);
+    --bluestate-500: var(--base-bluestate-500);
+    --bluestate-600: var(--base-bluestate-600);
+    --bluestate-700: var(--base-bluestate-700);
+    --bluestate-800: var(--base-bluestate-800);
+    --bluestate-900: var(--base-bluestate-900);
   }
 
   :host(.dark) {
@@ -1070,5 +1122,18 @@ exports.colors = (0, lit_1.css) `
     --warning-yellow-700: var(--base-warning-yellow-700);
     --warning-yellow-800: var(--base-warning-yellow-800);
     --warning-yellow-900: var(--base-warning-yellow-900);
+
+    /* Bluestate */
+    --bluestate-25: var(--base-bluestate-25);
+    --bluestate-50: var(--base-bluestate-50);
+    --bluestate-100: var(--base-bluestate-100);
+    --bluestate-200: var(--base-bluestate-200);
+    --bluestate-300: var(--base-bluestate-300);
+    --bluestate-400: var(--base-bluestate-400);
+    --bluestate-500: var(--base-bluestate-500);
+    --bluestate-600: var(--base-bluestate-600);
+    --bluestate-700: var(--base-bluestate-700);
+    --bluestate-800: var(--base-bluestate-800);
+    --bluestate-900: var(--base-bluestate-900);
   }
 `;

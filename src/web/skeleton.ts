@@ -2,38 +2,23 @@ import {css, html, LitElement} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
 import {ClassAttributes, HTMLAttributes} from 'react';
 
-const ELEMENT_NAME = 'c-layout';
+const ELEMENT_NAME = 'c-skeleton';
 /*
   const EVENT_ONE = 'event-1'
   interface EventOneProp {}
 */
 
 @customElement(ELEMENT_NAME)
-export class Layout extends LitElement {
-  static styles = css`
-    .layout-wrap {
-      height: 100%;
-      background: var(--primary-25);
-    }
-  `;
+export class Skeleton extends LitElement {
+  static styles = css``;
 
   render() {
-    return html`
-      <div class="layout-wrap">
-        <slot slot="navbar"></slot>
-        <slot slot="sidebar"></slot>
-        <slot slot="content"></slot>
-      </div>
-    `;
-  }
-
-  connectedCallback() {
-    super.connectedCallback();
+    return html` <div>c-skeleton component was created!!</div> `;
   }
 }
 
 declare global {
-  namespace CLayout {
+  namespace CSkeleton {
     interface Ref
       extends Omit<HTMLAttributes<Ref>, 'color' | 'placeholder'>,
         ClassAttributes<Ref> {}
@@ -46,7 +31,7 @@ declare global {
   }
   namespace JSX {
     interface IntrinsicElements {
-      [ELEMENT_NAME]: CLayout.Ref;
+      [ELEMENT_NAME]: CSkeleton.Ref;
     }
   }
 }

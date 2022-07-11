@@ -225,6 +225,20 @@ export interface WarningYellow {
   ['warning-yellow-900']?: boolean;
 }
 
+export interface Bluestate {
+  ['bluestate-25']?: boolean;
+  ['bluestate-50']?: boolean;
+  ['bluestate-100']?: boolean;
+  ['bluestate-200']?: boolean;
+  ['bluestate-300']?: boolean;
+  ['bluestate-400']?: boolean;
+  ['bluestate-500']?: boolean;
+  ['bluestate-600']?: boolean;
+  ['bluestate-700']?: boolean;
+  ['bluestate-800']?: boolean;
+  ['bluestate-900']?: boolean;
+}
+
 export interface Colors
   extends Base,
     Gray,
@@ -242,4 +256,5 @@ export interface Colors
     Pinky,
     RedFlag,
     AlarmOrange,
-    WarningYellow {}
+    WarningYellow,
+    Bluestate {}

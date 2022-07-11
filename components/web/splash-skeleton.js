@@ -6,35 +6,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.StartScreen = void 0;
+exports.SplashSkeleton = void 0;
 const lit_1 = require("lit");
 const decorators_js_1 = require("lit/decorators.js");
-const ELEMENT_NAME = 'start-screen';
+const ELEMENT_NAME = 'splash-skeleton';
 /*
   const EVENT_ONE = 'event-1'
   interface EventOneProp {}
 */
-let StartScreen = class StartScreen extends lit_1.LitElement {
+let SplashSkeleton = class SplashSkeleton extends lit_1.LitElement {
     render() {
-        return (0, lit_1.html) `
-      <div class="start-screen-wrap">
-        <slot name="img"></slot>
-      </div>
-      <slot></slot>
-    `;
+        return (0, lit_1.html) ` <div>c-splash-skeleton component was created!!</div> `;
     }
 };
-StartScreen.styles = (0, lit_1.css) `
-    .start-screen-wrap {
-      height: 100%;
-      position: fixed;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-    }
-  `;
-StartScreen = __decorate([
+SplashSkeleton.styles = (0, lit_1.css) ``;
+SplashSkeleton = __decorate([
     (0, decorators_js_1.customElement)(ELEMENT_NAME)
-], StartScreen);
-exports.StartScreen = StartScreen;
+], SplashSkeleton);
+exports.SplashSkeleton = SplashSkeleton;

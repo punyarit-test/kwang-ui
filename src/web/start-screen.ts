@@ -11,11 +11,20 @@ const ELEMENT_NAME = 'start-screen';
 
 @customElement(ELEMENT_NAME)
 export class StartScreen extends LitElement {
-  static styles = css``;
+  static styles = css`
+    .start-screen-wrap {
+      height: 100%;
+      position: fixed;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+  `;
 
   render() {
     return html`
-      <div>
+      <div class="start-screen-wrap">
         <slot name="img"></slot>
       </div>
       <slot></slot>

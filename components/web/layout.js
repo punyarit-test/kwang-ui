@@ -17,14 +17,23 @@ const ELEMENT_NAME = 'c-layout';
 let Layout = class Layout extends lit_1.LitElement {
     render() {
         return (0, lit_1.html) `
-      <div>
-        <slot slot="bar"></slot>
+      <div class="layout-wrap">
+        <slot slot="navbar"></slot>
+        <slot slot="sidebar"></slot>
         <slot slot="content"></slot>
       </div>
     `;
     }
+    connectedCallback() {
+        super.connectedCallback();
+    }
 };
-Layout.styles = (0, lit_1.css) ``;
+Layout.styles = (0, lit_1.css) `
+    .layout-wrap {
+      height: 100%;
+      background: var(--primary-25);
+    }
+  `;
 Layout = __decorate([
     (0, decorators_js_1.customElement)(ELEMENT_NAME)
 ], Layout);

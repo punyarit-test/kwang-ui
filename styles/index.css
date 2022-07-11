@@ -1,6 +1,13 @@
 @import './bg-colors.css';
-@import './font-sizes.css';
+@import './sizes.css';
 @import './fonts.registry.css';
 @import './icons.registry.css';
 @import './text-colors.css';
 @import './font-weights.css';
+
+html,
+body,
+#root {
+  margin: 0;
+  height: 100%;
+}
