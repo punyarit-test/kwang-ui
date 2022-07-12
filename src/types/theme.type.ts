@@ -1,13 +1,11 @@
 export interface SizeThemeAttr {
-  normal?: boolean;
+  standard?: boolean;
+  big?: boolean;
   large?: boolean;
-  huge?: boolean;
 }
 
 export interface ColorThemeAttr {
-  standard?: boolean;
-  warm?: boolean;
-  dim?: boolean;
+  light?: boolean;
   dark?: boolean;
 }
 

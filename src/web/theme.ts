@@ -20,9 +20,7 @@ const ELEMENT_NAME = 'c-theme';
 export class Theme extends LitElement {
   static styles = [colors, fonts];
 
-  render() {
-    return html` <slot></slot> `;
-  }
+  render = () => html` <slot></slot> `;
 
   connectedCallback() {
     super.connectedCallback();
@@ -59,7 +57,7 @@ export class Theme extends LitElement {
     sizeTheme?: keyof SizeThemeAttr,
     colorTheme?: keyof ColorThemeAttr
   ): void {
-    this.className = `${sizeTheme || 'normal'} ${colorTheme || 'standard'}`;
+    this.className = `${sizeTheme || 'normal'} ${colorTheme || 'light'}`;
   }
 }
 

@@ -14,7 +14,7 @@ exports.fonts = (0, lit_1.css) `
     --extrabold: Sarabun-ExtraBold;
   }
 
-  :host(.normal) {
+  :host(.standard) {
     --size-6: 0.375rem;
     --size-7: 0.438rem;
     --size-8: 0.5rem;
@@ -65,7 +65,7 @@ exports.fonts = (0, lit_1.css) `
     --size-124: 7.75rem;
   }
 
-  :host(.large) {
+  :host(.big) {
     --size-6: 0.625rem;
     --size-7: 0.688rem;
     --size-8: 0.75rem;
@@ -116,7 +116,7 @@ exports.fonts = (0, lit_1.css) `
     --size-124: 8rem;
   }
 
-  :host(.hurge) {
+  :host(.large) {
     --size-6: 0.875rem;
     --size-7: 0.938rem;
     --size-8: 1rem;

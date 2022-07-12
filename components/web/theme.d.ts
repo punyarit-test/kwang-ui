@@ -4,7 +4,7 @@ import { ColorThemeAttr, SizeThemeAttr, ThemeAttr } from '../types/theme.type';
 declare const ELEMENT_NAME = "c-theme";
 export declare class Theme extends LitElement {
     static styles: import("lit").CSSResult[];
-    render(): import("lit-html").TemplateResult<1>;
+    render: () => import("lit-html").TemplateResult<1>;
     connectedCallback(): void;
     onSetSize(size: keyof SizeThemeAttr): void;
     onSetTheme(color: keyof ColorThemeAttr): void;

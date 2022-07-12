@@ -18,8 +18,9 @@ const ELEMENT_NAME = 'c-theme';
   interface EventOneProp {}
 */
 let Theme = class Theme extends lit_1.LitElement {
-    render() {
-        return (0, lit_1.html) ` <slot></slot> `;
+    constructor() {
+        super(...arguments);
+        this.render = () => (0, lit_1.html) ` <slot></slot> `;
     }
     connectedCallback() {
         super.connectedCallback();
@@ -41,7 +42,7 @@ let Theme = class Theme extends lit_1.LitElement {
         this.setClassName(sizeTheme?.name, colorTheme?.name);
     }
     setClassName(sizeTheme, colorTheme) {
-        this.className = `${sizeTheme || 'normal'} ${colorTheme || 'standard'}`;
+        this.className = `${sizeTheme || 'normal'} ${colorTheme || 'light'}`;
     }
 };
 Theme.styles = [colors_theme_1.colors, fonts_theme_1.fonts];
