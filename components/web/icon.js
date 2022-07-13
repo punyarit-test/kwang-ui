@@ -6,11 +6,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Icon2 = void 0;
+exports.Icon = void 0;
 const lit_1 = require("lit");
 const decorators_js_1 = require("lit/decorators.js");
+const base_element_1 = require("./base-element");
 const ELEMENT_NAME = 'c-icon';
-let Icon2 = class Icon2 extends lit_1.LitElement {
+let Icon = class Icon extends base_element_1.BaseElement {
     render() {
         return (0, lit_1.html) ` <span class="icon">&#xe800;</span> `;
     }
@@ -20,10 +21,10 @@ let Icon2 = class Icon2 extends lit_1.LitElement {
     setIconAttr() {
         const [icon, attr1, attr2] = this.attributes;
         this.style.setProperty(`--icon`, icon?.name || '');
-        this.className = `${attr1?.name || ''}${attr2?.name ? ' ' + attr2?.name : ''}`;
+        this.className = `${attr1?.name ? 'tx-' + attr1?.name : ''}${attr2?.name ? ' tx-' + attr2?.name : ''}`;
     }
 };
-Icon2.styles = (0, lit_1.css) `
+Icon.styles = (0, lit_1.css) `
     :host {
       display: inline-flex;
     }
@@ -31,7 +32,7 @@ Icon2.styles = (0, lit_1.css) `
       font-family: var(--icon);
     }
   `;
-Icon2 = __decorate([
+Icon = __decorate([
     (0, decorators_js_1.customElement)(ELEMENT_NAME)
-], Icon2);
-exports.Icon2 = Icon2;
+], Icon);
+exports.Icon = Icon;

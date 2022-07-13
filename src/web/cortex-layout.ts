@@ -1,15 +1,15 @@
-import {css, html, LitElement} from 'lit';
+import {css, html} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
-import {ClassAttributes, HTMLAttributes} from 'react';
+import {BaseElement} from './base-element';
 
-const ELEMENT_NAME = 'c-layout';
+const ELEMENT_NAME = 'cortex-layout';
 /*
   const EVENT_ONE = 'event-1'
   interface EventOneProp {}
 */
 
 @customElement(ELEMENT_NAME)
-export class Layout extends LitElement {
+export class Layout extends BaseElement {
   static styles = css`
     .layout-wrap {
       height: 100%;
@@ -34,9 +34,7 @@ export class Layout extends LitElement {
 
 declare global {
   namespace CLayout {
-    interface Ref
-      extends Omit<HTMLAttributes<Ref>, 'color' | 'placeholder'>,
-        ClassAttributes<Ref> {}
+    interface Ref extends CBaseElement.Ref {}
     /*
       interface Event {
         [EVENT_ONE]: CustomEvent<EventOneProp>

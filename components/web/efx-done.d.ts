@@ -1,9 +1,8 @@
-import { LitElement } from 'lit';
-import { ClassAttributes, HTMLAttributes } from 'react';
+import { BaseElement } from './base-element';
 declare enum element {
     name = "efx-done"
 }
-export declare class EfxDone extends LitElement {
+export declare class EfxDone extends BaseElement {
     static styles: import("lit").CSSResult;
     disabled?: boolean;
     render(): import("lit-html").TemplateResult<1>;
@@ -14,7 +13,7 @@ export declare class EfxDone extends LitElement {
 }
 declare global {
     namespace CEfxDone {
-        interface Ref extends Omit<HTMLAttributes<Ref>, 'color' | 'placeholder'>, ClassAttributes<Ref> {
+        interface Ref extends CBaseElement.Ref {
             disabled?: boolean;
         }
     }

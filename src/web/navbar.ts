@@ -1,6 +1,5 @@
-import {css, html, LitElement} from 'lit';
+import {css, html} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
-import {ClassAttributes, HTMLAttributes} from 'react';
 import {NavbarPosition} from '../types/navbar.type';
 import {Bar} from './bar';
 

@@ -1,5 +1,4 @@
 import { LitElement } from 'lit';
-import { ClassAttributes, HTMLAttributes } from 'react';
 declare const ELEMENT_NAME = "c-button";
 export declare class Button extends LitElement {
     static styles: import("lit").CSSResult;
@@ -7,7 +6,7 @@ export declare class Button extends LitElement {
 }
 declare global {
     namespace CButton {
-        interface Ref extends Omit<HTMLAttributes<Ref>, 'color' | 'placeholder'>, ClassAttributes<Ref> {
+        interface Ref extends CBaseElement.Ref {
         }
     }
     namespace JSX {

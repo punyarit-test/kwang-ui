@@ -1,4 +1,4 @@
-export interface IconName {
+export interface IconNames {
   ['add-patient']?: boolean;
   ['assessment']?: boolean;
   ['badge-check']?: boolean;
@@ -170,4 +170,4 @@ export interface IconName {
   ['x-circle-input']?: boolean;
 }
 
-export type IconNameKeys = keyof IconName;
+export type IconNameKeys = keyof IconNames;

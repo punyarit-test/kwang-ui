@@ -1,6 +1,6 @@
-import {css, html, LitElement} from 'lit';
+import {css, html} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
-import {ClassAttributes, HTMLAttributes} from 'react';
+import {BaseElement} from './base-element';
 
 const ELEMENT_NAME = 'menu-bar';
 /*
@@ -9,7 +9,7 @@ const ELEMENT_NAME = 'menu-bar';
 */
 
 @customElement(ELEMENT_NAME)
-export class MenuBar extends LitElement {
+export class MenuBar extends BaseElement {
   static styles = css``;
 
   render() {
@@ -19,9 +19,7 @@ export class MenuBar extends LitElement {
 
 declare global {
   namespace CMenuBar {
-    interface Ref
-      extends Omit<HTMLAttributes<Ref>, 'color' | 'placeholder'>,
-        ClassAttributes<Ref> {}
+    interface Ref extends CBaseElement.Ref {}
     /*
       interface Event {
         [EVENT_ONE]: CustomEvent<EventOneProp>

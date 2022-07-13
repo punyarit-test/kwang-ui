@@ -9,13 +9,18 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Bar = void 0;
 const lit_1 = require("lit");
 const decorators_js_1 = require("lit/decorators.js");
+const base_element_1 = require("./base-element");
 const ELEMENT_NAME = 'c-bar';
 /*
   const EVENT_ONE = 'event-1'
   interface EventOneProp {}
 */
-let Bar = class Bar extends lit_1.LitElement {
+let Bar = class Bar extends base_element_1.BaseElement {
+    render() {
+        return (0, lit_1.html) ` <div>c-bar component was created!!</div> `;
+    }
 };
+Bar.styles = (0, lit_1.css) ``;
 Bar = __decorate([
     (0, decorators_js_1.customElement)(ELEMENT_NAME)
 ], Bar);

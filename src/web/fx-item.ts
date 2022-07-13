@@ -1,27 +1,25 @@
-import {css, html, LitElement} from 'lit';
+import {css, html} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
-import {ClassAttributes, HTMLAttributes} from 'react';
+import {BaseElement} from './base-element';
 
-const ELEMENT_NAME = 'c-hover';
+const ELEMENT_NAME = 'fx-item';
 /*
   const EVENT_ONE = 'event-1'
   interface EventOneProp {}
 */
 
 @customElement(ELEMENT_NAME)
-export class Hover extends LitElement {
+export class FxItem extends BaseElement {
   static styles = css``;
 
   render() {
-    return html` <div>c-hover component was created!!</div> `;
+    return html` <div>c-fx-item component was created!!</div> `;
   }
 }
 
 declare global {
-  namespace CHover {
-    interface Ref
-      extends Omit<HTMLAttributes<Ref>, 'color' | 'placeholder'>,
-        ClassAttributes<Ref> {}
+  namespace CFxItem {
+    interface Ref extends CBaseElement.Ref {}
     /*
       interface Event {
         [EVENT_ONE]: CustomEvent<EventOneProp>
@@ -31,7 +29,7 @@ declare global {
   }
   namespace JSX {
     interface IntrinsicElements {
-      [ELEMENT_NAME]: CHover.Ref;
+      [ELEMENT_NAME]: CFxItem.Ref;
     }
   }
 }

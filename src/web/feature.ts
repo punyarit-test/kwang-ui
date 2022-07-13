@@ -1,7 +1,7 @@
-import {css, html, LitElement} from 'lit';
+import {css, html} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
-import {ClassAttributes, HTMLAttributes} from 'react';
 import {FeatureAttr} from '../types/feature.type';
+import {BaseElement} from './base-element';
 
 const ELEMENT_NAME = 'c-feature';
 /*
@@ -10,7 +10,7 @@ const ELEMENT_NAME = 'c-feature';
 */
 
 @customElement(ELEMENT_NAME)
-export class Feature extends LitElement {
+export class Feature extends BaseElement {
   render() {
     return html` <slot></slot> `;
   }
@@ -24,10 +24,7 @@ export class Feature extends LitElement {
 
 declare global {
   namespace CFeature {
-    interface Ref
-      extends Omit<HTMLAttributes<Ref>, 'color' | 'placeholder'>,
-        ClassAttributes<Ref>,
-        FeatureAttr {
+    interface Ref extends CBaseElement.Ref, FeatureAttr {
       // checkFlag?: (flag: string) => boolean;
     }
     /*

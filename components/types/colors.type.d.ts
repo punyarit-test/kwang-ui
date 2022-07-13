@@ -25,6 +25,7 @@ export interface Primary {
     ['primary-600']?: boolean;
     ['primary-700']?: boolean;
     ['primary-800']?: boolean;
+    ['primary-900']?: boolean;
 }
 export interface Error {
     ['error-25']?: boolean;
@@ -208,7 +209,7 @@ export interface WarningYellow {
     ['warning-yellow-800']?: boolean;
     ['warning-yellow-900']?: boolean;
 }
-export interface Bluestate {
+export interface BlueState {
     ['bluestate-25']?: boolean;
     ['bluestate-50']?: boolean;
     ['bluestate-100']?: boolean;
@@ -221,5 +222,5 @@ export interface Bluestate {
     ['bluestate-800']?: boolean;
     ['bluestate-900']?: boolean;
 }
-export interface Colors extends Base, Gray, Primary, Error, Warning, Success, ModermGreen, SurgeonGreen, WellnessGreen, SafeBlue, Blueprint, VioletAlert, Purple, Pinky, RedFlag, AlarmOrange, WarningYellow, Bluestate {
+export interface Colors extends Base, Gray, Primary, Error, Warning, Success, ModermGreen, SurgeonGreen, WellnessGreen, SafeBlue, Blueprint, VioletAlert, Purple, Pinky, RedFlag, AlarmOrange, WarningYellow, BlueState {
 }

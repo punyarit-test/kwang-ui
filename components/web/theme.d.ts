@@ -1,9 +1,9 @@
-import { LitElement } from 'lit';
-import { ClassAttributes, HTMLAttributes } from 'react';
 import { ColorThemeAttr, SizeThemeAttr, ThemeAttr } from '../types/theme.type';
+import { BaseElement } from './base-element';
 declare const ELEMENT_NAME = "c-theme";
-export declare class Theme extends LitElement {
+export declare class Theme extends BaseElement {
     static styles: import("lit").CSSResult[];
+    sx?: string;
     render: () => import("lit-html").TemplateResult<1>;
     connectedCallback(): void;
     onSetSize(size: keyof SizeThemeAttr): void;
@@ -14,7 +14,7 @@ export declare class Theme extends LitElement {
 }
 declare global {
     namespace CTheme {
-        interface Ref extends Omit<HTMLAttributes<Ref>, 'color' | 'placeholder'>, ClassAttributes<Ref>, ThemeAttr {
+        interface Ref extends CBaseElement.Ref, ThemeAttr {
             onSetTheme?: (color: keyof ColorThemeAttr) => void;
             onSetSize?: (size: keyof SizeThemeAttr) => void;
         }

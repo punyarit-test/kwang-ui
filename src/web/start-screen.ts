@@ -1,7 +1,7 @@
 import {css, html, LitElement} from 'lit';
 import {customElement} from 'lit/decorators.js';
-import {ClassAttributes, HTMLAttributes} from 'react';
 import {StartScreenAttr} from '../types/start-screen.type';
+import {BaseElement} from './base-element';
 
 const ELEMENT_NAME = 'start-screen';
 /*
@@ -10,7 +10,7 @@ const ELEMENT_NAME = 'start-screen';
 */
 
 @customElement(ELEMENT_NAME)
-export class StartScreen extends LitElement {
+export class StartScreen extends BaseElement {
   static styles = css`
     .start-screen-wrap {
       height: 100%;
@@ -34,10 +34,7 @@ export class StartScreen extends LitElement {
 
 declare global {
   namespace CStartScreen {
-    interface Ref
-      extends Omit<HTMLAttributes<Ref>, 'color' | 'placeholder'>,
-        ClassAttributes<Ref>,
-        StartScreenAttr {}
+    interface Ref extends CBaseElement.Ref, StartScreenAttr {}
     /*
       interface Event {
         [EVENT_ONE]: CustomEvent<EventOneProp>

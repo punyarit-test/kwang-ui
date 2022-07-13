@@ -1,13 +1,12 @@
-import { LitElement } from 'lit';
-import { ClassAttributes, HTMLAttributes } from 'react';
+import { BaseElement } from './base-element';
 declare const ELEMENT_NAME = "c-content";
-export declare class Content extends LitElement {
+export declare class Content extends BaseElement {
     static styles: import("lit").CSSResult;
     render(): import("lit-html").TemplateResult<1>;
 }
 declare global {
     namespace CContent {
-        interface Ref extends Omit<HTMLAttributes<Ref>, 'color' | 'placeholder'>, ClassAttributes<Ref> {
+        interface Ref extends CBaseElement.Ref {
         }
     }
     namespace JSX {

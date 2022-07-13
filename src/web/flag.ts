@@ -1,7 +1,7 @@
-import {css, html, LitElement} from 'lit';
+import {css, html} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
-import {ClassAttributes, HTMLAttributes} from 'react';
 import {FlagAttr} from '../types/flag.type';
+import {BaseElement} from './base-element';
 
 const ELEMENT_NAME = 'c-flag';
 /*
@@ -10,7 +10,7 @@ const ELEMENT_NAME = 'c-flag';
 */
 
 @customElement(ELEMENT_NAME)
-export class Flag extends LitElement {
+export class Flag extends BaseElement {
   render() {
     return html` <slot></slot> `;
   }
@@ -34,10 +34,7 @@ export class Flag extends LitElement {
 
 declare global {
   namespace CFlag {
-    interface Ref
-      extends Omit<HTMLAttributes<Ref>, 'color' | 'placeholder'>,
-        ClassAttributes<Ref>,
-        FlagAttr {}
+    interface Ref extends CBaseElement.Ref, FlagAttr {}
     /*
       interface Event {
         [EVENT_ONE]: CustomEvent<EventOneProp>

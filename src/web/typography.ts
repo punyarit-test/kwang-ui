@@ -1,13 +1,13 @@
-import {css, html, LitElement} from 'lit';
+import {css, html} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
-import {ClassAttributes, HTMLAttributes} from 'react';
 import {Colors} from '../types/colors.type';
 import {WeightAttr} from '../types/weights.type';
+import {BaseElement} from './base-element';
 
 const ELEMENT_NAME = 'c-typography';
 
 @customElement(ELEMENT_NAME)
-export class Typography extends LitElement {
+export class Typography extends BaseElement {
   static styles = css`
     :host {
       display: inline-block;
@@ -22,19 +22,15 @@ export class Typography extends LitElement {
 
   protected setFontStyle(fontSize: string): void {
     const [attr1, attr2] = this.attributes;
-    this.className = `${fontSize} ${attr1?.name || ''}${
-      attr2?.name ? ' ' + attr2?.name : ''
+    this.className = `${fontSize} ${attr1?.name ? 'tx-' + attr1?.name : ''}${
+      attr2?.name ? ' tx-' + attr2?.name : ''
     }`;
   }
 }
 
 declare global {
   namespace CTypography {
-    interface Ref
-      extends Omit<HTMLAttributes<Ref>, 'color' | 'placeholder'>,
-        ClassAttributes<CTypography.Ref>,
-        Colors,
-        WeightAttr {
+    interface Ref extends CBaseElement.Ref, Colors, WeightAttr {
       p?: string;
     }
   }

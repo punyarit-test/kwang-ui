@@ -21,7 +21,7 @@ import '../web/header-sm';
 import '../web/header-xl';
 import '../web/header-xs';
 import '../web/icon';
-import '../web/layout';
+import '../web/cortex-layout';
 import '../web/navbar';
 import '../web/sidebar';
 import '../web/start-screen';

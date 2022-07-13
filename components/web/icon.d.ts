@@ -1,11 +1,10 @@
-import { LitElement } from 'lit';
-import { ClassAttributes, HTMLAttributes } from 'react';
 import { Colors } from '../types/colors.type';
-import { SizesAttr } from '../types/sizes.type';
-import { IconName } from '../types/icons.type';
+import { TxSizesAttr } from '../types/tx-sizes.type';
+import { IconNames } from '../types/icons.type';
 import { WeightAttr } from '../types/weights.type';
+import { BaseElement } from './base-element';
 declare const ELEMENT_NAME = "c-icon";
-export declare class Icon2 extends LitElement {
+export declare class Icon extends BaseElement {
     static styles: import("lit").CSSResult;
     render(): import("lit-html").TemplateResult<1>;
     firstUpdated(): void;
@@ -13,7 +12,7 @@ export declare class Icon2 extends LitElement {
 }
 declare global {
     namespace CIcon {
-        interface Ref extends Omit<HTMLAttributes<Ref>, 'color' | 'placeholder'>, ClassAttributes<CTypography.Ref>, IconName, Colors, WeightAttr, SizesAttr {
+        interface Ref extends CBaseElement.Ref, IconNames, Colors, WeightAttr, TxSizesAttr {
         }
     }
     namespace JSX {

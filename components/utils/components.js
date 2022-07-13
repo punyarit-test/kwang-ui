@@ -23,7 +23,7 @@ require("../web/header-sm");
 require("../web/header-xl");
 require("../web/header-xs");
 require("../web/icon");
-require("../web/layout");
+require("../web/cortex-layout");
 require("../web/navbar");
 require("../web/sidebar");
 require("../web/start-screen");

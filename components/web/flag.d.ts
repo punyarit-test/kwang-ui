@@ -1,15 +1,14 @@
-import { LitElement } from 'lit';
-import { ClassAttributes, HTMLAttributes } from 'react';
 import { FlagAttr } from '../types/flag.type';
+import { BaseElement } from './base-element';
 declare const ELEMENT_NAME = "c-flag";
-export declare class Flag extends LitElement {
+export declare class Flag extends BaseElement {
     render(): import("lit-html").TemplateResult<1>;
     connectedCallback(): void;
     private removeFlag;
 }
 declare global {
     namespace CFlag {
-        interface Ref extends Omit<HTMLAttributes<Ref>, 'color' | 'placeholder'>, ClassAttributes<Ref>, FlagAttr {
+        interface Ref extends CBaseElement.Ref, FlagAttr {
         }
     }
     namespace JSX {

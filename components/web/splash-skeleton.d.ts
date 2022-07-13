@@ -1,5 +1,4 @@
 import { LitElement } from 'lit';
-import { ClassAttributes, HTMLAttributes } from 'react';
 declare const ELEMENT_NAME = "splash-skeleton";
 export declare class SplashSkeleton extends LitElement {
     static styles: import("lit").CSSResult;
@@ -7,7 +6,7 @@ export declare class SplashSkeleton extends LitElement {
 }
 declare global {
     namespace CSplashSkeleton {
-        interface Ref extends Omit<HTMLAttributes<Ref>, 'color' | 'placeholder'>, ClassAttributes<Ref> {
+        interface Ref extends CBaseElement.Ref {
         }
     }
     namespace JSX {

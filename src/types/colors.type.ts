@@ -27,6 +27,7 @@ export interface Primary {
   ['primary-600']?: boolean;
   ['primary-700']?: boolean;
   ['primary-800']?: boolean;
+  ['primary-900']?: boolean;
 }
 
 export interface Error {
@@ -225,7 +226,7 @@ export interface WarningYellow {
   ['warning-yellow-900']?: boolean;
 }
 
-export interface Bluestate {
+export interface BlueState {
   ['bluestate-25']?: boolean;
   ['bluestate-50']?: boolean;
   ['bluestate-100']?: boolean;
@@ -257,4 +258,4 @@ export interface Colors
     RedFlag,
     AlarmOrange,
     WarningYellow,
-    Bluestate {}
+    BlueState {}

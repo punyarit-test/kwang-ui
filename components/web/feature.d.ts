@@ -1,14 +1,13 @@
-import { LitElement } from 'lit';
-import { ClassAttributes, HTMLAttributes } from 'react';
 import { FeatureAttr } from '../types/feature.type';
+import { BaseElement } from './base-element';
 declare const ELEMENT_NAME = "c-feature";
-export declare class Feature extends LitElement {
+export declare class Feature extends BaseElement {
     render(): import("lit-html").TemplateResult<1>;
     connectedCallback(): void;
 }
 declare global {
     namespace CFeature {
-        interface Ref extends Omit<HTMLAttributes<Ref>, 'color' | 'placeholder'>, ClassAttributes<Ref>, FeatureAttr {
+        interface Ref extends CBaseElement.Ref, FeatureAttr {
         }
     }
     namespace JSX {

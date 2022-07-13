@@ -1,6 +1,6 @@
-import {css, html, LitElement} from 'lit';
+import {css, html} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
-import {ClassAttributes, HTMLAttributes} from 'react';
+import {BaseElement} from './base-element';
 
 const ELEMENT_NAME = 'profile-bar';
 /*
@@ -9,7 +9,7 @@ const ELEMENT_NAME = 'profile-bar';
 */
 
 @customElement(ELEMENT_NAME)
-export class ProfileBar extends LitElement {
+export class ProfileBar extends BaseElement {
   static styles = css``;
 
   render() {
@@ -19,9 +19,7 @@ export class ProfileBar extends LitElement {
 
 declare global {
   namespace CProfileBar {
-    interface Ref
-      extends Omit<HTMLAttributes<Ref>, 'color' | 'placeholder'>,
-        ClassAttributes<Ref> {}
+    interface Ref extends CBaseElement.Ref {}
     /*
       interface Event {
         [EVENT_ONE]: CustomEvent<EventOneProp>

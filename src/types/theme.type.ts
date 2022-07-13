@@ -1,5 +1,5 @@
 export interface SizeThemeAttr {
-  standard?: boolean;
+  normal?: boolean;
   big?: boolean;
   large?: boolean;
 }

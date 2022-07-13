@@ -1,31 +1,31 @@
-.thin {
+.tx-thin {
   font-family: var(--thin) !important;
 }
 
-.extralight {
+.tx-extralight {
   font-family: var(--extralight) !important;
 }
 
-.light {
+.tx-light {
   font-family: var(--light) !important;
 }
 
-.regular {
+.tx-regular {
   font-family: var(--regular) !important;
 }
 
-.medium {
+.tx-medium {
   font-family: var(--medium) !important;
 }
 
-.semibold {
+.tx-semibold {
   font-family: var(--semibold) !important;
 }
 
-.bold {
+.tx-bold {
   font-family: var(--bold) !important;
 }
 
-.extrabold {
+.tx-extrabold {
   font-family: var(--extrabold) !important;
 }

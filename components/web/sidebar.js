@@ -9,12 +9,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Sidebar = void 0;
 const lit_1 = require("lit");
 const decorators_js_1 = require("lit/decorators.js");
+const bar_1 = require("./bar");
 const ELEMENT_NAME = 'c-sidebar';
 /*
   const EVENT_ONE = 'event-1'
   interface EventOneProp {}
 */
-let Sidebar = class Sidebar extends lit_1.LitElement {
+let Sidebar = class Sidebar extends bar_1.Bar {
     render() {
         return (0, lit_1.html) `
       <div>

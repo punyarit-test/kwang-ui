@@ -1,13 +1,13 @@
-import {css, html, LitElement} from 'lit';
+import {css, html} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
-import {ClassAttributes, HTMLAttributes} from 'react';
+import {BaseElement} from './base-element';
 
 enum element {
   name = 'efx-done',
 }
 
 @customElement(element.name)
-export class EfxDone extends LitElement {
+export class EfxDone extends BaseElement {
   static styles = css`
     .bubbly-efx {
       display: inline-block;
@@ -152,9 +152,7 @@ for decide dialog
 */
 declare global {
   namespace CEfxDone {
-    interface Ref
-      extends Omit<HTMLAttributes<Ref>, 'color' | 'placeholder'>,
-        ClassAttributes<Ref> {
+    interface Ref extends CBaseElement.Ref {
       disabled?: boolean;
     }
     /*

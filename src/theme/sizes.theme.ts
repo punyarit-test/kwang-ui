@@ -1,18 +1,7 @@
 import {css} from 'lit';
 
-export const fonts = css`
-  :host {
-    --thin: Sarabun-Thin;
-    --extralight: Sarabun-ExtraLight;
-    --light: Sarabun-Light;
-    --regular: Sarabun-Regular;
-    --medium: Sarabun-Medium;
-    --semibold: Sarabun-SemiBold;
-    --bold: Sarabun-Bold;
-    --extrabold: Sarabun-ExtraBold;
-  }
-
-  :host(.standard) {
+export const sizes = css`
+  :host(.normal) {
     --size-6: 0.375rem;
     --size-7: 0.438rem;
     --size-8: 0.5rem;

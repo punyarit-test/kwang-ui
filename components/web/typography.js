@@ -12,14 +12,15 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Typography = void 0;
 const lit_1 = require("lit");
 const decorators_js_1 = require("lit/decorators.js");
+const base_element_1 = require("./base-element");
 const ELEMENT_NAME = 'c-typography';
-let Typography = class Typography extends lit_1.LitElement {
+let Typography = class Typography extends base_element_1.BaseElement {
     render() {
         return (0, lit_1.html) `<slot></slot>${this.p}`;
     }
     setFontStyle(fontSize) {
         const [attr1, attr2] = this.attributes;
-        this.className = `${fontSize} ${attr1?.name || ''}${attr2?.name ? ' ' + attr2?.name : ''}`;
+        this.className = `${fontSize} ${attr1?.name ? 'tx-' + attr1?.name : ''}${attr2?.name ? ' tx-' + attr2?.name : ''}`;
     }
 };
 Typography.styles = (0, lit_1.css) `

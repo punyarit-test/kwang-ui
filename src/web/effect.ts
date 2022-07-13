@@ -1,17 +1,17 @@
-import { css, html, LitElement } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
-import { ClassAttributes, HTMLAttributes } from 'react'
-  
-const ELEMENT_NAME = 'c-effect'
+import {css, html} from 'lit';
+import {customElement, property} from 'lit/decorators.js';
+import {BaseElement} from './base-element';
+
+const ELEMENT_NAME = 'c-effect';
 /*
   const EVENT_ONE = 'event-1'
   interface EventOneProp {}
 */
 
 @customElement(ELEMENT_NAME)
-export class Effect extends LitElement {
+export class Effect extends BaseElement {
   static styles = css``;
-  
+
   render() {
     return html` <div>c-effect component was created!!</div> `;
   }
@@ -19,9 +19,7 @@ export class Effect extends LitElement {
 
 declare global {
   namespace CEffect {
-    interface Ref
-      extends Omit<HTMLAttributes<Ref>, 'color' | 'placeholder'>,
-        ClassAttributes<Ref> {}
+    interface Ref extends CBaseElement.Ref {}
     /*
       interface Event {
         [EVENT_ONE]: CustomEvent<EventOneProp>

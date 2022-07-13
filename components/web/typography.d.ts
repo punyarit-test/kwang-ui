@@ -1,9 +1,8 @@
-import { LitElement } from 'lit';
-import { ClassAttributes, HTMLAttributes } from 'react';
 import { Colors } from '../types/colors.type';
 import { WeightAttr } from '../types/weights.type';
+import { BaseElement } from './base-element';
 declare const ELEMENT_NAME = "c-typography";
-export declare class Typography extends LitElement {
+export declare class Typography extends BaseElement {
     static styles: import("lit").CSSResult;
     p?: string;
     render(): import("lit-html").TemplateResult<1>;
@@ -11,7 +10,7 @@ export declare class Typography extends LitElement {
 }
 declare global {
     namespace CTypography {
-        interface Ref extends Omit<HTMLAttributes<Ref>, 'color' | 'placeholder'>, ClassAttributes<CTypography.Ref>, Colors, WeightAttr {
+        interface Ref extends CBaseElement.Ref, Colors, WeightAttr {
             p?: string;
         }
     }

@@ -1,14 +1,16 @@
 import {html, LitElement} from 'lit';
-import {customElement} from 'lit/decorators.js';
+import {customElement, property} from 'lit/decorators.js';
 import {ClassAttributes, HTMLAttributes} from 'react';
 import {colors} from '../theme/colors.theme';
-import {fonts} from '../theme/fonts.theme';
+import {sizes} from '../theme/sizes.theme';
+import {fontWeights} from '../theme/font-weights.theme';
 import {
   ColorThemeAttr,
   SizeThemeAttr,
   ThemeAttr,
   ThemeIndex,
 } from '../types/theme.type';
+import {BaseElement} from './base-element';
 
 const ELEMENT_NAME = 'c-theme';
 /*
@@ -17,8 +19,9 @@ const ELEMENT_NAME = 'c-theme';
 */
 
 @customElement(ELEMENT_NAME)
-export class Theme extends LitElement {
-  static styles = [colors, fonts];
+export class Theme extends BaseElement {
+  static styles = [colors, fontWeights, sizes];
+  @property({type: String}) public sx?: string;
 
   render = () => html` <slot></slot> `;
 
@@ -63,10 +66,7 @@ export class Theme extends LitElement {
 
 declare global {
   namespace CTheme {
-    interface Ref
-      extends Omit<HTMLAttributes<Ref>, 'color' | 'placeholder'>,
-        ClassAttributes<Ref>,
-        ThemeAttr {
+    interface Ref extends CBaseElement.Ref, ThemeAttr {
       onSetTheme?: (color: keyof ColorThemeAttr) => void;
       onSetSize?: (size: keyof SizeThemeAttr) => void;
     }

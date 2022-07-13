@@ -1,6 +1,6 @@
-import {css, html, LitElement} from 'lit';
+import {css, html} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
-import {ClassAttributes, HTMLAttributes} from 'react';
+import {BaseElement} from './base-element';
 
 const ELEMENT_NAME = 'c-skeleton';
 /*
@@ -9,7 +9,7 @@ const ELEMENT_NAME = 'c-skeleton';
 */
 
 @customElement(ELEMENT_NAME)
-export class Skeleton extends LitElement {
+export class Skeleton extends BaseElement {
   static styles = css``;
 
   render() {
@@ -19,9 +19,7 @@ export class Skeleton extends LitElement {
 
 declare global {
   namespace CSkeleton {
-    interface Ref
-      extends Omit<HTMLAttributes<Ref>, 'color' | 'placeholder'>,
-        ClassAttributes<Ref> {}
+    interface Ref extends CBaseElement.Ref {}
     /*
       interface Event {
         [EVENT_ONE]: CustomEvent<EventOneProp>

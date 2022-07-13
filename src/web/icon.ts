@@ -2,14 +2,15 @@ import {css, html, LitElement} from 'lit';
 import {customElement} from 'lit/decorators.js';
 import {ClassAttributes, HTMLAttributes} from 'react';
 import {Colors} from '../types/colors.type';
-import {SizesAttr} from '../types/sizes.type';
-import {IconName} from '../types/icons.type';
+import {TxSizesAttr} from '../types/tx-sizes.type';
+import {IconNames} from '../types/icons.type';
 import {WeightAttr} from '../types/weights.type';
+import {BaseElement} from './base-element';
 
 const ELEMENT_NAME = 'c-icon';
 
 @customElement(ELEMENT_NAME)
-export class Icon2 extends LitElement {
+export class Icon extends BaseElement {
   static styles = css`
     :host {
       display: inline-flex;
@@ -32,8 +33,8 @@ export class Icon2 extends LitElement {
 
     this.style.setProperty(`--icon`, icon?.name || '');
 
-    this.className = `${attr1?.name || ''}${
-      attr2?.name ? ' ' + attr2?.name : ''
+    this.className = `${attr1?.name ? 'tx-' + attr1?.name : ''}${
+      attr2?.name ? ' tx-' + attr2?.name : ''
     }`;
   }
 }
@@ -41,12 +42,11 @@ export class Icon2 extends LitElement {
 declare global {
   namespace CIcon {
     interface Ref
-      extends Omit<HTMLAttributes<Ref>, 'color' | 'placeholder'>,
-        ClassAttributes<CTypography.Ref>,
-        IconName,
+      extends CBaseElement.Ref,
+        IconNames,
         Colors,
         WeightAttr,
-        SizesAttr {}
+        TxSizesAttr {}
   }
   namespace JSX {
     interface IntrinsicElements {

@@ -12,11 +12,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.EfxDone = void 0;
 const lit_1 = require("lit");
 const decorators_js_1 = require("lit/decorators.js");
+const base_element_1 = require("./base-element");
 var element;
 (function (element) {
     element["name"] = "efx-done";
 })(element || (element = {}));
-let EfxDone = class EfxDone extends lit_1.LitElement {
+let EfxDone = class EfxDone extends base_element_1.BaseElement {
     constructor() {
         super(...arguments);
         this.setTimeEfx = (e) => setTimeout(function () {

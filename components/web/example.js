@@ -9,9 +9,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Example = void 0;
 const lit_1 = require("lit");
 const decorators_js_1 = require("lit/decorators.js");
+const base_element_1 = require("./base-element");
 const ELEMENT_NAME = 'c-example';
 const EVENT_ONE = 'event-1';
-let Example = class Example extends lit_1.LitElement {
+let Example = class Example extends base_element_1.BaseElement {
     render() {
         return (0, lit_1.html) `
       <div style="font-family:var(--regular)">

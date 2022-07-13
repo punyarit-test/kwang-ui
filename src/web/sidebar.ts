@@ -2,6 +2,8 @@ import {css, html, LitElement} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
 import {ClassAttributes, HTMLAttributes} from 'react';
 import {SidebarPosition} from '../types/sidebar.type';
+import {Bar} from './bar';
+import {BaseElement} from './base-element';
 
 const ELEMENT_NAME = 'c-sidebar';
 /*
@@ -10,7 +12,7 @@ const ELEMENT_NAME = 'c-sidebar';
 */
 
 @customElement(ELEMENT_NAME)
-export class Sidebar extends LitElement {
+export class Sidebar extends Bar {
   static styles = css``;
 
   render() {

@@ -9,12 +9,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Skeleton = void 0;
 const lit_1 = require("lit");
 const decorators_js_1 = require("lit/decorators.js");
+const base_element_1 = require("./base-element");
 const ELEMENT_NAME = 'c-skeleton';
 /*
   const EVENT_ONE = 'event-1'
   interface EventOneProp {}
 */
-let Skeleton = class Skeleton extends lit_1.LitElement {
+let Skeleton = class Skeleton extends base_element_1.BaseElement {
     render() {
         return (0, lit_1.html) ` <div>c-skeleton component was created!!</div> `;
     }
