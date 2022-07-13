@@ -2,23 +2,23 @@ import {css, html} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
 import {BaseElement} from './base-element';
 
-const ELEMENT_NAME = 'layout-element';
+const ELEMENT_NAME = 'div-display';
 /*
   const EVENT_ONE = 'event-1'
   interface EventOneProp {}
 */
 
 @customElement(ELEMENT_NAME)
-export class LayoutElement extends BaseElement {
+export class DivDisplay extends BaseElement {
   static styles = css``;
 
   render() {
-    return html` <div>c-layout-element component was created!!</div> `;
+    return html` <div>c-div-display component was created!!</div> `;
   }
 }
 
 declare global {
-  namespace CLayoutElement {
+  namespace CDivDisplay {
     interface Ref extends CBaseElement.Ref {}
     /*
       interface Event {
@@ -29,7 +29,7 @@ declare global {
   }
   namespace JSX {
     interface IntrinsicElements {
-      [ELEMENT_NAME]: CLayoutElement.Ref;
+      [ELEMENT_NAME]: CDivDisplay.Ref;
     }
   }
 }

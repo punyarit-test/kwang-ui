@@ -1,6 +1,6 @@
 import {css, html} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
-import {BaseElement} from './base-element';
+import {DivDisplay} from './div-display';
 
 const ELEMENT_NAME = 'c-block';
 /*
@@ -9,7 +9,7 @@ const ELEMENT_NAME = 'c-block';
 */
 
 @customElement(ELEMENT_NAME)
-export class Block extends BaseElement {
+export class Block extends DivDisplay {
   static styles = css``;
 
   render() {
@@ -19,7 +19,7 @@ export class Block extends BaseElement {
 
 declare global {
   namespace CBlock {
-    interface Ref extends CBaseElement.Ref {}
+    interface Ref extends CDivDisplay.Ref {}
     /*
       interface Event {
         [EVENT_ONE]: CustomEvent<EventOneProp>

@@ -9,13 +9,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Flex = void 0;
 const lit_1 = require("lit");
 const decorators_js_1 = require("lit/decorators.js");
-const base_element_1 = require("./base-element");
+const div_display_1 = require("./div-display");
 const ELEMENT_NAME = 'c-flex';
 /*
   const EVENT_ONE = 'event-1'
   interface EventOneProp {}
 */
-let Flex = class Flex extends base_element_1.BaseElement {
+let Flex = class Flex extends div_display_1.DivDisplay {
     render() {
         return (0, lit_1.html) ` <div>c-flex component was created!!</div> `;
     }

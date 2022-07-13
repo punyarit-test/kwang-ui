@@ -53,3 +53,11 @@ const asyncClr = (component, eventName, callback, timeout = 5000) => {
     }, 1000);
 };
 exports.asyncClr = asyncClr;
+// Effects
+const shake = () => {
+    const body = document.body;
+    body?.classList?.add('efx-shake');
+    setTimeout(() => {
+        body?.classList?.remove('efx-shake');
+    }, 600);
+};

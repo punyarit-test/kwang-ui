@@ -81,3 +81,13 @@ export const asyncClr = <Y>(
     }
   }, 1000);
 };
+
+// Effects
+const shake = () => {
+  const body = document.body;
+  body?.classList?.add('efx-shake');
+
+  setTimeout(() => {
+    body?.classList?.remove('efx-shake');
+  }, 600);
+};

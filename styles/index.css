@@ -4,10 +4,5 @@
 @import './fonts.registry.css';
 @import './icons.registry.css';
 @import './font-weights.css';
-
-html,
-body,
-#root {
-  margin: 0;
-  height: 100%;
-}
+@import './print.css';
+@import './default.css';

@@ -6,22 +6,22 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Grid = void 0;
+exports.DivDisplay = void 0;
 const lit_1 = require("lit");
 const decorators_js_1 = require("lit/decorators.js");
-const div_display_1 = require("./div-display");
-const ELEMENT_NAME = 'c-grid';
+const base_element_1 = require("./base-element");
+const ELEMENT_NAME = 'div-display';
 /*
   const EVENT_ONE = 'event-1'
   interface EventOneProp {}
 */
-let Grid = class Grid extends div_display_1.DivDisplay {
+let DivDisplay = class DivDisplay extends base_element_1.BaseElement {
     render() {
-        return (0, lit_1.html) ` <div>c-grid component was created!!</div> `;
+        return (0, lit_1.html) ` <div>c-div-display component was created!!</div> `;
     }
 };
-Grid.styles = (0, lit_1.css) ``;
-Grid = __decorate([
+DivDisplay.styles = (0, lit_1.css) ``;
+DivDisplay = __decorate([
     (0, decorators_js_1.customElement)(ELEMENT_NAME)
-], Grid);
-exports.Grid = Grid;
+], DivDisplay);
+exports.DivDisplay = DivDisplay;
