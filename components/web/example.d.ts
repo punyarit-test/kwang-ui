@@ -9,7 +9,7 @@ export declare class Example extends BaseElement {
 }
 declare global {
     namespace CExample {
-        interface Ref extends CBaseElement.Ref {
+        interface Ref extends CBaseElement.Ref<string> {
         }
         interface Event {
             [EVENT_ONE]: CustomEvent<EventOneProp>;

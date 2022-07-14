@@ -1,5 +1,6 @@
 import {css, html} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
+import {FlexAttr} from '../types/div-display.type';
 import {BaseElement} from './base-element';
 import {DivDisplay} from './div-display';
 
@@ -10,17 +11,11 @@ const ELEMENT_NAME = 'c-flex';
 */
 
 @customElement(ELEMENT_NAME)
-export class Flex extends DivDisplay {
-  static styles = css``;
-
-  render() {
-    return html` <slot></slot> `;
-  }
-}
+export class Flex extends DivDisplay {}
 
 declare global {
   namespace CFlex {
-    interface Ref extends CDivDisplay.Ref {}
+    interface Ref extends CDivDisplay.Ref, FlexAttr {}
     /*
       interface Event {
         [EVENT_ONE]: CustomEvent<EventOneProp>

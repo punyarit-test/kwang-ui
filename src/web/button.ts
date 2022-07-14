@@ -18,7 +18,7 @@ export class Button extends LitElement {
 
 declare global {
   namespace CButton {
-    interface Ref extends CBaseElement.Ref {}
+    interface Ref extends CBaseElement.Ref<string> {}
     /*
       interface Event {
         [EVENT_ONE]: CustomEvent<EventOneProp>

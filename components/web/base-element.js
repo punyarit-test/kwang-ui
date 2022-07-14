@@ -10,10 +10,6 @@ exports.BaseElement = void 0;
 const lit_1 = require("lit");
 const decorators_js_1 = require("lit/decorators.js");
 const ELEMENT_NAME = 'base-element';
-/*
-  const EVENT_ONE = 'event-1'
-  interface EventOneProp {}
-*/
 let BaseElement = class BaseElement extends lit_1.LitElement {
 };
 BaseElement = __decorate([

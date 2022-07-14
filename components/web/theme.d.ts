@@ -14,7 +14,7 @@ export declare class Theme extends BaseElement {
 }
 declare global {
     namespace CTheme {
-        interface Ref extends CBaseElement.Ref, ThemeAttr {
+        interface Ref extends CBaseElement.Ref<string>, ThemeAttr {
             onSetTheme?: (color: keyof ColorThemeAttr) => void;
             onSetSize?: (size: keyof SizeThemeAttr) => void;
         }

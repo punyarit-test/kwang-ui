@@ -12,7 +12,7 @@ export declare class Icon extends BaseElement {
 }
 declare global {
     namespace CIcon {
-        interface Ref extends CBaseElement.Ref, IconNames, Colors, WeightAttr, TxSizesAttr {
+        interface Ref extends CBaseElement.Ref<string>, IconNames, Colors, WeightAttr, TxSizesAttr {
         }
     }
     namespace JSX {

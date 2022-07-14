@@ -152,7 +152,7 @@ for decide dialog
 */
 declare global {
   namespace CEfxDone {
-    interface Ref extends CBaseElement.Ref {
+    interface Ref extends CBaseElement.Ref<string> {
       disabled?: boolean;
     }
     /*

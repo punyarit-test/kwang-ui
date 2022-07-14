@@ -7,7 +7,7 @@ export declare class Feature extends BaseElement {
 }
 declare global {
     namespace CFeature {
-        interface Ref extends CBaseElement.Ref, FeatureAttr {
+        interface Ref extends CBaseElement.Ref<string>, FeatureAttr {
         }
     }
     namespace JSX {

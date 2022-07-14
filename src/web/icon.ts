@@ -42,7 +42,7 @@ export class Icon extends BaseElement {
 declare global {
   namespace CIcon {
     interface Ref
-      extends CBaseElement.Ref,
+      extends CBaseElement.Ref<string>,
         IconNames,
         Colors,
         WeightAttr,

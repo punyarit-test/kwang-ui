@@ -7,20 +7,32 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DivDisplay = void 0;
-const lit_1 = require("lit");
 const decorators_js_1 = require("lit/decorators.js");
-const base_element_1 = require("./base-element");
+const div_element_1 = require("./div-element");
 const ELEMENT_NAME = 'div-display';
 /*
   const EVENT_ONE = 'event-1'
   interface EventOneProp {}
 */
-let DivDisplay = class DivDisplay extends base_element_1.BaseElement {
-    render() {
-        return (0, lit_1.html) ` <div>c-div-display component was created!!</div> `;
+let DivDisplay = class DivDisplay extends div_element_1.DivElement {
+    connectedCallback() {
+        super.connectedCallback();
+        this.setClassName();
+    }
+    setClassName() {
+        this.className = this.getClassName();
+    }
+    getClassName() {
+        let className = '';
+        for (const attr of this.attributes) {
+            className = className + attr.name + ' ';
+        }
+        return className;
+    }
+    createRenderRoot() {
+        return this;
     }
 };
-DivDisplay.styles = (0, lit_1.css) ``;
 DivDisplay = __decorate([
     (0, decorators_js_1.customElement)(ELEMENT_NAME)
 ], DivDisplay);

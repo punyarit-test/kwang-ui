@@ -7,7 +7,7 @@ export declare class StartScreen extends BaseElement {
 }
 declare global {
     namespace CStartScreen {
-        interface Ref extends CBaseElement.Ref, StartScreenAttr {
+        interface Ref extends CBaseElement.Ref<string>, StartScreenAttr {
         }
     }
     namespace JSX {

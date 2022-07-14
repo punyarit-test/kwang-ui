@@ -1,0 +1,32 @@
+c-flex {
+  display: flex;
+}
+
+c-flex.justify-center {
+  justify-content: center;
+}
+
+c-flex.items-center {
+  align-items: center;
+}
+
+c-flex.column {
+  flex-direction: column;
+}
+
+c-flex.wrap {
+  flex-wrap: wrap;
+}
+
+c-flex.inline {
+  display: inline-flex;
+}
+
+/* gap */
+c-flex.row-12 {
+  row-gap: var(--size-12);
+}
+
+c-flex.col-12 {
+  column-gap: var(--size-12);
+}

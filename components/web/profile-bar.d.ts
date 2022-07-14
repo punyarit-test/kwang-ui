@@ -6,7 +6,7 @@ export declare class ProfileBar extends BaseElement {
 }
 declare global {
     namespace CProfileBar {
-        interface Ref extends CBaseElement.Ref {
+        interface Ref extends CBaseElement.Ref<string> {
         }
     }
     namespace JSX {

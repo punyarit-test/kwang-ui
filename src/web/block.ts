@@ -3,29 +3,13 @@ import {customElement, property} from 'lit/decorators.js';
 import {DivDisplay} from './div-display';
 
 const ELEMENT_NAME = 'c-block';
-/*
-  const EVENT_ONE = 'event-1'
-  interface EventOneProp {}
-*/
 
 @customElement(ELEMENT_NAME)
-export class Block extends DivDisplay {
-  static styles = css``;
-
-  render() {
-    return html` <div>c-block component was created!!</div> `;
-  }
-}
+export class Block extends DivDisplay {}
 
 declare global {
   namespace CBlock {
     interface Ref extends CDivDisplay.Ref {}
-    /*
-      interface Event {
-        [EVENT_ONE]: CustomEvent<EventOneProp>
-      }
-      interface EventOne extends CustomEvent<EventOneProp> {}
-    */
   }
   namespace JSX {
     interface IntrinsicElements {

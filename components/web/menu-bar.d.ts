@@ -6,7 +6,7 @@ export declare class MenuBar extends BaseElement {
 }
 declare global {
     namespace CMenuBar {
-        interface Ref extends CBaseElement.Ref {
+        interface Ref extends CBaseElement.Ref<string> {
         }
     }
     namespace JSX {

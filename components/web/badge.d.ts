@@ -6,7 +6,7 @@ export declare class Badge extends BaseElement {
 }
 declare global {
     namespace CBadge {
-        interface Ref extends CBaseElement.Ref {
+        interface Ref extends CBaseElement.Ref<string> {
         }
     }
     namespace JSX {

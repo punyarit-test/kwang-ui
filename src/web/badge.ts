@@ -19,7 +19,7 @@ export class Badge extends BaseElement {
 
 declare global {
   namespace CBadge {
-    interface Ref extends CBaseElement.Ref {}
+    interface Ref extends CBaseElement.Ref<string> {}
     /*
       interface Event {
         [EVENT_ONE]: CustomEvent<EventOneProp>

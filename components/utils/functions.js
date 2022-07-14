@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.asyncClr = exports.asyncEvt = exports.attr = exports.clr = exports.evt = exports.val = void 0;
+exports.shake = exports.asyncClr = exports.asyncEvt = exports.attr = exports.clr = exports.evt = exports.val = void 0;
 const val = (value) => JSON.stringify(value);
 exports.val = val;
 const evt = (component, eventName, callback) => {
@@ -61,3 +61,4 @@ const shake = () => {
         body?.classList?.remove('efx-shake');
     }, 600);
 };
+exports.shake = shake;

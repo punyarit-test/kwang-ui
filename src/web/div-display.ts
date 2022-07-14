@@ -1,6 +1,5 @@
-import {css, html} from 'lit';
-import {customElement, property} from 'lit/decorators.js';
-import {BaseElement} from './base-element';
+import {customElement} from 'lit/decorators.js';
+import {DivElement} from './div-element';
 
 const ELEMENT_NAME = 'div-display';
 /*
@@ -9,17 +8,32 @@ const ELEMENT_NAME = 'div-display';
 */
 
 @customElement(ELEMENT_NAME)
-export class DivDisplay extends BaseElement {
-  static styles = css``;
+export class DivDisplay extends DivElement {
+  connectedCallback() {
+    super.connectedCallback();
+    this.setClassName();
+  }
 
-  render() {
-    return html` <div>c-div-display component was created!!</div> `;
+  private setClassName(): void {
+    this.className = this.getClassName();
+  }
+
+  private getClassName(): string {
+    let className = '';
+    for (const attr of this.attributes) {
+      className = className + attr.name + ' ';
+    }
+    return className;
+  }
+
+  createRenderRoot(): this {
+    return this;
   }
 }
 
 declare global {
   namespace CDivDisplay {
-    interface Ref extends CBaseElement.Ref {}
+    interface Ref extends CDivElement.Ref {}
     /*
       interface Event {
         [EVENT_ONE]: CustomEvent<EventOneProp>

@@ -83,7 +83,7 @@ export const asyncClr = <Y>(
 };
 
 // Effects
-const shake = () => {
+export const shake = (): void => {
   const body = document.body;
   body?.classList?.add('efx-shake');
 

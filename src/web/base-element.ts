@@ -4,20 +4,18 @@ import {ClassAttributes, HTMLAttributes} from 'react';
 import {BaseElementAttr} from '../types/base-element.type';
 
 const ELEMENT_NAME = 'base-element';
-/*
-  const EVENT_ONE = 'event-1'
-  interface EventOneProp {}
-*/
 
 @customElement(ELEMENT_NAME)
 export class BaseElement extends LitElement {}
 
 declare global {
   namespace CBaseElement {
-    interface Ref
-      extends Omit<HTMLAttributes<Ref>, 'color' | 'placeholder'>,
-        ClassAttributes<Ref>,
-        BaseElementAttr {}
+    interface Ref<T>
+      extends Omit<HTMLAttributes<Ref<T>>, 'color' | 'placeholder'>,
+        ClassAttributes<Ref<T>>,
+        BaseElementAttr {
+      sx?: Record<keyof T, string>;
+    }
     /*
       interface Event {
         [EVENT_ONE]: CustomEvent<EventOneProp>

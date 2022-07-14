@@ -19,7 +19,7 @@ export class Skeleton extends BaseElement {
 
 declare global {
   namespace CSkeleton {
-    interface Ref extends CBaseElement.Ref {}
+    interface Ref extends CBaseElement.Ref<string> {}
     /*
       interface Event {
         [EVENT_ONE]: CustomEvent<EventOneProp>

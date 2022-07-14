@@ -7,7 +7,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Flex = void 0;
-const lit_1 = require("lit");
 const decorators_js_1 = require("lit/decorators.js");
 const div_display_1 = require("./div-display");
 const ELEMENT_NAME = 'c-flex';
@@ -16,11 +15,7 @@ const ELEMENT_NAME = 'c-flex';
   interface EventOneProp {}
 */
 let Flex = class Flex extends div_display_1.DivDisplay {
-    render() {
-        return (0, lit_1.html) ` <slot></slot> `;
-    }
 };
-Flex.styles = (0, lit_1.css) ``;
 Flex = __decorate([
     (0, decorators_js_1.customElement)(ELEMENT_NAME)
 ], Flex);

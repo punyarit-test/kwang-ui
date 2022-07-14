@@ -8,7 +8,7 @@ export declare class Flag extends BaseElement {
 }
 declare global {
     namespace CFlag {
-        interface Ref extends CBaseElement.Ref, FlagAttr {
+        interface Ref extends CBaseElement.Ref<string>, FlagAttr {
         }
     }
     namespace JSX {

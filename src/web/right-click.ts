@@ -19,7 +19,7 @@ export class RightClick extends BaseElement {
 
 declare global {
   namespace CRightClick {
-    interface Ref extends CBaseElement.Ref {}
+    interface Ref extends CBaseElement.Ref<string> {}
     /*
       interface Event {
         [EVENT_ONE]: CustomEvent<EventOneProp>

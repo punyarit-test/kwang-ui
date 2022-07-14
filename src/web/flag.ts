@@ -34,7 +34,7 @@ export class Flag extends BaseElement {
 
 declare global {
   namespace CFlag {
-    interface Ref extends CBaseElement.Ref, FlagAttr {}
+    interface Ref extends CBaseElement.Ref<string>, FlagAttr {}
     /*
       interface Event {
         [EVENT_ONE]: CustomEvent<EventOneProp>

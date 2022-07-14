@@ -1,12 +1,14 @@
-import { BaseElement } from './base-element';
+import { DivElement } from './div-element';
 declare const ELEMENT_NAME = "div-display";
-export declare class DivDisplay extends BaseElement {
-    static styles: import("lit").CSSResult;
-    render(): import("lit-html").TemplateResult<1>;
+export declare class DivDisplay extends DivElement {
+    connectedCallback(): void;
+    private setClassName;
+    private getClassName;
+    createRenderRoot(): this;
 }
 declare global {
     namespace CDivDisplay {
-        interface Ref extends CBaseElement.Ref {
+        interface Ref extends CDivElement.Ref {
         }
     }
     namespace JSX {

@@ -10,7 +10,7 @@ export declare class Typography extends BaseElement {
 }
 declare global {
     namespace CTypography {
-        interface Ref extends CBaseElement.Ref, Colors, WeightAttr {
+        interface Ref extends CBaseElement.Ref<string>, Colors, WeightAttr {
             p?: string;
         }
     }
