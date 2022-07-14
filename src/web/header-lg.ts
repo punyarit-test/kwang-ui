@@ -7,7 +7,7 @@ const ELEMENT_NAME = 'header-lg';
 export class HeaderLg extends Typography {
   connectedCallback() {
     super.connectedCallback();
-    this.setFontStyle('size-48');
+    this.setFontStyle('tx-48');
   }
 }
 

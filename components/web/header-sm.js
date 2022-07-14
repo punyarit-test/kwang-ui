@@ -13,7 +13,7 @@ const ELEMENT_NAME = 'header-sm';
 let HeaderSm = class HeaderSm extends typography_1.Typography {
     connectedCallback() {
         super.connectedCallback();
-        this.setFontStyle('size-32');
+        this.setFontStyle('tx-32');
     }
 };
 HeaderSm = __decorate([

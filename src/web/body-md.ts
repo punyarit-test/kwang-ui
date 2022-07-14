@@ -7,7 +7,7 @@ const ELEMENT_NAME = 'body-md';
 export class BodyMd extends Typography {
   connectedCallback() {
     super.connectedCallback();
-    this.setFontStyle('size-16');
+    this.setFontStyle('tx-16');
   }
 }
 

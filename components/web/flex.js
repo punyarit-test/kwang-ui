@@ -17,7 +17,7 @@ const ELEMENT_NAME = 'c-flex';
 */
 let Flex = class Flex extends div_display_1.DivDisplay {
     render() {
-        return (0, lit_1.html) ` <div>c-flex component was created!!</div> `;
+        return (0, lit_1.html) ` <slot></slot> `;
     }
 };
 Flex.styles = (0, lit_1.css) ``;

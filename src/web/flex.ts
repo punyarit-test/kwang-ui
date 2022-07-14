@@ -14,7 +14,7 @@ export class Flex extends DivDisplay {
   static styles = css``;
 
   render() {
-    return html` <div>c-flex component was created!!</div> `;
+    return html` <slot></slot> `;
   }
 }
 

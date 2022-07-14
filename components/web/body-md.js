@@ -13,7 +13,7 @@ const ELEMENT_NAME = 'body-md';
 let BodyMd = class BodyMd extends typography_1.Typography {
     connectedCallback() {
         super.connectedCallback();
-        this.setFontStyle('size-16');
+        this.setFontStyle('tx-16');
     }
 };
 BodyMd = __decorate([

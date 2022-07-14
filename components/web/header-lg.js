@@ -13,7 +13,7 @@ const ELEMENT_NAME = 'header-lg';
 let HeaderLg = class HeaderLg extends typography_1.Typography {
     connectedCallback() {
         super.connectedCallback();
-        this.setFontStyle('size-48');
+        this.setFontStyle('tx-48');
     }
 };
 HeaderLg = __decorate([

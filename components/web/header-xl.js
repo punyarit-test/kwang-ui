@@ -13,7 +13,7 @@ const ELEMENT_NAME = 'header-xl';
 let HeaderXl = class HeaderXl extends typography_1.Typography {
     connectedCallback() {
         super.connectedCallback();
-        this.setFontStyle('size-60');
+        this.setFontStyle('tx-60');
     }
 };
 HeaderXl = __decorate([
