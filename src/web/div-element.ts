@@ -4,17 +4,13 @@ import {DivElementAttr} from '../types/div-element.type';
 import {BaseElement} from './base-element';
 
 const ELEMENT_NAME = 'div-element';
-/*
-  const EVENT_ONE = 'event-1'
-  interface EventOneProp {}
-*/
 
 @customElement(ELEMENT_NAME)
 export class DivElement extends BaseElement {}
 
 declare global {
   namespace CDivElement {
-    interface Ref extends CBaseElement.Ref<any,any>, DivElementAttr {}
+    interface Ref extends CBaseElement.Ref<any, any>, DivElementAttr {}
   }
   namespace JSX {
     interface IntrinsicElements {

@@ -6,13 +6,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DivElement = void 0;
+exports.Inline = void 0;
 const decorators_js_1 = require("lit/decorators.js");
 const base_element_1 = require("./base-element");
-const ELEMENT_NAME = 'div-element';
-let DivElement = class DivElement extends base_element_1.BaseElement {
+const ELEMENT_NAME = 'c-inline';
+let Inline = class Inline extends base_element_1.BaseElement {
 };
-DivElement = __decorate([
+Inline = __decorate([
     (0, decorators_js_1.customElement)(ELEMENT_NAME)
-], DivElement);
-exports.DivElement = DivElement;
+], Inline);
+exports.Inline = Inline;
