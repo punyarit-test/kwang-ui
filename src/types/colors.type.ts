@@ -240,7 +240,7 @@ export interface BlueState {
   ['bluestate-900']?: boolean;
 }
 
-export interface Colors
+export interface ColorsAttr
   extends Base,
     Gray,
     Primary,
@@ -259,6 +259,3 @@ export interface Colors
     AlarmOrange,
     WarningYellow,
     BlueState {}
-
-
-    

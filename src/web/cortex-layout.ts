@@ -34,7 +34,7 @@ export class Layout extends BaseElement {
 
 declare global {
   namespace CLayout {
-    interface Ref extends CBaseElement.Ref<string> {}
+    interface Ref extends CBaseElement.Ref<any,any> {}
     /*
       interface Event {
         [EVENT_ONE]: CustomEvent<EventOneProp>

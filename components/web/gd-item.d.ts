@@ -6,7 +6,7 @@ export declare class GdItem extends BaseElement {
 }
 declare global {
     namespace CGdItem {
-        interface Ref extends CBaseElement.Ref {
+        interface Ref extends CBaseElement.Ref<any,any> {
         }
     }
     namespace JSX {

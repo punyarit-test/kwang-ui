@@ -1,8 +1,8 @@
 import {css, html, LitElement} from 'lit';
 import {customElement} from 'lit/decorators.js';
 import {ClassAttributes, HTMLAttributes} from 'react';
-import {Colors} from '../types/colors.type';
-import {TxSizesAttr} from '../types/tx-sizes.type';
+import {ColorsAttr} from '../types/colors.type';
+import {TySizesAttr} from '../types/ty-sizes.type';
 import {IconNames} from '../types/icons.type';
 import {WeightAttr} from '../types/weights.type';
 import {BaseElement} from './base-element';
@@ -33,8 +33,8 @@ export class Icon extends BaseElement {
 
     this.style.setProperty(`--icon`, icon?.name || '');
 
-    this.className = `${attr1?.name ? 'tx-' + attr1?.name : ''}${
-      attr2?.name ? ' tx-' + attr2?.name : ''
+    this.className = `${attr1?.name ? 'ty-' + attr1?.name : ''}${
+      attr2?.name ? ' ty-' + attr2?.name : ''
     }`;
   }
 }
@@ -42,11 +42,11 @@ export class Icon extends BaseElement {
 declare global {
   namespace CIcon {
     interface Ref
-      extends CBaseElement.Ref<string>,
+      extends CBaseElement.Ref<any, any>,
         IconNames,
-        Colors,
+        ColorsAttr,
         WeightAttr,
-        TxSizesAttr {}
+        TySizesAttr {}
   }
   namespace JSX {
     interface IntrinsicElements {

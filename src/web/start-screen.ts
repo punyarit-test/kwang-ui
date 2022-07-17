@@ -34,7 +34,7 @@ export class StartScreen extends BaseElement {
 
 declare global {
   namespace CStartScreen {
-    interface Ref extends CBaseElement.Ref<string>, StartScreenAttr {}
+    interface Ref extends CBaseElement.Ref<any,any>, StartScreenAttr {}
     /*
       interface Event {
         [EVENT_ONE]: CustomEvent<EventOneProp>

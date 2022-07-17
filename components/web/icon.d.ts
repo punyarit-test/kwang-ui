@@ -1,5 +1,5 @@
-import { Colors } from '../types/colors.type';
-import { TxSizesAttr } from '../types/tx-sizes.type';
+import { ColorsAttr } from '../types/colors.type';
+import { TySizesAttr } from '../types/ty-sizes.type';
 import { IconNames } from '../types/icons.type';
 import { WeightAttr } from '../types/weights.type';
 import { BaseElement } from './base-element';
@@ -12,7 +12,7 @@ export declare class Icon extends BaseElement {
 }
 declare global {
     namespace CIcon {
-        interface Ref extends CBaseElement.Ref<string>, IconNames, Colors, WeightAttr, TxSizesAttr {
+        interface Ref extends CBaseElement.Ref<any, any>, IconNames, ColorsAttr, WeightAttr, TySizesAttr {
         }
     }
     namespace JSX {

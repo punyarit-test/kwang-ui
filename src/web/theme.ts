@@ -21,7 +21,6 @@ const ELEMENT_NAME = 'c-theme';
 @customElement(ELEMENT_NAME)
 export class Theme extends BaseElement {
   static styles = [colors, fontWeights, sizes];
-  @property({type: String}) public sx?: string;
 
   render = () => html` <slot></slot> `;
 
@@ -66,7 +65,7 @@ export class Theme extends BaseElement {
 
 declare global {
   namespace CTheme {
-    interface Ref extends CBaseElement.Ref<string>, ThemeAttr {
+    interface Ref extends CBaseElement.Ref<any,any>, ThemeAttr {
       onSetTheme?: (color: keyof ColorThemeAttr) => void;
       onSetSize?: (size: keyof SizeThemeAttr) => void;
     }

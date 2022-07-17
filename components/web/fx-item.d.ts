@@ -6,7 +6,7 @@ export declare class FxItem extends BaseElement {
 }
 declare global {
     namespace CFxItem {
-        interface Ref extends CBaseElement.Ref {
+        interface Ref extends CBaseElement.Ref<any,any> {
         }
     }
     namespace JSX {

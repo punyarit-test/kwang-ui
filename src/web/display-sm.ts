@@ -7,7 +7,7 @@ const ELEMENT_NAME = 'display-sm';
 export class DisplaySm extends Typography {
   connectedCallback() {
     super.connectedCallback();
-    this.setFontStyle('tx-96');
+    this.setFontStyle('ty-96');
   }
 }
 

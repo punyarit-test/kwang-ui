@@ -6,7 +6,7 @@ export declare class RightClick extends BaseElement {
 }
 declare global {
     namespace CRightClick {
-        interface Ref extends CBaseElement.Ref<string> {
+        interface Ref extends CBaseElement.Ref<any, any> {
         }
     }
     namespace JSX {

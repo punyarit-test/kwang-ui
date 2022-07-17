@@ -6,7 +6,7 @@ export declare class Content extends BaseElement {
 }
 declare global {
     namespace CContent {
-        interface Ref extends CBaseElement.Ref<string> {
+        interface Ref extends CBaseElement.Ref<any, any> {
         }
     }
     namespace JSX {

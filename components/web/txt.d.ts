@@ -1,7 +1,7 @@
 import { LitElement } from 'lit';
 import { ClassAttributes, HTMLAttributes } from 'react';
 import { Colors } from '../types/colors.type';
-import { TxSizes } from '../types/tx-sizes.type';
+import { TxSizes } from '../types/ty-sizes.type';
 import { WeightAttr } from '../types/weights.type';
 declare const ELEMENT_NAME = "c-txt";
 export declare class Txt extends LitElement {

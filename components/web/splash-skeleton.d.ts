@@ -6,7 +6,7 @@ export declare class SplashSkeleton extends LitElement {
 }
 declare global {
     namespace CSplashSkeleton {
-        interface Ref extends CBaseElement.Ref {
+        interface Ref extends CBaseElement.Ref<any,any> {
         }
     }
     namespace JSX {

@@ -14,7 +14,7 @@ export class DivElement extends BaseElement {}
 
 declare global {
   namespace CDivElement {
-    interface Ref extends CBaseElement.Ref<string>, DivElementAttr {}
+    interface Ref extends CBaseElement.Ref<any,any>, DivElementAttr {}
   }
   namespace JSX {
     interface IntrinsicElements {

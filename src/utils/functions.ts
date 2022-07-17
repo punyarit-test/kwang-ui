@@ -1,4 +1,56 @@
+import {CElement} from 'react';
+
+(window as any)['$cortex'] = {};
+
+// Async Event
+
+const asyncComponent = (
+  component: any,
+  timeout: any,
+  errorText: any,
+  callback: any
+) => {
+  const expire = Date.now() + timeout;
+  const asyncComponent = setInterval(() => {
+    //@ts-ignore
+    if (component.current) {
+      clearAsyncComponent(asyncComponent);
+      callback();
+    } else if (Date.now() >= expire) {
+      clearAsyncComponent(asyncComponent);
+      throw new Error(errorText);
+    }
+  }, 1000);
+};
+
+const clearAsyncComponent = (
+  asyncComponent: ReturnType<typeof setInterval>
+): void => {
+  clearInterval(asyncComponent);
+};
+
+// export
+
 export const val = <T>(value: T): string => JSON.stringify(value);
+export const ex = <T>(events: T): void => {
+  for (const key in events) {
+    (window as any)['$cortex'][key] = events[key];
+  }
+};
+
+export const sx = <SX = void | undefined>(
+  component: React.RefObject<unknown>,
+  styles: SX
+) => {
+  (<CBaseElement.Ref<any, any>>component.current).sx = styles;
+};
+
+export const cfx = <SX = void | undefined>(
+  component: React.RefObject<unknown>,
+  styles: SX
+) => {
+  (<CBaseElement.Ref<any, any>>component.current).cfx = styles;
+};
 
 export const evt = <Y>(
   component: React.RefObject<unknown>,
@@ -30,34 +82,23 @@ export const attr = (attrs: string): Record<string, boolean> => {
   return attrObj;
 };
 
-// Async Event
-
-const clearAsyncEvent = (
-  asyncComponent: ReturnType<typeof setInterval>
-): void => {
-  clearInterval(asyncComponent);
-};
-
 export const asyncEvt = <Y>(
   component: React.RefObject<unknown>,
   eventName: keyof Y,
   callback: (e: CustomEvent) => void,
   timeout = 5000
 ): void => {
-  const expire = Date.now() + timeout;
-  const asyncComponent = setInterval(() => {
-    //@ts-ignore
-    if (component.current) {
-      clearAsyncEvent(asyncComponent);
+  asyncComponent(
+    component,
+    timeout,
+    'AsyncEvent: Component does not exist.',
+    () => {
       (<HTMLElement>component.current).addEventListener(
         <keyof HTMLElementEventMap>eventName,
         <EventListener>callback
       );
-    } else if (Date.now() >= expire) {
-      clearAsyncEvent(asyncComponent);
-      throw new Error('AsyncEvent: Component does not exist.');
     }
-  }, 1000);
+  );
 };
 
 export const asyncClr = <Y>(
@@ -66,20 +107,17 @@ export const asyncClr = <Y>(
   callback: (e: CustomEvent) => void,
   timeout = 5000
 ): void => {
-  const expire = Date.now() + timeout;
-  const asyncComponent = setInterval(() => {
-    //@ts-ignore
-    if (component.current) {
-      clearAsyncEvent(asyncComponent);
+  asyncComponent(
+    component,
+    timeout,
+    'AsyncEvent: Component does not exist.',
+    () => {
       (<HTMLElement>component.current).removeEventListener(
         <keyof HTMLElementEventMap>eventName,
         <EventListener>callback
       );
-    } else if (Date.now() >= expire) {
-      clearAsyncEvent(asyncComponent);
-      throw new Error('AsyncEvent: Component does not exist.');
     }
-  }, 1000);
+  );
 };
 
 // Effects

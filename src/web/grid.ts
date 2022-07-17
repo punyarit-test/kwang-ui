@@ -10,13 +10,7 @@ const ELEMENT_NAME = 'c-grid';
 */
 
 @customElement(ELEMENT_NAME)
-export class Grid extends DivDisplay {
-  static styles = css``;
-
-  render() {
-    return html` <div>c-grid component was created!!</div> `;
-  }
-}
+export class Grid extends DivDisplay {}
 
 declare global {
   namespace CGrid {

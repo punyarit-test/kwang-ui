@@ -222,5 +222,5 @@ export interface BlueState {
     ['bluestate-800']?: boolean;
     ['bluestate-900']?: boolean;
 }
-export interface Colors extends Base, Gray, Primary, Error, Warning, Success, ModermGreen, SurgeonGreen, WellnessGreen, SafeBlue, Blueprint, VioletAlert, Purple, Pinky, RedFlag, AlarmOrange, WarningYellow, BlueState {
+export interface ColorsAttr extends Base, Gray, Primary, Error, Warning, Success, ModermGreen, SurgeonGreen, WellnessGreen, SafeBlue, Blueprint, VioletAlert, Purple, Pinky, RedFlag, AlarmOrange, WarningYellow, BlueState {
 }

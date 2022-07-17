@@ -19,7 +19,7 @@ export class MenuBar extends BaseElement {
 
 declare global {
   namespace CMenuBar {
-    interface Ref extends CBaseElement.Ref<string> {}
+    interface Ref extends CBaseElement.Ref<any,any> {}
     /*
       interface Event {
         [EVENT_ONE]: CustomEvent<EventOneProp>

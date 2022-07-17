@@ -1,4 +1,4 @@
-import { FlexAttr } from '../types/div-display.type';
+import { FlexAttr } from '../types/flex.type';
 import { DivDisplay } from './div-display';
 declare const ELEMENT_NAME = "c-flex";
 export declare class Flex extends DivDisplay {

@@ -25,7 +25,7 @@ let DivDisplay = class DivDisplay extends div_element_1.DivElement {
     getClassName() {
         let className = '';
         for (const attr of this.attributes) {
-            className = className + attr.name + ' ';
+            className = className + 'dv-' + attr.name + ' ';
         }
         return className;
     }

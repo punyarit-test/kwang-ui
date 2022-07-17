@@ -6,7 +6,7 @@ export declare class LayoutElement extends BaseElement {
 }
 declare global {
     namespace CLayoutElement {
-        interface Ref extends CBaseElement.Ref {
+        interface Ref extends CBaseElement.Ref<any,any> {
         }
     }
     namespace JSX {

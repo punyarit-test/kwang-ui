@@ -2,31 +2,31 @@ c-flex {
   display: flex;
 }
 
-c-flex.justify-center {
+c-flex.dv-justify-center {
   justify-content: center;
 }
 
-c-flex.items-center {
+c-flex.dv-items-center {
   align-items: center;
 }
 
-c-flex.column {
+c-flex.dv-column {
   flex-direction: column;
 }
 
-c-flex.wrap {
+c-flex.dv-wrap {
   flex-wrap: wrap;
 }
 
-c-flex.inline {
+c-flex.dv-inline {
   display: inline-flex;
 }
 
 /* gap */
-c-flex.row-12 {
+c-flex.dv-row-12 {
   row-gap: var(--size-12);
 }
 
-c-flex.col-12 {
+c-flex.dv-col-12 {
   column-gap: var(--size-12);
 }

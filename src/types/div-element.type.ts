@@ -1,3 +1,6 @@
+import {ColorsAttr} from './colors.type';
+import {TySizesAttr} from './ty-sizes.type';
+
 export interface BorderRadiusAttr {
   ['round-full']?: boolean;
   ['round-0']?: boolean;
@@ -1680,4 +1683,5 @@ export interface DivElementAttr
     BottomAttr,
     LeftAttr,
     WidthAttr,
-    HeightAttr {}
+    HeightAttr,
+    ColorsAttr {}

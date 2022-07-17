@@ -7,7 +7,7 @@ const ELEMENT_NAME = 'display-md';
 export class DisplayMd extends Typography {
   connectedCallback() {
     super.connectedCallback();
-    this.setFontStyle('tx-124');
+    this.setFontStyle('ty-124');
   }
 }
 

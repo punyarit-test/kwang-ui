@@ -7,7 +7,7 @@ const ELEMENT_NAME = 'body-xl';
 export class BodyXl extends Typography {
   connectedCallback() {
     super.connectedCallback();
-    this.setFontStyle('tx-20');
+    this.setFontStyle('ty-20');
   }
 }
 

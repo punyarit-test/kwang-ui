@@ -1,6 +1,6 @@
 import {css, html} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
-import {FlexAttr} from '../types/div-display.type';
+import {FlexAttr} from '../types/flex.type';
 import {BaseElement} from './base-element';
 import {DivDisplay} from './div-display';
 

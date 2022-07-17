@@ -6,7 +6,7 @@ export declare class Hover extends BaseElement {
 }
 declare global {
     namespace CHover {
-        interface Ref extends CBaseElement.Ref {
+        interface Ref extends CBaseElement.Ref<any,any> {
         }
     }
     namespace JSX {

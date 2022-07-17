@@ -6,15 +6,21 @@ import {BaseElementAttr} from '../types/base-element.type';
 const ELEMENT_NAME = 'base-element';
 
 @customElement(ELEMENT_NAME)
-export class BaseElement extends LitElement {}
+export class BaseElement extends LitElement {
+  @property({type: Object}) public sx?: CBaseElement.Ref<any, any> | string;
+  @property({type: Object}) public cfx?: CBaseElement.Ref<any, any> | string;
+  @property({type: Object}) public test?: CBaseElement.Ref<any, any> | string;
+}
 
 declare global {
   namespace CBaseElement {
-    interface Ref<T>
-      extends Omit<HTMLAttributes<Ref<T>>, 'color' | 'placeholder'>,
-        ClassAttributes<Ref<T>>,
+    interface Ref<SX, CFX>
+      extends Omit<HTMLAttributes<Ref<SX, CFX>>, 'color' | 'placeholder'>,
+        ClassAttributes<Ref<SX, CFX>>,
         BaseElementAttr {
-      sx?: Record<keyof T, string>;
+      ex?: void;
+      sx?: SX | string;
+      cfx?: CFX | string;
     }
     /*
       interface Event {

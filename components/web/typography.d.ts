@@ -1,4 +1,4 @@
-import { Colors } from '../types/colors.type';
+import { ColorsAttr } from '../types/colors.type';
 import { WeightAttr } from '../types/weights.type';
 import { BaseElement } from './base-element';
 declare const ELEMENT_NAME = "c-typography";
@@ -10,7 +10,7 @@ export declare class Typography extends BaseElement {
 }
 declare global {
     namespace CTypography {
-        interface Ref extends CBaseElement.Ref<string>, Colors, WeightAttr {
+        interface Ref extends CBaseElement.Ref<any, any>, ColorsAttr, WeightAttr {
             p?: string;
         }
     }

@@ -1,4 +1,4 @@
-@import './bg-colors.css';
+@import './dv-colors.css';
 @import './block.css';
 @import './border-radius.css';
 @import './bottom.css';
@@ -15,4 +15,4 @@
 @import './margin.css';
 @import './padding.css';
 @import './print.css';
-@import './tx-colors.css';
+@import './ty-colors.css';

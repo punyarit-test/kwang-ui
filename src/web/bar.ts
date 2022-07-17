@@ -19,7 +19,7 @@ export class Bar extends BaseElement {
 
 declare global {
   namespace CBar {
-    interface Ref extends CBaseElement.Ref<string> {}
+    interface Ref extends CBaseElement.Ref<any,any> {}
     /*
       interface Event {
         [EVENT_ONE]: CustomEvent<EventOneProp>

@@ -6,7 +6,7 @@ export declare class DivElement extends BaseElement {
 }
 declare global {
     namespace CDivElement {
-        interface Ref extends CBaseElement.Ref {
+        interface Ref extends CBaseElement.Ref<any,any> {
         }
     }
     namespace JSX {

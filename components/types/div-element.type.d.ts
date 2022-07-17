@@ -1,3 +1,4 @@
+import { ColorsAttr } from './colors.type';
 export interface BorderRadiusAttr {
     ['round-full']?: boolean;
     ['round-0']?: boolean;
@@ -1660,5 +1661,5 @@ export interface PositionAttr {
     ['static']?: boolean;
     ['sticky']?: boolean;
 }
-export interface DivElementAttr extends MarginAttr, PaddingAttr, BorderRadiusAttr, PositionAttr, TopAttr, RightAttr, BottomAttr, LeftAttr, WidthAttr, HeightAttr {
+export interface DivElementAttr extends MarginAttr, PaddingAttr, BorderRadiusAttr, PositionAttr, TopAttr, RightAttr, BottomAttr, LeftAttr, WidthAttr, HeightAttr, ColorsAttr {
 }

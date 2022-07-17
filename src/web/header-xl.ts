@@ -7,7 +7,7 @@ const ELEMENT_NAME = 'header-xl';
 export class HeaderXl extends Typography {
   connectedCallback() {
     super.connectedCallback();
-    this.setFontStyle('tx-60');
+    this.setFontStyle('ty-60');
   }
 }
 

@@ -1,6 +1,6 @@
 import {css, html} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
-import {Colors} from '../types/colors.type';
+import {ColorsAttr} from '../types/colors.type';
 import {WeightAttr} from '../types/weights.type';
 import {BaseElement} from './base-element';
 
@@ -22,15 +22,15 @@ export class Typography extends BaseElement {
 
   protected setFontStyle(fontSize: string): void {
     const [attr1, attr2] = this.attributes;
-    this.className = `${fontSize} ${attr1?.name ? 'tx-' + attr1?.name : ''}${
-      attr2?.name ? ' tx-' + attr2?.name : ''
+    this.className = `${fontSize} ${attr1?.name ? 'ty-' + attr1?.name : ''}${
+      attr2?.name ? ' ty-' + attr2?.name : ''
     }`;
   }
 }
 
 declare global {
   namespace CTypography {
-    interface Ref extends CBaseElement.Ref<string>, Colors, WeightAttr {
+    interface Ref extends CBaseElement.Ref<any,any>, ColorsAttr, WeightAttr {
       p?: string;
     }
   }

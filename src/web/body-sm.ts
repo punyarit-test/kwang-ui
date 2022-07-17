@@ -7,7 +7,7 @@ const ELEMENT_NAME = 'body-sm';
 export class BodySm extends Typography {
   connectedCallback() {
     super.connectedCallback();
-    this.setFontStyle('tx-14');
+    this.setFontStyle('ty-14');
   }
 }
 

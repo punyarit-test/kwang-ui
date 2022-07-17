@@ -7,7 +7,7 @@ const ELEMENT_NAME = 'display-xs';
 export class DisplayXs extends Typography {
   connectedCallback() {
     super.connectedCallback();
-    this.setFontStyle('tx-72');
+    this.setFontStyle('ty-72');
   }
 }
 
