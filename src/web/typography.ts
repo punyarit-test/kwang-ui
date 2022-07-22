@@ -22,8 +22,8 @@ export class Typography extends BaseElement {
 
   protected setFontStyle(fontSize: string): void {
     const [attr1, attr2] = this.attributes;
-    this.className = `${fontSize} ${attr1?.name ? 'ty-' + attr1?.name : ''}${
-      attr2?.name ? ' ty-' + attr2?.name : ''
+    this.className = `${fontSize} ${attr1?.name ? 'tx-' + attr1?.name : ''}${
+      attr2?.name ? ' tx-' + attr2?.name : ''
     }`;
   }
 }

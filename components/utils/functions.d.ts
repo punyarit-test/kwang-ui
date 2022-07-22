@@ -1,7 +1,7 @@
 export declare const val: <T>(value: T) => string;
 export declare const ex: <T>(events: T) => void;
 export declare const sx: <SX = void | undefined>(component: React.RefObject<unknown>, styles: SX) => void;
-export declare const cfx: <SX = void | undefined>(component: React.RefObject<unknown>, styles: SX) => void;
+export declare const cx: <SX = void | undefined>(component: React.RefObject<unknown>, styles: SX) => void;
 export declare const evt: <Y>(component: React.RefObject<unknown>, eventName: keyof Y, callback: (e: CustomEvent) => void) => void;
 export declare const clr: <Y>(component: React.RefObject<unknown>, eventName: keyof Y, callback: (e: CustomEvent) => void) => void;
 export declare const attr: (attrs: string) => Record<string, boolean>;

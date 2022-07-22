@@ -1,5 +1,5 @@
 import { ColorsAttr } from '../types/colors.type';
-import { TySizesAttr } from '../types/ty-sizes.type';
+import { TySizesAttr } from '../types/tx-sizes.type';
 import { IconNames } from '../types/icons.type';
 import { WeightAttr } from '../types/weights.type';
 import { BaseElement } from './base-element';

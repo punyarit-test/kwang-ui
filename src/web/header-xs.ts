@@ -7,7 +7,7 @@ const ELEMENT_NAME = 'header-xs';
 export class HeaderXs extends Typography {
   connectedCallback() {
     super.connectedCallback();
-    this.setFontStyle('ty-24');
+    this.setFontStyle('tx-24');
   }
 }
 

@@ -21,7 +21,7 @@ let Icon = class Icon extends base_element_1.BaseElement {
     setIconAttr() {
         const [icon, attr1, attr2] = this.attributes;
         this.style.setProperty(`--icon`, icon?.name || '');
-        this.className = `${attr1?.name ? 'ty-' + attr1?.name : ''}${attr2?.name ? ' ty-' + attr2?.name : ''}`;
+        this.className = `${attr1?.name ? '' + attr1?.name : ''}${attr2?.name ? ' tx-' + attr2?.name : ''}`;
     }
 };
 Icon.styles = (0, lit_1.css) `

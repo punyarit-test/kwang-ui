@@ -7,7 +7,7 @@ const ELEMENT_NAME = 'body-lg';
 export class BodyLg extends Typography {
   connectedCallback() {
     super.connectedCallback();
-    this.setFontStyle('ty-18');
+    this.setFontStyle('tx-18');
   }
 }
 

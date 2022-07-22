@@ -7,7 +7,7 @@ const ELEMENT_NAME = 'header-sm';
 export class HeaderSm extends Typography {
   connectedCallback() {
     super.connectedCallback();
-    this.setFontStyle('ty-32');
+    this.setFontStyle('tx-32');
   }
 }
 

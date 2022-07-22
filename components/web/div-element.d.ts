@@ -1,6 +1,5 @@
 import { DivElementAttr } from '../types/div-element.type';
 import { BaseElement } from './base-element';
-declare const ELEMENT_NAME = "div-element";
 export declare class DivElement extends BaseElement {
 }
 declare global {
@@ -8,10 +7,4 @@ declare global {
         interface Ref extends CBaseElement.Ref<any, any>, DivElementAttr {
         }
     }
-    namespace JSX {
-        interface IntrinsicElements {
-            [ELEMENT_NAME]: CDivElement.Ref;
-        }
-    }
 }
-export {};

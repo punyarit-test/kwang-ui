@@ -1,5 +1,4 @@
 import { DivElement } from './div-element';
-declare const ELEMENT_NAME = "div-display";
 export declare class DivDisplay extends DivElement {
     connectedCallback(): void;
     private setClassName;
@@ -11,10 +10,4 @@ declare global {
         interface Ref extends CDivElement.Ref {
         }
     }
-    namespace JSX {
-        interface IntrinsicElements {
-            [ELEMENT_NAME]: CDivDisplay.Ref;
-        }
-    }
 }
-export {};

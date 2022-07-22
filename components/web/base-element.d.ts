@@ -1,10 +1,14 @@
 import { LitElement } from 'lit';
 import { ClassAttributes, HTMLAttributes } from 'react';
 import { BaseElementAttr } from '../types/base-element.type';
-export declare class BaseElement extends LitElement {
-    sx?: CBaseElement.Ref<any, any> | string;
-    cfx?: CBaseElement.Ref<any, any> | string;
-    test?: CBaseElement.Ref<any, any> | string;
+export declare abstract class BaseElement extends LitElement {
+    sx?: any;
+    cfx?: Record<string, string>;
+    protected defaultStyles: Record<string, any>;
+    protected defaultConfig: Record<string, any>;
+    private updateAttributes;
+    willUpdate(changedProperties: Map<PropertyKey, unknown>): void;
+    updated(e: any): void;
 }
 declare global {
     namespace CBaseElement {

@@ -1,4 +1,7 @@
 import { BaseElement } from './base-element';
+import { SizesAttr } from '../types/sizes.types';
+import { ColorsAttr } from '../types/colors.type';
+import { BorderRadiusAttr } from '../types/div-element.type';
 declare const ELEMENT_NAME = "c-example";
 declare const EVENT_ONE = "event-1";
 interface EventOneProp {
@@ -6,9 +9,12 @@ interface EventOneProp {
 }
 export declare class Example extends BaseElement {
     p: string;
+    private static defaultStyles;
+    private static defaultConfig;
+    static styles: import("lit").CSSResult;
     render(): import("lit-html").TemplateResult<1>;
     connectedCallback(): void;
-    updated(): void;
+    willUpdate(changedProperties: any): void;
     onEvent1(): void;
     onEvent2(): void;
     onEvent3(): void;
@@ -23,9 +29,10 @@ declare global {
             onEvent4?: (e: any) => any;
         }
         interface SX {
-            height?: string;
-            backgroundColor?: string;
-            borderRadius?: string;
+            height?: keyof SizesAttr;
+            backgroundColor?: keyof ColorsAttr;
+            borderRadius?: keyof BorderRadiusAttr;
+            width?: keyof SizesAttr;
         }
         interface CFX {
             button1?: boolean;

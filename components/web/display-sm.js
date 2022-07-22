@@ -13,7 +13,7 @@ const ELEMENT_NAME = 'display-sm';
 let DisplaySm = class DisplaySm extends typography_1.Typography {
     connectedCallback() {
         super.connectedCallback();
-        this.setFontStyle('ty-96');
+        this.setFontStyle('tx-96');
     }
 };
 DisplaySm = __decorate([

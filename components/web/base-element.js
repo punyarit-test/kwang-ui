@@ -12,9 +12,33 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.BaseElement = void 0;
 const lit_1 = require("lit");
 const decorators_js_1 = require("lit/decorators.js");
-const ELEMENT_NAME = 'base-element';
-let BaseElement = class BaseElement extends lit_1.LitElement {
-};
+class BaseElement extends lit_1.LitElement {
+    constructor() {
+        super(...arguments);
+        this.defaultStyles = {};
+        this.defaultConfig = {};
+    }
+    updateAttributes(styles, updatedAttributes) {
+        for (const key in styles) {
+            updatedAttributes[key] = styles[key];
+        }
+        return { ...updatedAttributes };
+    }
+    willUpdate(changedProperties) {
+        if (changedProperties.has('sx')) {
+            this.defaultStyles = this.updateAttributes(this.sx, this.defaultStyles);
+        }
+        if (changedProperties.has('cfx')) {
+            this.defaultConfig = this.updateAttributes(this.cfx, this.defaultConfig);
+        }
+        super.willUpdate(changedProperties);
+    }
+    updated(e) {
+        // สิ่งนี้คือสิ่งที่ต้องการ super.update(e) จะทำให้เมื่อมีการ update state มันจะไม่เกิด infinity loop
+        // super.update(changedProperties);
+        super.update(e);
+    }
+}
 __decorate([
     (0, decorators_js_1.property)({ type: Object }),
     __metadata("design:type", Object)
@@ -24,10 +48,11 @@ __decorate([
     __metadata("design:type", Object)
 ], BaseElement.prototype, "cfx", void 0);
 __decorate([
-    (0, decorators_js_1.property)({ type: Object }),
+    (0, decorators_js_1.state)(),
     __metadata("design:type", Object)
-], BaseElement.prototype, "test", void 0);
-BaseElement = __decorate([
-    (0, decorators_js_1.customElement)(ELEMENT_NAME)
-], BaseElement);
+], BaseElement.prototype, "defaultStyles", void 0);
+__decorate([
+    (0, decorators_js_1.state)(),
+    __metadata("design:type", Object)
+], BaseElement.prototype, "defaultConfig", void 0);
 exports.BaseElement = BaseElement;

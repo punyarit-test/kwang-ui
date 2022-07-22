@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.shake = exports.asyncClr = exports.asyncEvt = exports.attr = exports.clr = exports.evt = exports.cfx = exports.sx = exports.ex = exports.val = void 0;
+exports.shake = exports.asyncClr = exports.asyncEvt = exports.attr = exports.clr = exports.evt = exports.cx = exports.sx = exports.ex = exports.val = void 0;
 window['$cortex'] = {};
 // Async Event
 const asyncComponent = (component, timeout, errorText, callback) => {
@@ -24,19 +24,23 @@ const clearAsyncComponent = (asyncComponent) => {
 const val = (value) => JSON.stringify(value);
 exports.val = val;
 const ex = (events) => {
+    let a = {};
     for (const key in events) {
         window['$cortex'][key] = events[key];
+        // @ts-ignore
+        a[key] = events[key].name;
     }
+    // เด้วจะเอา a ไปทำต่อในส่วนของการเรียกใช้ฟังชั่นแบบนี้ใน web component
 };
 exports.ex = ex;
 const sx = (component, styles) => {
     component.current.sx = styles;
 };
 exports.sx = sx;
-const cfx = (component, styles) => {
+const cx = (component, styles) => {
     component.current.cfx = styles;
 };
-exports.cfx = cfx;
+exports.cx = cx;
 const evt = (component, eventName, callback) => {
     component.current.addEventListener(eventName, callback);
 };

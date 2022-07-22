@@ -1,8 +1,12 @@
 import {css, html, LitElement} from 'lit';
-import {customElement, property} from 'lit/decorators.js';
+import {customElement, property, state} from 'lit/decorators.js';
 import {ClassAttributes, HTMLAttributes} from 'react';
 import {BaseElement} from './base-element';
 import {attr} from '../utils/functions';
+import {SizeThemeAttr} from '../types/theme.type';
+import {SizesAttr} from '../types/sizes.types';
+import {ColorsAttr} from '../types/colors.type';
+import {BorderRadiusAttr} from '../types/div-element.type';
 
 const ELEMENT_NAME = 'c-example';
 const EVENT_ONE = 'event-1';
@@ -13,26 +17,77 @@ interface EventOneProp {
 @customElement(ELEMENT_NAME)
 export class Example extends BaseElement {
   @property({type: String}) public p = '';
+  private static defaultStyles: CExample.SX = {
+    backgroundColor: 'primary-100',
+    borderRadius: 'round-12',
+    height: 'size-10',
+    width: 'size-124',
+  };
+
+  private static defaultConfig: CExample.CFX = {
+    button1: true,
+    button2: true,
+    button3: true,
+    button4: true,
+  };
+
+  static styles = css`
+    .test {
+      background-color: var(--background-color);
+      border-radius: var(--border-radius);
+      height: var(--height);
+      width: var(--width);
+    }
+  `;
 
   render() {
     return html`
+      <style>
+        :host {
+          --background-color: var(--${this.defaultStyles?.backgroundColor});
+          --border-radius: var(--${this.defaultStyles?.borderRadius});
+          --height: var(--${this.defaultStyles?.height});
+          --width: var(--${this.defaultStyles?.width});
+        }
+      </style>
+      <div class="test"></div>
       <div style="font-family:var(--regular)">
-        <button @click="${this.onEvent1}">event1</button>
-        <button @click="${this.onEvent2}">event2</button>
-        <button @click="${this.onEvent3}">event3</button>
-        <button @click="${this.onEvent4}">event4</button>
+        <button
+          .hidden="${!this.defaultConfig.button1}"
+          @click="${this.onEvent1}"
+        >
+          event1
+        </button>
+        <button
+          .hidden="${!this.defaultConfig.button2}"
+          @click="${this.onEvent2}"
+        >
+          event2
+        </button>
+        <button
+          .hidden="${!this.defaultConfig.button3}"
+          @click="${this.onEvent3}"
+        >
+          event3
+        </button>
+        <button
+          .hidden="${!this.defaultConfig.button4}"
+          @click="${this.onEvent4}"
+        >
+          event4
+        </button>
       </div>
     `;
   }
 
   connectedCallback() {
     super.connectedCallback();
+    this.defaultStyles = Example.defaultStyles;
+    this.defaultConfig = Example.defaultConfig;
   }
 
-  updated() {
-    console.log('example |this.test123123|', this.test);
-    console.log('example |this.sx|', this.sx);
-    console.log('example |this.sx|', this.cfx);
+  willUpdate(changedProperties: any) {
+    super.willUpdate(changedProperties);
   }
 
   onEvent1() {
@@ -48,7 +103,9 @@ export class Example extends BaseElement {
   }
 
   onEvent4() {
-    (window as any)['$cortex']['onEvent4'](40);
+    if ((window as any)['$cortex']['onEvent4']) {
+      (window as any)['$cortex']['onEvent4'](40);
+    }
   }
 }
 
@@ -62,9 +119,10 @@ declare global {
     }
 
     interface SX {
-      height?: string;
-      backgroundColor?: string;
-      borderRadius?: string;
+      height?: keyof SizesAttr;
+      backgroundColor?: keyof ColorsAttr;
+      borderRadius?: keyof BorderRadiusAttr;
+      width?: keyof SizesAttr;
     }
 
     interface CFX {

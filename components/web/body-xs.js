@@ -13,7 +13,7 @@ const ELEMENT_NAME = 'body-xs';
 let BodyXs = class BodyXs extends typography_1.Typography {
     connectedCallback() {
         super.connectedCallback();
-        this.setFontStyle('ty-12');
+        this.setFontStyle('tx-12');
     }
 };
 BodyXs = __decorate([

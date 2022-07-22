@@ -13,7 +13,7 @@ const ELEMENT_NAME = 'body-sm';
 let BodySm = class BodySm extends typography_1.Typography {
     connectedCallback() {
         super.connectedCallback();
-        this.setFontStyle('ty-14');
+        this.setFontStyle('tx-14');
     }
 };
 BodySm = __decorate([

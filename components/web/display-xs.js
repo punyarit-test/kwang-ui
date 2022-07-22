@@ -13,7 +13,7 @@ const ELEMENT_NAME = 'display-xs';
 let DisplayXs = class DisplayXs extends typography_1.Typography {
     connectedCallback() {
         super.connectedCallback();
-        this.setFontStyle('ty-72');
+        this.setFontStyle('tx-72');
     }
 };
 DisplayXs = __decorate([

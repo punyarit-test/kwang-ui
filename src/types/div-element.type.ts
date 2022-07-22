@@ -1,5 +1,4 @@
 import {ColorsAttr} from './colors.type';
-import {TySizesAttr} from './ty-sizes.type';
 
 export interface BorderRadiusAttr {
   ['round-full']?: boolean;

@@ -1,5 +1,3 @@
-import {CElement} from 'react';
-
 (window as any)['$cortex'] = {};
 
 // Async Event
@@ -33,9 +31,14 @@ const clearAsyncComponent = (
 
 export const val = <T>(value: T): string => JSON.stringify(value);
 export const ex = <T>(events: T): void => {
+  let a: any = {};
   for (const key in events) {
     (window as any)['$cortex'][key] = events[key];
+    // @ts-ignore
+    a[key] = events[key].name;
   }
+
+  // เด้วจะเอา a ไปทำต่อในส่วนของการเรียกใช้ฟังชั่นแบบนี้ใน web component
 };
 
 export const sx = <SX = void | undefined>(
@@ -45,7 +48,7 @@ export const sx = <SX = void | undefined>(
   (<CBaseElement.Ref<any, any>>component.current).sx = styles;
 };
 
-export const cfx = <SX = void | undefined>(
+export const cx = <SX = void | undefined>(
   component: React.RefObject<unknown>,
   styles: SX
 ) => {
