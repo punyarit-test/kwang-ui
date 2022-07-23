@@ -17,6 +17,11 @@ class BaseElement extends lit_1.LitElement {
         super(...arguments);
         this.defaultStyles = {};
         this.defaultConfig = {};
+        // updated(changedProperties: Map<PropertyKey, unknown>) {
+        // สิ่งนี้คือสิ่งที่ต้องการ super.update(e) จะทำให้เมื่อมีการ update state มันจะไม่เกิด infinity loop
+        // super.update(changedProperties);
+        // super.update(changedProperties);
+        // }
     }
     updateAttributes(styles, updatedAttributes) {
         for (const key in styles) {
@@ -32,11 +37,6 @@ class BaseElement extends lit_1.LitElement {
             this.defaultConfig = this.updateAttributes(this.cfx, this.defaultConfig);
         }
         super.willUpdate(changedProperties);
-    }
-    updated(e) {
-        // สิ่งนี้คือสิ่งที่ต้องการ super.update(e) จะทำให้เมื่อมีการ update state มันจะไม่เกิด infinity loop
-        // super.update(changedProperties);
-        super.update(e);
     }
 }
 __decorate([

@@ -1,3 +1,6 @@
+// wating for fix like below
+// export type BaseColorAttr = Partial<Record<'white' | 'black', Boolean>>;
+
 export interface IconNames {
   ['add-patient']?: boolean;
   ['assessment']?: boolean;

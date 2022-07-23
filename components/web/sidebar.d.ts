@@ -1,4 +1,4 @@
-import { SidebarPosition } from '../types/sidebar.type';
+import { SidebarPositionAttr } from '../types/sidebar.type';
 import { Bar } from './bar';
 declare const ELEMENT_NAME = "c-sidebar";
 export declare class Sidebar extends Bar {
@@ -7,7 +7,7 @@ export declare class Sidebar extends Bar {
 }
 declare global {
     namespace CSidebar {
-        interface Ref extends CBar.Ref, SidebarPosition {
+        interface Ref extends CBar.Ref, SidebarPositionAttr {
         }
     }
     namespace JSX {

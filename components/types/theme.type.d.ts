@@ -1,12 +1,5 @@
-export interface SizeThemeAttr {
-    normal?: boolean;
-    big?: boolean;
-    large?: boolean;
-}
-export interface ColorThemeAttr {
-    light?: boolean;
-    dark?: boolean;
-}
+export declare type SizeThemeAttr = Partial<Record<'normal' | 'big' | 'large', Boolean>>;
+export declare type ColorThemeAttr = Partial<Record<'light' | 'dark', Boolean>>;
 export interface ThemeAttr extends SizeThemeAttr, ColorThemeAttr {
 }
 export declare enum ThemeIndex {

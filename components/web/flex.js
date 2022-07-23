@@ -10,10 +10,6 @@ exports.Flex = void 0;
 const decorators_js_1 = require("lit/decorators.js");
 const div_display_1 = require("./div-display");
 const ELEMENT_NAME = 'c-flex';
-/*
-  const EVENT_ONE = 'event-1'
-  interface EventOneProp {}
-*/
 let Flex = class Flex extends div_display_1.DivDisplay {
 };
 Flex = __decorate([

@@ -28,11 +28,11 @@ export abstract class BaseElement extends LitElement {
     super.willUpdate(changedProperties);
   }
 
-  updated(e: any) {
-    // สิ่งนี้คือสิ่งที่ต้องการ super.update(e) จะทำให้เมื่อมีการ update state มันจะไม่เกิด infinity loop
-    // super.update(changedProperties);
-    super.update(e);
-  }
+  // updated(changedProperties: Map<PropertyKey, unknown>) {
+  // สิ่งนี้คือสิ่งที่ต้องการ super.update(e) จะทำให้เมื่อมีการ update state มันจะไม่เกิด infinity loop
+  // super.update(changedProperties);
+  // super.update(changedProperties);
+  // }
 }
 
 declare global {

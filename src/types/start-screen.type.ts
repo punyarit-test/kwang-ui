@@ -1,3 +1,1 @@
-export interface StartScreenAttr {
-  fade?: boolean;
-}
+export type StartScreenAttr = Partial<Record<'fade', Boolean>>;

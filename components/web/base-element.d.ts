@@ -8,7 +8,6 @@ export declare abstract class BaseElement extends LitElement {
     protected defaultConfig: Record<string, any>;
     private updateAttributes;
     willUpdate(changedProperties: Map<PropertyKey, unknown>): void;
-    updated(e: any): void;
 }
 declare global {
     namespace CBaseElement {

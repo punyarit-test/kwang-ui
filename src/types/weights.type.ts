@@ -1,10 +1,13 @@
-export interface WeightAttr {
-  thin?: boolean;
-  extralight?: boolean;
-  light?: boolean;
-  regular?: boolean;
-  medium?: boolean;
-  semibold?: boolean;
-  bold?: boolean;
-  extrabold?: boolean;
-}
+export type WeightAttr = Partial<
+  Record<
+    | 'thin'
+    | 'extralight'
+    | 'light'
+    | 'regular'
+    | 'medium'
+    | 'semibold'
+    | 'bold'
+    | 'extrabold',
+    Boolean
+  >
+>;

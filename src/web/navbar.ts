@@ -1,6 +1,6 @@
 import {css, html} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
-import {NavbarPosition} from '../types/navbar.type';
+import {NavbarPositionAttr} from '../types/navbar.type';
 import {Bar} from './bar';
 
 const ELEMENT_NAME = 'c-navbar';
@@ -26,7 +26,7 @@ export class Navbar extends Bar {
 
 declare global {
   namespace CNavbar {
-    interface Ref extends NavbarPosition, CBar.Ref {}
+    interface Ref extends NavbarPositionAttr, CBar.Ref {}
     /*
       interface Event {
         [EVENT_ONE]: CustomEvent<EventOneProp>

@@ -1,4 +1,4 @@
-import { NavbarPosition } from '../types/navbar.type';
+import { NavbarPositionAttr } from '../types/navbar.type';
 import { Bar } from './bar';
 declare const ELEMENT_NAME = "c-navbar";
 export declare class Navbar extends Bar {
@@ -7,7 +7,7 @@ export declare class Navbar extends Bar {
 }
 declare global {
     namespace CNavbar {
-        interface Ref extends NavbarPosition, CBar.Ref {
+        interface Ref extends NavbarPositionAttr, CBar.Ref {
         }
     }
     namespace JSX {

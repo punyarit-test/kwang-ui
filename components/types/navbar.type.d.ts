@@ -1,4 +1,1 @@
-export interface NavbarPosition {
-    top?: boolean;
-    bottom?: boolean;
-}
+export declare type NavbarPositionAttr = Partial<Record<'top' | 'bottom', Boolean>>;

@@ -1,7 +1,7 @@
 import {css, html, LitElement} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
 import {ClassAttributes, HTMLAttributes} from 'react';
-import {SidebarPosition} from '../types/sidebar.type';
+import {SidebarPositionAttr} from '../types/sidebar.type';
 import {Bar} from './bar';
 import {BaseElement} from './base-element';
 
@@ -28,7 +28,7 @@ export class Sidebar extends Bar {
 
 declare global {
   namespace CSidebar {
-    interface Ref extends CBar.Ref, SidebarPosition {}
+    interface Ref extends CBar.Ref, SidebarPositionAttr {}
     /*
       interface Event {
         [EVENT_ONE]: CustomEvent<EventOneProp>
