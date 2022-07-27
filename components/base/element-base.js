@@ -17,10 +17,6 @@ class ElementBase extends lit_1.LitElement {
         super(...arguments);
         this.defaultStyles = {};
         this.defaultConfig = {};
-        // updated(changedProperties: Map<PropertyKey, unknown>) {
-        // สิ่งนี้คือสิ่งที่ต้องการ super.update(e) จะทำให้เมื่อมีการ update state มันจะไม่เกิด infinity loop
-        // super.update(changedProperties);
-        // }
     }
     updateAttributes(styles, updatedAttributes) {
         for (const key in styles) {

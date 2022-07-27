@@ -2,10 +2,6 @@ import {css, html, LitElement} from 'lit';
 import {customElement} from 'lit/decorators.js';
 
 const ELEMENT_NAME = 'c-button';
-/*
-  const EVENT_ONE = 'event-1'
-  interface EventOneProp {}
-*/
 
 @customElement(ELEMENT_NAME)
 export class Button extends LitElement {

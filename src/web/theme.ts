@@ -1,6 +1,5 @@
-import {html, LitElement} from 'lit';
-import {customElement, property} from 'lit/decorators.js';
-import {ClassAttributes, HTMLAttributes} from 'react';
+import {html} from 'lit';
+import {customElement} from 'lit/decorators.js';
 import {colors} from '../theme/colors.theme';
 import {sizes} from '../theme/sizes.theme';
 import {fontWeights} from '../theme/font-weights.theme';
@@ -13,10 +12,6 @@ import {
 import {ElementBase} from '../base/element-base';
 
 const ELEMENT_NAME = 'c-theme';
-/*
-  const EVENT_ONE = 'event-1'
-  interface EventOneProp {}
-*/
 
 @customElement(ELEMENT_NAME)
 export class Theme extends ElementBase {
@@ -65,16 +60,10 @@ export class Theme extends ElementBase {
 
 declare global {
   namespace CTheme {
-    interface Ref extends CBaseElement.Ref<any,any>, ThemeAttr {
+    interface Ref extends CBaseElement.Ref<any, any>, ThemeAttr {
       onSetTheme?: (color: keyof ColorThemeAttr) => void;
       onSetSize?: (size: keyof SizeThemeAttr) => void;
     }
-    /*
-      interface Event {
-        [EVENT_ONE]: CustomEvent<EventOneProp>
-      }
-      interface EventOne extends CustomEvent<EventOneProp> {}
-    */
   }
   namespace JSX {
     interface IntrinsicElements {

@@ -12,8 +12,9 @@ const decorators_js_1 = require("lit/decorators.js");
 const element_base_1 = require("../base/element-base");
 const ELEMENT_NAME = 'c-icon';
 let Icon = class Icon extends element_base_1.ElementBase {
-    render() {
-        return (0, lit_1.html) ` <span class="icon">&#xe800;</span> `;
+    constructor() {
+        super(...arguments);
+        this.render = () => (0, lit_1.html) ` <span class="icon">&#xe800;</span> `;
     }
     firstUpdated() {
         this.setIconAttr();
@@ -25,9 +26,6 @@ let Icon = class Icon extends element_base_1.ElementBase {
     }
 };
 Icon.styles = (0, lit_1.css) `
-    :host {
-      display: inline-flex;
-    }
     .icon {
       font-family: var(--icon);
     }

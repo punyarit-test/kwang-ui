@@ -15,10 +15,6 @@ const font_weights_theme_1 = require("../theme/font-weights.theme");
 const theme_type_1 = require("../types/theme.type");
 const element_base_1 = require("../base/element-base");
 const ELEMENT_NAME = 'c-theme';
-/*
-  const EVENT_ONE = 'event-1'
-  interface EventOneProp {}
-*/
 let Theme = class Theme extends element_base_1.ElementBase {
     constructor() {
         super(...arguments);

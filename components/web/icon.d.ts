@@ -6,7 +6,7 @@ import { ElementBase } from '../base/element-base';
 declare const ELEMENT_NAME = "c-icon";
 export declare class Icon extends ElementBase {
     static styles: import("lit").CSSResult;
-    render(): import("lit-html").TemplateResult<1>;
+    render: () => import("lit-html").TemplateResult<1>;
     firstUpdated(): void;
     private setIconAttr;
 }

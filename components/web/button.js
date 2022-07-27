@@ -10,10 +10,6 @@ exports.Button = void 0;
 const lit_1 = require("lit");
 const decorators_js_1 = require("lit/decorators.js");
 const ELEMENT_NAME = 'c-button';
-/*
-  const EVENT_ONE = 'event-1'
-  interface EventOneProp {}
-*/
 let Button = class Button extends lit_1.LitElement {
     render() {
         return (0, lit_1.html) ` <div>c-button component was created!!</div> `;

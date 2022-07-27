@@ -1,6 +1,5 @@
-import {css, html, LitElement} from 'lit';
+import {css, html} from 'lit';
 import {customElement} from 'lit/decorators.js';
-import {ClassAttributes, HTMLAttributes} from 'react';
 import {ColorsAttr} from '../types/colors.type';
 import {TySizesAttr} from '../types/tx-sizes.type';
 import {IconNames} from '../types/icons.type';
@@ -12,17 +11,12 @@ const ELEMENT_NAME = 'c-icon';
 @customElement(ELEMENT_NAME)
 export class Icon extends ElementBase {
   static styles = css`
-    :host {
-      display: inline-flex;
-    }
     .icon {
       font-family: var(--icon);
     }
   `;
 
-  render() {
-    return html` <span class="icon">&#xe800;</span> `;
-  }
+  render = () => html` <span class="icon">&#xe800;</span> `;
 
   firstUpdated() {
     this.setIconAttr();
