@@ -1,5 +1,5 @@
 import {css, html, LitElement} from 'lit';
-import {customElement, property} from 'lit/decorators.js';
+import {customElement} from 'lit/decorators.js';
 
 const ELEMENT_NAME = 'c-button';
 /*
@@ -18,7 +18,7 @@ export class Button extends LitElement {
 
 declare global {
   namespace CButton {
-    interface Ref extends CBaseElement.Ref<any,any> {}
+    interface Ref extends CBaseElement.Ref<any, any> {}
     /*
       interface Event {
         [EVENT_ONE]: CustomEvent<EventOneProp>

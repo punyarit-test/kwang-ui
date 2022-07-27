@@ -9,13 +9,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.RightClick = void 0;
 const lit_1 = require("lit");
 const decorators_js_1 = require("lit/decorators.js");
-const base_element_1 = require("./base-element");
+const element_base_1 = require("../base/element-base");
+// Use command pattern
 const ELEMENT_NAME = 'right-click';
 /*
   const EVENT_ONE = 'event-1'
   interface EventOneProp {}
 */
-let RightClick = class RightClick extends base_element_1.BaseElement {
+let RightClick = class RightClick extends element_base_1.ElementBase {
     render() {
         return (0, lit_1.html) ` <div>c-right-click component was created!!</div> `;
     }

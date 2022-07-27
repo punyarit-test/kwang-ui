@@ -1,6 +1,6 @@
-import { BaseElement } from './base-element';
+import { ElementBase } from '../base/element-base';
 declare const ELEMENT_NAME = "profile-bar";
-export declare class ProfileBar extends BaseElement {
+export declare class ProfileBar extends ElementBase {
     static styles: import("lit").CSSResult;
     render(): import("lit-html").TemplateResult<1>;
 }

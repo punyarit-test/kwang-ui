@@ -1,6 +1,6 @@
 import {css, html} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
-import {BaseElement} from './base-element';
+import {ElementBase} from '../base/element-base';
 
 const ELEMENT_NAME = 'c-effect';
 /*
@@ -9,7 +9,7 @@ const ELEMENT_NAME = 'c-effect';
 */
 
 @customElement(ELEMENT_NAME)
-export class Effect extends BaseElement {
+export class Effect extends ElementBase {
   static styles = css``;
 
   render() {

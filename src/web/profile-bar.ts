@@ -1,6 +1,6 @@
 import {css, html} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
-import {BaseElement} from './base-element';
+import {ElementBase} from '../base/element-base';
 
 const ELEMENT_NAME = 'profile-bar';
 /*
@@ -9,7 +9,7 @@ const ELEMENT_NAME = 'profile-bar';
 */
 
 @customElement(ELEMENT_NAME)
-export class ProfileBar extends BaseElement {
+export class ProfileBar extends ElementBase {
   static styles = css``;
 
   render() {

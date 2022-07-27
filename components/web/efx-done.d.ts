@@ -1,8 +1,8 @@
-import { BaseElement } from './base-element';
+import { ElementBase } from '../base/element-base';
 declare enum element {
     name = "efx-done"
 }
-export declare class EfxDone extends BaseElement {
+export declare class EfxDone extends ElementBase {
     static styles: import("lit").CSSResult;
     disabled?: boolean;
     render(): import("lit-html").TemplateResult<1>;

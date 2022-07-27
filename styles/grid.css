@@ -1,3 +1,9 @@
 c-grid {
   display: grid;
 }
+
+c-grid.inline {
+  display: inline-grid;
+}
+
+

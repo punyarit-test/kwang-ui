@@ -1,7 +1,7 @@
 import { ColorThemeAttr, SizeThemeAttr, ThemeAttr } from '../types/theme.type';
-import { BaseElement } from './base-element';
+import { ElementBase } from '../base/element-base';
 declare const ELEMENT_NAME = "c-theme";
-export declare class Theme extends BaseElement {
+export declare class Theme extends ElementBase {
     static styles: import("lit").CSSResult[];
     render: () => import("lit-html").TemplateResult<1>;
     connectedCallback(): void;

@@ -1,4 +1,4 @@
-import '../web/bar';
+import '../base/bar-base';
 import '../web/body-lg';
 import '../web/body-md';
 import '../web/body-sm';

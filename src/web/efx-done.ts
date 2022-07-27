@@ -1,13 +1,13 @@
 import {css, html} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
-import {BaseElement} from './base-element';
+import {ElementBase} from '../base/element-base';
 
 enum element {
   name = 'efx-done',
 }
 
 @customElement(element.name)
-export class EfxDone extends BaseElement {
+export class EfxDone extends ElementBase {
   static styles = css`
     .bubbly-efx {
       display: inline-block;

@@ -1,7 +1,7 @@
 import { FlagAttr } from '../types/flag.type';
-import { BaseElement } from './base-element';
+import { ElementBase } from '../base/element-base';
 declare const ELEMENT_NAME = "c-flag";
-export declare class Flag extends BaseElement {
+export declare class Flag extends ElementBase {
     render(): import("lit-html").TemplateResult<1>;
     connectedCallback(): void;
     private removeFlag;

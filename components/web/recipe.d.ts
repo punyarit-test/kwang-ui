@@ -1,6 +1,6 @@
-import { BaseElement } from './base-element';
+import { ElementBase } from '../base/element-base';
 declare const ELEMENT_NAME = "c-recipe";
-export declare class Recipe extends BaseElement {
+export declare class Recipe extends ElementBase {
     static styles: import("lit").CSSResult;
     render(): import("lit-html").TemplateResult<1>;
 }

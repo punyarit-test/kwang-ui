@@ -1,6 +1,6 @@
-import { BaseElement } from './base-element';
+import { ElementBase } from '../base/element-base';
 declare const ELEMENT_NAME = "c-skeleton";
-export declare class Skeleton extends BaseElement {
+export declare class Skeleton extends ElementBase {
     static styles: import("lit").CSSResult;
     render(): import("lit-html").TemplateResult<1>;
 }

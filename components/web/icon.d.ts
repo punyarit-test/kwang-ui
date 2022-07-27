@@ -2,9 +2,9 @@ import { ColorsAttr } from '../types/colors.type';
 import { TySizesAttr } from '../types/tx-sizes.type';
 import { IconNames } from '../types/icons.type';
 import { WeightAttr } from '../types/weights.type';
-import { BaseElement } from './base-element';
+import { ElementBase } from '../base/element-base';
 declare const ELEMENT_NAME = "c-icon";
-export declare class Icon extends BaseElement {
+export declare class Icon extends ElementBase {
     static styles: import("lit").CSSResult;
     render(): import("lit-html").TemplateResult<1>;
     firstUpdated(): void;

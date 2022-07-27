@@ -1,7 +1,7 @@
 import { NavbarPositionAttr } from '../types/navbar.type';
-import { Bar } from './bar';
+import { BarBase } from '../base/bar-base';
 declare const ELEMENT_NAME = "c-navbar";
-export declare class Navbar extends Bar {
+export declare class Navbar extends BarBase {
     static styles: import("lit").CSSResult;
     render(): import("lit-html").TemplateResult<1>;
 }

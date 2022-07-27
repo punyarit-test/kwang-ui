@@ -1,13 +1,13 @@
-import { BaseElement } from './base-element';
+import { ElementBase } from '../base/element-base';
 import { SizesAttr } from '../types/sizes.types';
 import { ColorsAttr } from '../types/colors.type';
-import { BorderRadiusAttr } from '../types/div-element.type';
+import { BorderRadiusAttr } from '../types/div-base.type';
 declare const ELEMENT_NAME = "c-example";
 declare const EVENT_ONE = "event-1";
 interface EventOneProp {
     test: string;
 }
-export declare class Example extends BaseElement {
+export declare class Example extends ElementBase {
     p: string;
     private static defaultStyles;
     private static defaultConfig;

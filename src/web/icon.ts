@@ -5,12 +5,12 @@ import {ColorsAttr} from '../types/colors.type';
 import {TySizesAttr} from '../types/tx-sizes.type';
 import {IconNames} from '../types/icons.type';
 import {WeightAttr} from '../types/weights.type';
-import {BaseElement} from './base-element';
+import {ElementBase} from '../base/element-base';
 
 const ELEMENT_NAME = 'c-icon';
 
 @customElement(ELEMENT_NAME)
-export class Icon extends BaseElement {
+export class Icon extends ElementBase {
   static styles = css`
     :host {
       display: inline-flex;

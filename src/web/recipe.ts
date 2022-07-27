@@ -1,6 +1,6 @@
 import {css, html} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
-import {BaseElement} from './base-element';
+import {ElementBase} from '../base/element-base';
 
 const ELEMENT_NAME = 'c-recipe';
 /*
@@ -9,7 +9,7 @@ const ELEMENT_NAME = 'c-recipe';
 */
 
 @customElement(ELEMENT_NAME)
-export class Recipe extends BaseElement {
+export class Recipe extends ElementBase {
   static styles = css``;
 
   render() {

@@ -1,17 +1,18 @@
-import { css, html } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
-import { BaseElement } from './base-element';
-  
-const ELEMENT_NAME = 'right-click'
+import {css, html} from 'lit';
+import {customElement, property} from 'lit/decorators.js';
+import {ElementBase} from '../base/element-base';
+
+// Use command pattern
+const ELEMENT_NAME = 'right-click';
 /*
   const EVENT_ONE = 'event-1'
   interface EventOneProp {}
 */
 
 @customElement(ELEMENT_NAME)
-export class RightClick extends BaseElement {
+export class RightClick extends ElementBase {
   static styles = css``;
-  
+
   render() {
     return html` <div>c-right-click component was created!!</div> `;
   }
@@ -19,7 +20,7 @@ export class RightClick extends BaseElement {
 
 declare global {
   namespace CRightClick {
-    interface Ref extends CBaseElement.Ref<any,any> {}
+    interface Ref extends CBaseElement.Ref<any, any> {}
     /*
       interface Event {
         [EVENT_ONE]: CustomEvent<EventOneProp>

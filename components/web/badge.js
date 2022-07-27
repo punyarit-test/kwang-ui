@@ -9,13 +9,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Badge = void 0;
 const lit_1 = require("lit");
 const decorators_js_1 = require("lit/decorators.js");
-const base_element_1 = require("./base-element");
+const element_base_1 = require("../base/element-base");
 const ELEMENT_NAME = 'c-badge';
 /*
   const EVENT_ONE = 'event-1'
   interface EventOneProp {}
 */
-let Badge = class Badge extends base_element_1.BaseElement {
+let Badge = class Badge extends element_base_1.ElementBase {
     render() {
         return (0, lit_1.html) ` <div>c-badge component was created!!</div> `;
     }

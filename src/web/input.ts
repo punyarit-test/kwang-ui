@@ -1,7 +1,7 @@
 import {css, html, LitElement} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
 import {ClassAttributes, HTMLAttributes} from 'react';
-import {BaseElement} from './base-element';
+import {ElementBase} from '../base/element-base';
 
 const ELEMENT_NAME = 'c-input';
 /*
@@ -10,7 +10,7 @@ const ELEMENT_NAME = 'c-input';
 */
 
 @customElement(ELEMENT_NAME)
-export class Input extends BaseElement {
+export class Input extends ElementBase {
   static styles = css``;
 
   render() {

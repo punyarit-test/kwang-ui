@@ -1,7 +1,7 @@
 import {css, html} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
 import {FlagAttr} from '../types/flag.type';
-import {BaseElement} from './base-element';
+import {ElementBase} from '../base/element-base';
 
 const ELEMENT_NAME = 'c-flag';
 /*
@@ -10,7 +10,7 @@ const ELEMENT_NAME = 'c-flag';
 */
 
 @customElement(ELEMENT_NAME)
-export class Flag extends BaseElement {
+export class Flag extends ElementBase {
   render() {
     return html` <slot></slot> `;
   }

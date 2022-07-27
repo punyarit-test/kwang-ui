@@ -13,13 +13,13 @@ const colors_theme_1 = require("../theme/colors.theme");
 const sizes_theme_1 = require("../theme/sizes.theme");
 const font_weights_theme_1 = require("../theme/font-weights.theme");
 const theme_type_1 = require("../types/theme.type");
-const base_element_1 = require("./base-element");
+const element_base_1 = require("../base/element-base");
 const ELEMENT_NAME = 'c-theme';
 /*
   const EVENT_ONE = 'event-1'
   interface EventOneProp {}
 */
-let Theme = class Theme extends base_element_1.BaseElement {
+let Theme = class Theme extends element_base_1.ElementBase {
     constructor() {
         super(...arguments);
         this.render = () => (0, lit_1.html) ` <slot></slot> `;

@@ -1,7 +1,7 @@
 import {css, html} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
 import {NavbarPositionAttr} from '../types/navbar.type';
-import {Bar} from './bar';
+import {BarBase} from '../base/bar-base';
 
 const ELEMENT_NAME = 'c-navbar';
 /*
@@ -10,7 +10,7 @@ const ELEMENT_NAME = 'c-navbar';
 */
 
 @customElement(ELEMENT_NAME)
-export class Navbar extends Bar {
+export class Navbar extends BarBase {
   static styles = css``;
 
   render() {

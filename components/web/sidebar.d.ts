@@ -1,7 +1,7 @@
 import { SidebarPositionAttr } from '../types/sidebar.type';
-import { Bar } from './bar';
+import { BarBase } from '../base/bar-base';
 declare const ELEMENT_NAME = "c-sidebar";
-export declare class Sidebar extends Bar {
+export declare class Sidebar extends BarBase {
     static styles: import("lit").CSSResult;
     render(): import("lit-html").TemplateResult<1>;
 }

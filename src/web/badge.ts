@@ -1,6 +1,6 @@
 import {css, html} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
-import {BaseElement} from './base-element';
+import {ElementBase} from '../base/element-base';
 
 const ELEMENT_NAME = 'c-badge';
 /*
@@ -9,7 +9,7 @@ const ELEMENT_NAME = 'c-badge';
 */
 
 @customElement(ELEMENT_NAME)
-export class Badge extends BaseElement {
+export class Badge extends ElementBase {
   static styles = css``;
 
   render() {

@@ -1,21 +1,25 @@
 import {SIZES} from './sizes.types';
 
+export const FLEX_ALIGNS = [
+  'start',
+  'center',
+  'end',
+  'stretch',
+  'around',
+  'between',
+  'evenly',
+] as const;
+
 export type FlexLayoutAttr = Partial<
   Record<'column' | 'row' | 'inline', Boolean>
 >;
 
 export type JustifyAttr = Partial<
-  Record<
-    'justify-start' | 'justify-center' | 'justify-end' | 'justify-stretch',
-    Boolean
-  >
+  Record<`justify-${typeof FLEX_ALIGNS[number]}`, boolean>
 >;
 
 export type ItemsAttr = Partial<
-  Record<
-    'items-start' | 'items-center' | 'items-end' | 'items-stretch',
-    Boolean
-  >
+  Record<`items-${typeof FLEX_ALIGNS[number]}`, boolean>
 >;
 
 export type RowGapAttr = Partial<
@@ -31,7 +35,15 @@ export type FlexGrowAttr = Partial<
 >;
 
 export type FlexWrapAttr = Partial<
-  Record<'wrap' | 'items-center' | 'wrap-reverse' | 'nowrap', Boolean>
+  Record<'wrap' | 'wrap-reverse' | 'nowrap', Boolean>
+>;
+
+export type FlexShrinkAttr = Partial<
+  Record<`shrink-${typeof SIZES[number]}`, boolean>
+>;
+
+export type FlexBasisAttr = Partial<
+  Record<`basis-${typeof SIZES[number]}`, boolean>
 >;
 
 export interface FlexAttr
@@ -42,4 +54,6 @@ export interface FlexAttr
     ColGapAttr,
     RowGapAttr,
     FlexGrowAttr,
-    FlexWrapAttr {}
+    FlexWrapAttr,
+    FlexShrinkAttr,
+    FlexBasisAttr {}

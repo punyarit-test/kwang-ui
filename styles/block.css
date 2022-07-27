@@ -1,3 +1,11 @@
 c-block {
   display: block;
 }
+
+c-block.inline {
+  display: inline !important;
+}
+
+c-block.inline-block {
+  display: inline-block !important;
+}

@@ -9,13 +9,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ProfileBar = void 0;
 const lit_1 = require("lit");
 const decorators_js_1 = require("lit/decorators.js");
-const base_element_1 = require("./base-element");
+const element_base_1 = require("../base/element-base");
 const ELEMENT_NAME = 'profile-bar';
 /*
   const EVENT_ONE = 'event-1'
   interface EventOneProp {}
 */
-let ProfileBar = class ProfileBar extends base_element_1.BaseElement {
+let ProfileBar = class ProfileBar extends element_base_1.ElementBase {
     render() {
         return (0, lit_1.html) ` <div>c-profile-bar component was created!!</div> `;
     }

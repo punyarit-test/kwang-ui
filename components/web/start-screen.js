@@ -9,13 +9,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.StartScreen = void 0;
 const lit_1 = require("lit");
 const decorators_js_1 = require("lit/decorators.js");
-const base_element_1 = require("./base-element");
+const element_base_1 = require("../base/element-base");
 const ELEMENT_NAME = 'start-screen';
 /*
   const EVENT_ONE = 'event-1'
   interface EventOneProp {}
 */
-let StartScreen = class StartScreen extends base_element_1.BaseElement {
+let StartScreen = class StartScreen extends element_base_1.ElementBase {
     render() {
         return (0, lit_1.html) `
       <div class="start-screen-wrap">

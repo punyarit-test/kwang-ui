@@ -1,7 +1,7 @@
 import {css, html} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
 import {FeatureAttr} from '../types/feature.type';
-import {BaseElement} from './base-element';
+import {ElementBase} from '../base/element-base';
 
 const ELEMENT_NAME = 'c-feature';
 /*
@@ -10,7 +10,7 @@ const ELEMENT_NAME = 'c-feature';
 */
 
 @customElement(ELEMENT_NAME)
-export class Feature extends BaseElement {
+export class Feature extends ElementBase {
   render() {
     return html` <slot></slot> `;
   }

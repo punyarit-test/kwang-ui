@@ -1,7 +1,7 @@
 import {css, html, LitElement} from 'lit';
 import {customElement} from 'lit/decorators.js';
 import {StartScreenAttr} from '../types/start-screen.type';
-import {BaseElement} from './base-element';
+import {ElementBase} from '../base/element-base';
 
 const ELEMENT_NAME = 'start-screen';
 /*
@@ -10,7 +10,7 @@ const ELEMENT_NAME = 'start-screen';
 */
 
 @customElement(ELEMENT_NAME)
-export class StartScreen extends BaseElement {
+export class StartScreen extends ElementBase {
   static styles = css`
     .start-screen-wrap {
       height: 100%;

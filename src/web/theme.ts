@@ -10,7 +10,7 @@ import {
   ThemeAttr,
   ThemeIndex,
 } from '../types/theme.type';
-import {BaseElement} from './base-element';
+import {ElementBase} from '../base/element-base';
 
 const ELEMENT_NAME = 'c-theme';
 /*
@@ -19,7 +19,7 @@ const ELEMENT_NAME = 'c-theme';
 */
 
 @customElement(ELEMENT_NAME)
-export class Theme extends BaseElement {
+export class Theme extends ElementBase {
   static styles = [colors, fontWeights, sizes];
 
   render = () => html` <slot></slot> `;

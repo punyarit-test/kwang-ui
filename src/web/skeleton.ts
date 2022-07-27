@@ -1,6 +1,6 @@
 import {css, html} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
-import {BaseElement} from './base-element';
+import {ElementBase} from '../base/element-base';
 
 const ELEMENT_NAME = 'c-skeleton';
 /*
@@ -9,7 +9,7 @@ const ELEMENT_NAME = 'c-skeleton';
 */
 
 @customElement(ELEMENT_NAME)
-export class Skeleton extends BaseElement {
+export class Skeleton extends ElementBase {
   static styles = css``;
 
   render() {

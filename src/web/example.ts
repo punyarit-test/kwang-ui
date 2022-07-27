@@ -1,12 +1,12 @@
 import {css, html, LitElement} from 'lit';
 import {customElement, property, state} from 'lit/decorators.js';
 import {ClassAttributes, HTMLAttributes} from 'react';
-import {BaseElement} from './base-element';
+import {ElementBase} from '../base/element-base';
 import {attr} from '../utils/functions';
 import {SizeThemeAttr} from '../types/theme.type';
 import {SizesAttr} from '../types/sizes.types';
 import {ColorsAttr} from '../types/colors.type';
-import {BorderRadiusAttr} from '../types/div-element.type';
+import {BorderRadiusAttr} from '../types/div-base.type';
 
 const ELEMENT_NAME = 'c-example';
 const EVENT_ONE = 'event-1';
@@ -15,7 +15,7 @@ interface EventOneProp {
 }
 
 @customElement(ELEMENT_NAME)
-export class Example extends BaseElement {
+export class Example extends ElementBase {
   @property({type: String}) public p = '';
   private static defaultStyles: CExample.SX = {
     backgroundColor: 'primary-100',

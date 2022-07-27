@@ -19,7 +19,7 @@ c-flex.dv-wrap {
 }
 
 c-flex.dv-inline {
-  display: inline-flex;
+  display: inline-flex !important;
 }
 
 /* gap */

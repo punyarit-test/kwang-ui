@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-require("../web/bar");
+require("../base/bar-base");
 require("../web/body-lg");
 require("../web/body-md");
 require("../web/body-sm");
