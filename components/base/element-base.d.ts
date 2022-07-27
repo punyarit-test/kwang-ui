@@ -6,11 +6,12 @@ export declare abstract class ElementBase extends LitElement {
     cfx?: Record<string, string>;
     protected defaultStyles: Record<string, any>;
     protected defaultConfig: Record<string, any>;
-    private updateAttributes;
     willUpdate(changedProperties: Map<PropertyKey, unknown>): void;
+    protected checkAttributesLength(expectedLength: number): void;
+    private updateAttributes;
 }
 declare global {
-    namespace CBaseElement {
+    namespace CElementBase {
         interface Ref<SX, CFX> extends Omit<HTMLAttributes<Ref<SX, CFX>>, 'color' | 'placeholder'>, ClassAttributes<Ref<SX, CFX>>, ElementBaseAttr {
             ex?: void;
             sx?: SX | string;

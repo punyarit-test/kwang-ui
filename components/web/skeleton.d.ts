@@ -6,7 +6,7 @@ export declare class Skeleton extends ElementBase {
 }
 declare global {
     namespace CSkeleton {
-        interface Ref extends CBaseElement.Ref<any, any> {
+        interface Ref extends CElementBase.Ref<any, any> {
         }
     }
     namespace JSX {

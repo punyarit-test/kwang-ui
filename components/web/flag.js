@@ -11,10 +11,6 @@ const lit_1 = require("lit");
 const decorators_js_1 = require("lit/decorators.js");
 const element_base_1 = require("../base/element-base");
 const ELEMENT_NAME = 'c-flag';
-/*
-  const EVENT_ONE = 'event-1'
-  interface EventOneProp {}
-*/
 let Flag = class Flag extends element_base_1.ElementBase {
     render() {
         return (0, lit_1.html) ` <slot></slot> `;

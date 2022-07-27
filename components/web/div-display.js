@@ -23,7 +23,7 @@ class DivDisplay extends div_base_1.DivBase {
     getClassName() {
         let className = '';
         for (const attr of this.attributes) {
-            className = className + 'dv-' + attr.name + ' ';
+            className = className + attr.name + ' ';
         }
         return className;
     }

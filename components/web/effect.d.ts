@@ -6,7 +6,7 @@ export declare class Effect extends ElementBase {
 }
 declare global {
     namespace CEffect {
-        interface Ref extends CBaseElement.Ref<any, any> {
+        interface Ref extends CElementBase.Ref<any, any> {
         }
     }
     namespace JSX {

@@ -19,7 +19,7 @@ export class Effect extends ElementBase {
 
 declare global {
   namespace CEffect {
-    interface Ref extends CBaseElement.Ref<any, any> {}
+    interface Ref extends CElementBase.Ref<any, any> {}
     /*
       interface Event {
         [EVENT_ONE]: CustomEvent<EventOneProp>

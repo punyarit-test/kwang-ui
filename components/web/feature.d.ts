@@ -7,7 +7,7 @@ export declare class Feature extends ElementBase {
 }
 declare global {
     namespace CFeature {
-        interface Ref extends CBaseElement.Ref<any, any>, FeatureAttr {
+        interface Ref extends CElementBase.Ref<any, any>, FeatureAttr {
         }
     }
     namespace JSX {

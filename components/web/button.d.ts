@@ -6,7 +6,7 @@ export declare class Button extends LitElement {
 }
 declare global {
     namespace CButton {
-        interface Ref extends CBaseElement.Ref<any, any> {
+        interface Ref extends CElementBase.Ref<any, any> {
         }
     }
     namespace JSX {

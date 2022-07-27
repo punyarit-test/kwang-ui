@@ -136,7 +136,7 @@ declare global {
       [EVENT_ONE]: CustomEvent<EventOneProp>;
     }
 
-    interface Ref extends CBaseElement.Ref<SX, CFX> {
+    interface Ref extends CElementBase.Ref<SX, CFX> {
       onTest?: () => void;
       p?: string;
       onTest1?: string;

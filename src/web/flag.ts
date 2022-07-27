@@ -4,10 +4,6 @@ import {FlagAttr} from '../types/flag.type';
 import {ElementBase} from '../base/element-base';
 
 const ELEMENT_NAME = 'c-flag';
-/*
-  const EVENT_ONE = 'event-1'
-  interface EventOneProp {}
-*/
 
 @customElement(ELEMENT_NAME)
 export class Flag extends ElementBase {
@@ -34,13 +30,7 @@ export class Flag extends ElementBase {
 
 declare global {
   namespace CFlag {
-    interface Ref extends CBaseElement.Ref<any,any>, FlagAttr {}
-    /*
-      interface Event {
-        [EVENT_ONE]: CustomEvent<EventOneProp>
-      }
-      interface EventOne extends CustomEvent<EventOneProp> {}
-    */
+    interface Ref extends CElementBase.Ref<any, any>, FlagAttr {}
   }
   namespace JSX {
     interface IntrinsicElements {

@@ -6,7 +6,7 @@ export declare class RightClick extends ElementBase {
 }
 declare global {
     namespace CRightClick {
-        interface Ref extends CBaseElement.Ref<any, any> {
+        interface Ref extends CElementBase.Ref<any, any> {
         }
     }
     namespace JSX {

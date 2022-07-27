@@ -16,10 +16,8 @@ declare const BODY_SM_NAME = "body-sm";
 declare const BODY_MD_NAME = "body-md";
 declare const BODY_LG_NAME = "body-lg";
 declare abstract class Typography extends ElementBase {
-    static styles: import("lit").CSSResult;
-    p?: string;
-    render: () => import("lit-html").TemplateResult<1>;
     protected setFontStyle(fontSize: keyof TySizesAttr): void;
+    createRenderRoot(): this;
 }
 export declare class DisplayMd extends Typography {
     connectedCallback(): void;
@@ -62,7 +60,7 @@ export declare class BodyXs extends Typography {
 }
 declare global {
     namespace CTypography {
-        interface Ref extends CBaseElement.Ref<any, any>, ColorsAttr, WeightAttr {
+        interface Ref extends CElementBase.Ref<any, any>, ColorsAttr, WeightAttr {
             p?: string;
         }
     }

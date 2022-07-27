@@ -6,7 +6,7 @@ export declare class Badge extends ElementBase {
 }
 declare global {
     namespace CBadge {
-        interface Ref extends CBaseElement.Ref<any, any> {
+        interface Ref extends CElementBase.Ref<any, any> {
         }
     }
     namespace JSX {

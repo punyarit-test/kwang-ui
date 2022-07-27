@@ -13,7 +13,7 @@ export declare class Theme extends ElementBase {
 }
 declare global {
     namespace CTheme {
-        interface Ref extends CBaseElement.Ref<any, any>, ThemeAttr {
+        interface Ref extends CElementBase.Ref<any, any>, ThemeAttr {
             onSetTheme?: (color: keyof ColorThemeAttr) => void;
             onSetSize?: (size: keyof SizeThemeAttr) => void;
         }

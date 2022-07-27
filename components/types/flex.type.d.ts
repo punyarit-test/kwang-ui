@@ -1,6 +1,6 @@
 import { SIZES } from './sizes.types';
 export declare const FLEX_ALIGNS: readonly ["start", "center", "end", "stretch", "around", "between", "evenly"];
-export declare type FlexLayoutAttr = Partial<Record<'column' | 'row' | 'inline', Boolean>>;
+export declare type FlexLayoutAttr = Partial<Record<'column' | 'row' | 'inline-flex', Boolean>>;
 export declare type JustifyAttr = Partial<Record<`justify-${typeof FLEX_ALIGNS[number]}`, boolean>>;
 export declare type ItemsAttr = Partial<Record<`items-${typeof FLEX_ALIGNS[number]}`, boolean>>;
 export declare type RowGapAttr = Partial<Record<`row-${typeof SIZES[number]}`, boolean>>;

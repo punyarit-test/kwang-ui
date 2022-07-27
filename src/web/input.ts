@@ -20,7 +20,7 @@ export class Input extends ElementBase {
 
 declare global {
   namespace CInput {
-    interface Ref extends CBaseElement.Ref<any,any> {}
+    interface Ref extends CElementBase.Ref<any,any> {}
     /*
       interface Event {
         [EVENT_ONE]: CustomEvent<EventOneProp>

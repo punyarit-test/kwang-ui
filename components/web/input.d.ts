@@ -6,7 +6,7 @@ export declare class Input extends ElementBase {
 }
 declare global {
     namespace CInput {
-        interface Ref extends CBaseElement.Ref<any, any> {
+        interface Ref extends CElementBase.Ref<any, any> {
         }
     }
     namespace JSX {

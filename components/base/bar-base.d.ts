@@ -6,7 +6,7 @@ export declare class BarBase extends ElementBase {
 }
 declare global {
     namespace CBar {
-        interface Ref extends CBaseElement.Ref<any, any> {
+        interface Ref extends CElementBase.Ref<any, any> {
         }
     }
     namespace JSX {

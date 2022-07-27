@@ -1,2 +1,1 @@
-export type GridAttr = Partial<Record<'inline', boolean>>;
-
+export type GridAttr = Partial<Record<'inline-grid', boolean>>;

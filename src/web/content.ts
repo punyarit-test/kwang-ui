@@ -19,7 +19,7 @@ export class Content extends ElementBase {
 
 declare global {
   namespace CContent {
-    interface Ref extends CBaseElement.Ref<any,any> {}
+    interface Ref extends CElementBase.Ref<any,any> {}
     /*
       interface Event {
         [EVENT_ONE]: CustomEvent<EventOneProp>

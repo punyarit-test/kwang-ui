@@ -1,5 +1,7 @@
 import {ColorsAttr} from './colors.type';
+import {ActiveColorAttr, HoverColorAttr} from './pseudo-classes.type';
 import {SIZES} from './sizes.types';
+import {TxColorAttr} from './tx-colors.type';
 
 export type BorderRadiusAttr = Partial<
   Record<`round-${typeof SIZES[number]}`, boolean>
@@ -44,4 +46,7 @@ export interface ElementBaseAttr
     LeftAttr,
     WidthAttr,
     HeightAttr,
-    ColorsAttr {}
+    ColorsAttr,
+    TxColorAttr,
+    HoverColorAttr,
+    ActiveColorAttr {}

@@ -1,0 +1,15 @@
+display-sm,
+display-md,
+display-xs,
+header-xs,
+header-xl,
+header-sm,
+header-md,
+header-lg,
+body-xs,
+body-xl,
+body-sm,
+body-md,
+body-lg {
+  display: inline-block;
+}

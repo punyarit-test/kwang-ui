@@ -18,12 +18,6 @@ class ElementBase extends lit_1.LitElement {
         this.defaultStyles = {};
         this.defaultConfig = {};
     }
-    updateAttributes(styles, updatedAttributes) {
-        for (const key in styles) {
-            updatedAttributes[key] = styles[key];
-        }
-        return { ...updatedAttributes };
-    }
     willUpdate(changedProperties) {
         if (changedProperties.has('sx')) {
             this.defaultStyles = this.updateAttributes(this.sx, this.defaultStyles);
@@ -32,6 +26,17 @@ class ElementBase extends lit_1.LitElement {
             this.defaultConfig = this.updateAttributes(this.cfx, this.defaultConfig);
         }
         super.willUpdate(changedProperties);
+    }
+    checkAttributesLength(expectedLength) {
+        if (this.attributes.length > expectedLength) {
+            throw new Error(`${this.tagName.toLowerCase()}: Expected ${expectedLength} attribute${expectedLength > 1 ? 's' : ''}, but got ${this.attributes.length}.`);
+        }
+    }
+    updateAttributes(styles, updatedAttributes) {
+        for (const key in styles) {
+            updatedAttributes[key] = styles[key];
+        }
+        return { ...updatedAttributes };
     }
 }
 __decorate([

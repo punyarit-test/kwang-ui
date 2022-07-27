@@ -45,14 +45,14 @@ export const sx = <SX = void | undefined>(
   component: React.RefObject<unknown>,
   styles: SX
 ) => {
-  (<CBaseElement.Ref<any, any>>component.current).sx = styles;
+  (<CElementBase.Ref<any, any>>component.current).sx = styles;
 };
 
 export const cx = <SX = void | undefined>(
   component: React.RefObject<unknown>,
   styles: SX
 ) => {
-  (<CBaseElement.Ref<any, any>>component.current).cfx = styles;
+  (<CElementBase.Ref<any, any>>component.current).cfx = styles;
 };
 
 export const evt = <Y>(

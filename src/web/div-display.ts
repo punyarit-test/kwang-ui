@@ -3,6 +3,7 @@ import {BlockAttr} from '../types/block.type';
 import {FlexAttr} from '../types/flex.type';
 import {GridAttr} from '../types/grid.type';
 import {DivBase} from '../base/div-base';
+import {attr} from '../utils/functions';
 
 const BLOCK_NAME = 'c-block';
 const FLEX_NAME = 'c-flex';
@@ -20,7 +21,7 @@ abstract class DivDisplay extends DivBase {
   private getClassName(): string {
     let className = '';
     for (const attr of this.attributes) {
-      className = className + 'dv-' + attr.name + ' ';
+      className = className + attr.name + ' ';
     }
     return className;
   }

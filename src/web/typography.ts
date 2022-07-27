@@ -20,19 +20,15 @@ const BODY_MD_NAME = 'body-md';
 const BODY_LG_NAME = 'body-lg';
 
 abstract class Typography extends ElementBase {
-  static styles = css`
-    :host {
-      display: inline-block;
-    }
-  `;
-  @property({type: String}) public p?: string;
-  render = () => html`<slot></slot>${this.p}`;
-
   protected setFontStyle(fontSize: keyof TySizesAttr): void {
     const [attr1, attr2] = this.attributes;
     this.className = `${fontSize} ${attr1?.name ? 'tx-' + attr1?.name : ''}${
       attr2?.name ? ' tx-' + attr2?.name : ''
     }`;
+  }
+
+  createRenderRoot() {
+    return this;
   }
 }
 
@@ -141,7 +137,7 @@ export class BodyXs extends Typography {
 
 declare global {
   namespace CTypography {
-    interface Ref extends CBaseElement.Ref<any, any>, ColorsAttr, WeightAttr {
+    interface Ref extends CElementBase.Ref<any, any>, ColorsAttr, WeightAttr {
       p?: string;
     }
   }

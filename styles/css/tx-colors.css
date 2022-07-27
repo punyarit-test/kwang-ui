@@ -1,11 +1,11 @@
 /* Base */
 
 .tx-white {
-  color: var(--white);
+  color: var(--white) !important;
 }
 
 .tx-black {
-  color: var(--black);
+  color: var(--black) !important;
 }
 
 /* Gray */

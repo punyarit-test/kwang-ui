@@ -16,6 +16,9 @@ let Icon = class Icon extends element_base_1.ElementBase {
         super(...arguments);
         this.render = () => (0, lit_1.html) ` <span class="icon">&#xe800;</span> `;
     }
+    connectedCallback() {
+        super.connectedCallback();
+    }
     firstUpdated() {
         this.setIconAttr();
     }

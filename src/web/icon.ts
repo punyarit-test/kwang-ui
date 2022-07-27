@@ -18,15 +18,17 @@ export class Icon extends ElementBase {
 
   render = () => html` <span class="icon">&#xe800;</span> `;
 
+  connectedCallback() {
+    super.connectedCallback();
+  }
+
   firstUpdated() {
     this.setIconAttr();
   }
 
   private setIconAttr(): void {
     const [icon, attr1, attr2] = this.attributes;
-
     this.style.setProperty(`--icon`, icon?.name || '');
-
     this.className = `${attr1?.name ? '' + attr1?.name : ''}${
       attr2?.name ? ' tx-' + attr2?.name : ''
     }`;
@@ -36,7 +38,7 @@ export class Icon extends ElementBase {
 declare global {
   namespace CIcon {
     interface Ref
-      extends CBaseElement.Ref<any, any>,
+      extends CElementBase.Ref<any, any>,
         IconNames,
         ColorsAttr,
         WeightAttr,

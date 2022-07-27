@@ -11,7 +11,7 @@ export const FLEX_ALIGNS = [
 ] as const;
 
 export type FlexLayoutAttr = Partial<
-  Record<'column' | 'row' | 'inline', Boolean>
+  Record<'column' | 'row' | 'inline-flex', Boolean>
 >;
 
 export type JustifyAttr = Partial<

@@ -13,7 +13,7 @@ export declare class EfxDone extends ElementBase {
 }
 declare global {
     namespace CEfxDone {
-        interface Ref extends CBaseElement.Ref<any, any> {
+        interface Ref extends CElementBase.Ref<any, any> {
             disabled?: boolean;
         }
     }

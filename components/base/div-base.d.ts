@@ -4,7 +4,7 @@ export declare abstract class DivBase extends ElementBase {
 }
 declare global {
     namespace CDivElement {
-        interface Ref extends CBaseElement.Ref<any, any>, ElementBaseAttr {
+        interface Ref extends CElementBase.Ref<any, any>, ElementBaseAttr {
         }
     }
 }
