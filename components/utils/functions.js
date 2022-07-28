@@ -51,7 +51,7 @@ const clr = (component, eventName, callback) => {
 exports.clr = clr;
 const attr = (attrs) => {
     let attrObj = {};
-    for (const key of attrs) {
+    for (const key of attrs.flat()) {
         attrObj[key] = true;
     }
     return attrObj;
