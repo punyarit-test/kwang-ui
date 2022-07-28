@@ -8,7 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.BodyXs = exports.BodySm = exports.BodyMd = exports.BodyLg = exports.BodyXl = exports.HeaderXs = exports.HeaderSm = exports.HeaderMd = exports.HeaderLg = exports.HeaderXl = exports.DisplayXs = exports.DisplaySm = exports.DisplayMd = void 0;
 const decorators_js_1 = require("lit/decorators.js");
-const element_base_1 = require("../base/element-base");
+const div_base_1 = require("../base/div-base");
 const DISPLAY_SM_NAME = 'display-sm';
 const DISPLAY_MD_NAME = 'display-md';
 const DISPLAY_XS_NAME = 'display-xs';
@@ -22,10 +22,9 @@ const BODY_XL_NAME = 'body-xl';
 const BODY_SM_NAME = 'body-sm';
 const BODY_MD_NAME = 'body-md';
 const BODY_LG_NAME = 'body-lg';
-class Typography extends element_base_1.ElementBase {
+class Typography extends div_base_1.DivBase {
     setFontStyle(fontSize) {
-        const [attr1, attr2] = this.attributes;
-        this.className = `${fontSize} ${attr1?.name ? 'tx-' + attr1?.name : ''}${attr2?.name ? ' tx-' + attr2?.name : ''}`;
+        this.className = `${fontSize} ${this.concatenatedClassName()}`;
     }
     createRenderRoot() {
         return this;

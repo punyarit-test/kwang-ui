@@ -1,8 +1,8 @@
 import { ColorAttr } from '../types/colors.type';
 import { TxSizeAttr } from '../types/tx-sizes.type';
 import { WeightAttr } from '../types/weights.type';
-import { ElementBase } from '../base/element-base';
 import { ClassAttributes, HTMLAttributes } from 'react';
+import { DivBase } from '../base/div-base';
 declare const DISPLAY_SM_NAME = "display-sm";
 declare const DISPLAY_MD_NAME = "display-md";
 declare const DISPLAY_XS_NAME = "display-xs";
@@ -16,7 +16,7 @@ declare const BODY_XL_NAME = "body-xl";
 declare const BODY_SM_NAME = "body-sm";
 declare const BODY_MD_NAME = "body-md";
 declare const BODY_LG_NAME = "body-lg";
-declare abstract class Typography extends ElementBase {
+declare abstract class Typography extends DivBase {
     protected setFontStyle(fontSize: keyof TxSizeAttr): void;
     createRenderRoot(): this;
 }
@@ -61,7 +61,7 @@ export declare class BodyXs extends Typography {
 }
 declare global {
     namespace CTypography {
-        interface Ref extends CElementBase.Ref<any, any>, ColorAttr, WeightAttr {
+        interface Ref extends CDivElement.Ref, ColorAttr, WeightAttr {
             p?: string;
         }
         type Key = keyof Omit<CTypography.Ref, keyof HTMLAttributes<CTypography.Ref> | keyof ClassAttributes<CTypography.Ref>>;

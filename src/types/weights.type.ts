@@ -1,13 +1,13 @@
 export type WeightAttr = Partial<
   Record<
-    | 'thin'
-    | 'extralight'
-    | 'light'
-    | 'regular'
-    | 'medium'
-    | 'semibold'
-    | 'bold'
-    | 'extrabold',
+    | 'tx-thin'
+    | 'tx-extralight'
+    | 'tx-light'
+    | 'tx-regular'
+    | 'tx-medium'
+    | 'tx-semibold'
+    | 'tx-bold'
+    | 'tx-extrabold',
     Boolean
   >
 >;
@@ -19,5 +19,3 @@ declare global {
     type Weight = WeightKey;
   }
 }
-
-export {};

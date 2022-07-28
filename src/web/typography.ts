@@ -1,9 +1,9 @@
-import {customElement, property} from 'lit/decorators.js';
+import {customElement} from 'lit/decorators.js';
 import {ColorAttr} from '../types/colors.type';
 import {TxSizeAttr} from '../types/tx-sizes.type';
 import {WeightAttr} from '../types/weights.type';
-import {ElementBase} from '../base/element-base';
 import {ClassAttributes, HTMLAttributes} from 'react';
+import {DivBase} from '../base/div-base';
 
 const DISPLAY_SM_NAME = 'display-sm';
 const DISPLAY_MD_NAME = 'display-md';
@@ -19,12 +19,9 @@ const BODY_SM_NAME = 'body-sm';
 const BODY_MD_NAME = 'body-md';
 const BODY_LG_NAME = 'body-lg';
 
-abstract class Typography extends ElementBase {
+abstract class Typography extends DivBase {
   protected setFontStyle(fontSize: keyof TxSizeAttr): void {
-    const [attr1, attr2] = this.attributes;
-    this.className = `${fontSize} ${attr1?.name ? 'tx-' + attr1?.name : ''}${
-      attr2?.name ? ' tx-' + attr2?.name : ''
-    }`;
+    this.className = `${fontSize} ${this.concatenatedClassName()}`;
   }
 
   createRenderRoot() {
@@ -137,7 +134,7 @@ export class BodyXs extends Typography {
 
 declare global {
   namespace CTypography {
-    interface Ref extends CElementBase.Ref<any, any>, ColorAttr, WeightAttr {
+    interface Ref extends CDivElement.Ref, ColorAttr, WeightAttr {
       p?: string;
     }
     type Key = keyof Omit<
