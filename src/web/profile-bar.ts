@@ -1,5 +1,6 @@
 import {css, html} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
+import {ClassAttributes, HTMLAttributes} from 'react';
 import {ElementBase} from '../base/element-base';
 
 const ELEMENT_NAME = 'profile-bar';
@@ -19,7 +20,12 @@ export class ProfileBar extends ElementBase {
 
 declare global {
   namespace CProfileBar {
-    interface Ref extends CElementBase.Ref<any,any> {}
+    interface Ref extends CElementBase.Ref<any, any> {}
+    type Key = keyof Omit<
+      CProfileBar.Ref,
+      | keyof HTMLAttributes<CProfileBar.Ref>
+      | keyof ClassAttributes<CProfileBar.Ref>
+    >;
     /*
       interface Event {
         [EVENT_ONE]: CustomEvent<EventOneProp>

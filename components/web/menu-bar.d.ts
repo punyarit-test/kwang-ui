@@ -1,3 +1,4 @@
+import { ClassAttributes, HTMLAttributes } from 'react';
 import { ElementBase } from '../base/element-base';
 declare const ELEMENT_NAME = "menu-bar";
 export declare class MenuBar extends ElementBase {
@@ -8,6 +9,7 @@ declare global {
     namespace CMenuBar {
         interface Ref extends CElementBase.Ref<any, any> {
         }
+        type Key = keyof Omit<CMenuBar.Ref, keyof HTMLAttributes<CMenuBar.Ref> | keyof ClassAttributes<CMenuBar.Ref>>;
     }
     namespace JSX {
         interface IntrinsicElements {

@@ -2,6 +2,7 @@ import {css, html} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
 import {FeatureAttr} from '../types/feature.type';
 import {ElementBase} from '../base/element-base';
+import {ClassAttributes, HTMLAttributes} from 'react';
 
 const ELEMENT_NAME = 'c-feature';
 /*
@@ -24,9 +25,14 @@ export class Feature extends ElementBase {
 
 declare global {
   namespace CFeature {
-    interface Ref extends CElementBase.Ref<any,any>, FeatureAttr {
+    interface Ref extends CElementBase.Ref<any, any>, FeatureAttr {
       // checkFlag?: (flag: string) => boolean;
     }
+    type Key = keyof Omit<
+      CFeature.Ref,
+      keyof HTMLAttributes<CFeature.Ref> | keyof ClassAttributes<CFeature.Ref>
+    >;
+
     /*
       interface Event {
         [EVENT_ONE]: CustomEvent<EventOneProp>

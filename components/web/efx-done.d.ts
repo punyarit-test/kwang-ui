@@ -1,3 +1,4 @@
+import { ClassAttributes, HTMLAttributes } from 'react';
 import { ElementBase } from '../base/element-base';
 declare enum element {
     name = "efx-done"
@@ -16,6 +17,7 @@ declare global {
         interface Ref extends CElementBase.Ref<any, any> {
             disabled?: boolean;
         }
+        type Key = keyof Omit<CEfxDone.Ref, keyof HTMLAttributes<CEfxDone.Ref> | keyof ClassAttributes<CEfxDone.Ref>>;
     }
     namespace JSX {
         interface IntrinsicElements {

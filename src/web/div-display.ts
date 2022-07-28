@@ -4,6 +4,7 @@ import {FlexAttr} from '../types/flex.type';
 import {GridAttr} from '../types/grid.type';
 import {DivBase} from '../base/div-base';
 import {attr} from '../utils/functions';
+import {ClassAttributes, HTMLAttributes} from 'react';
 
 const BLOCK_NAME = 'c-block';
 const FLEX_NAME = 'c-flex';
@@ -15,15 +16,7 @@ abstract class DivDisplay extends DivBase {
   }
 
   private setClassName(): void {
-    this.className = this.getClassName();
-  }
-
-  private getClassName(): string {
-    let className = '';
-    for (const attr of this.attributes) {
-      className = className + attr.name + ' ';
-    }
-    return className;
+    this.className = this.concatenatedClassName();
   }
 
   createRenderRoot(): this {
@@ -43,6 +36,12 @@ export class Grid extends DivDisplay {}
 declare global {
   namespace CDivDisplay {
     interface Ref extends CDivElement.Ref {}
+    type Key = keyof Omit<
+      CDivDisplay.Ref,
+      | keyof HTMLAttributes<CDivDisplay.Ref>
+      | keyof ClassAttributes<CDivDisplay.Ref>
+    >;
+
     interface CBlockRef extends CDivDisplay.Ref, BlockAttr {}
     interface CFlexRef extends CDivDisplay.Ref, FlexAttr {}
     interface CGridRef extends CDivDisplay.Ref, GridAttr {}

@@ -1,5 +1,6 @@
 import {css, html} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
+import {ClassAttributes, HTMLAttributes} from 'react';
 import {ElementBase} from '../base/element-base';
 
 const ELEMENT_NAME = 'c-badge';
@@ -19,7 +20,12 @@ export class Badge extends ElementBase {
 
 declare global {
   namespace CBadge {
-    interface Ref extends CElementBase.Ref<any,any> {}
+    interface Ref extends CElementBase.Ref<any, any> {}
+    type Key = keyof Omit<
+      CBadge.Ref,
+      keyof HTMLAttributes<CBadge.Ref> | keyof ClassAttributes<CBadge.Ref>
+    >;
+
     /*
       interface Event {
         [EVENT_ONE]: CustomEvent<EventOneProp>

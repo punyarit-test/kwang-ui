@@ -7,6 +7,7 @@ export declare abstract class ElementBase extends LitElement {
     protected defaultStyles: Record<string, any>;
     protected defaultConfig: Record<string, any>;
     willUpdate(changedProperties: Map<PropertyKey, unknown>): void;
+    protected concatenatedClassName(): string;
     protected checkAttributesLength(expectedLength: number): void;
     private updateAttributes;
 }

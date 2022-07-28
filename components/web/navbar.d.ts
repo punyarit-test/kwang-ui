@@ -1,5 +1,6 @@
 import { NavbarPositionAttr } from '../types/navbar.type';
 import { BarBase } from '../base/bar-base';
+import { ClassAttributes, HTMLAttributes } from 'react';
 declare const ELEMENT_NAME = "c-navbar";
 export declare class Navbar extends BarBase {
     static styles: import("lit").CSSResult;
@@ -9,6 +10,7 @@ declare global {
     namespace CNavbar {
         interface Ref extends NavbarPositionAttr, CBar.Ref {
         }
+        type Key = keyof Omit<CMenuBar.Ref, keyof HTMLAttributes<CMenuBar.Ref> | keyof ClassAttributes<CMenuBar.Ref>>;
     }
     namespace JSX {
         interface IntrinsicElements {

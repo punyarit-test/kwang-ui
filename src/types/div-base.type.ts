@@ -2,9 +2,10 @@ import {ColorAttr} from './colors.type';
 import {ActiveColorAttr, HoverColorAttr} from './pseudo-classes.type';
 import {SIZES} from './sizes.types';
 import {TxColorAttr} from './tx-colors.type';
+import {TxSizeAttr} from './tx-sizes.type';
 
 export type BorderRadiusAttr = Partial<
-  Record<`round-${typeof SIZES[number]}`, boolean>
+  Record<`round-${typeof SIZES[number]}` | 'round-full', boolean>
 >;
 
 export type HeightAttr = Partial<
@@ -35,7 +36,7 @@ export type PositionAttr = Partial<
   Record<'absolute' | 'relative' | 'fixed' | 'static' | 'sticky', Boolean>
 >;
 
-export interface ElementBaseAttr
+export interface DivBaseAttr
   extends MarginAttr,
     PaddingAttr,
     BorderRadiusAttr,
@@ -48,5 +49,13 @@ export interface ElementBaseAttr
     HeightAttr,
     ColorAttr,
     TxColorAttr,
+    TxSizeAttr,
     HoverColorAttr,
     ActiveColorAttr {}
+
+export type DivBaseKey = keyof DivBaseAttr;
+declare global {
+  namespace CX {
+    type DivBase = DivBaseKey;
+  }
+}

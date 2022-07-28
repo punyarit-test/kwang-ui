@@ -187,4 +187,10 @@ export type SizeAttr = Partial<
   Record<`size-${typeof SIZES[number]}` | 'size-full', boolean>
 >;
 
-export type SizeAttrKey = keyof SizeAttr;
+export type SizeKey = keyof SizeAttr;
+
+declare global {
+  namespace CX {
+    type Size = SizeKey;
+  }
+}

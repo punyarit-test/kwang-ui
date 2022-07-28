@@ -1,3 +1,4 @@
+import { ClassAttributes, HTMLAttributes } from 'react';
 import { ElementBase } from '../base/element-base';
 import { SizeAttr } from '../types/sizes.types';
 import { ColorAttr } from '../types/colors.type';
@@ -54,6 +55,7 @@ declare global {
             test1?: any;
             ['primary-25']?: boolean;
         }
+        type Key = keyof Omit<CExample.Ref, keyof HTMLAttributes<CExample.Ref> | keyof ClassAttributes<CExample.Ref>>;
         interface EventOne extends CustomEvent<EventOneProp> {
         }
     }

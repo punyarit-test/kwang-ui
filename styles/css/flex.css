@@ -6,6 +6,10 @@ c-flex.justify-center {
   justify-content: center;
 }
 
+c-flex.justify-end {
+  justify-content: end;
+}
+
 c-flex.items-center {
   align-items: center;
 }

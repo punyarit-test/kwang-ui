@@ -2,6 +2,7 @@ import { ColorAttr } from '../types/colors.type';
 import { TxSizeAttr } from '../types/tx-sizes.type';
 import { WeightAttr } from '../types/weights.type';
 import { ElementBase } from '../base/element-base';
+import { ClassAttributes, HTMLAttributes } from 'react';
 declare const DISPLAY_SM_NAME = "display-sm";
 declare const DISPLAY_MD_NAME = "display-md";
 declare const DISPLAY_XS_NAME = "display-xs";
@@ -63,6 +64,7 @@ declare global {
         interface Ref extends CElementBase.Ref<any, any>, ColorAttr, WeightAttr {
             p?: string;
         }
+        type Key = keyof Omit<CTypography.Ref, keyof HTMLAttributes<CTypography.Ref> | keyof ClassAttributes<CTypography.Ref>>;
     }
     namespace JSX {
         interface IntrinsicElements {

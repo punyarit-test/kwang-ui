@@ -1,5 +1,6 @@
 import {css, html} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
+import {ClassAttributes, HTMLAttributes} from 'react';
 import {ElementBase} from '../base/element-base';
 
 enum element {
@@ -152,9 +153,13 @@ for decide dialog
 */
 declare global {
   namespace CEfxDone {
-    interface Ref extends CElementBase.Ref<any,any> {
+    interface Ref extends CElementBase.Ref<any, any> {
       disabled?: boolean;
     }
+    type Key = keyof Omit<
+      CEfxDone.Ref,
+      keyof HTMLAttributes<CEfxDone.Ref> | keyof ClassAttributes<CEfxDone.Ref>
+    >;
     /*
       interface Event {
         [EVENT_ONE]: CustomEvent<EventOneProp>

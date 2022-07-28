@@ -1,5 +1,6 @@
 import {css, html} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
+import {ClassAttributes, HTMLAttributes} from 'react';
 import {ElementBase} from '../base/element-base';
 
 // Use command pattern
@@ -21,6 +22,11 @@ export class RightClick extends ElementBase {
 declare global {
   namespace CRightClick {
     interface Ref extends CElementBase.Ref<any, any> {}
+    type Key = keyof Omit<
+      CRightClick.Ref,
+      | keyof HTMLAttributes<CRightClick.Ref>
+      | keyof ClassAttributes<CRightClick.Ref>
+    >;
     /*
       interface Event {
         [EVENT_ONE]: CustomEvent<EventOneProp>

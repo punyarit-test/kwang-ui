@@ -20,13 +20,11 @@ export class Input extends ElementBase {
 
 declare global {
   namespace CInput {
-    interface Ref extends CElementBase.Ref<any,any> {}
-    /*
-      interface Event {
-        [EVENT_ONE]: CustomEvent<EventOneProp>
-      }
-      interface EventOne extends CustomEvent<EventOneProp> {}
-    */
+    interface Ref extends CElementBase.Ref<any, any> {}
+    type Key = keyof Omit<
+      CInput.Ref,
+      keyof HTMLAttributes<CInput.Ref> | keyof ClassAttributes<CInput.Ref>
+    >;
   }
   namespace JSX {
     interface IntrinsicElements {

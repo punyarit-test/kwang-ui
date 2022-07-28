@@ -19,3 +19,9 @@ export declare type WarningYellowAttr = Partial<Record<`warning-yellow-${typeof 
 export declare type BlueStateAttr = Partial<Record<`bluestate-${typeof SHADES[number]}`, boolean>>;
 export interface ColorAttr extends BaseColorAttr, GrayAttr, PrimaryAttr, ErrorAttr, WarningAttr, SuccessAttr, ModermGreenAttr, SurgeonGreenAttr, WellnessGreenAttr, SafeBlueAttr, BlueprintAttr, VioletAlertAttr, PurpleAttr, PinkyAttr, RedFlagAttr, AlarmOrangeAttr, WarningYellowAttr, BlueStateAttr {
 }
+export declare type ColorKey = keyof ColorAttr;
+declare global {
+    namespace CX {
+        type Color = ColorKey;
+    }
+}

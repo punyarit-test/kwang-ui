@@ -2,6 +2,7 @@ import {css, html, LitElement} from 'lit';
 import {customElement} from 'lit/decorators.js';
 import {StartScreenAttr} from '../types/start-screen.type';
 import {ElementBase} from '../base/element-base';
+import {ClassAttributes, HTMLAttributes} from 'react';
 
 const ELEMENT_NAME = 'start-screen';
 /*
@@ -34,7 +35,12 @@ export class StartScreen extends ElementBase {
 
 declare global {
   namespace CStartScreen {
-    interface Ref extends CElementBase.Ref<any,any>, StartScreenAttr {}
+    interface Ref extends CElementBase.Ref<any, any>, StartScreenAttr {}
+    type Key = keyof Omit<
+      CStartScreen.Ref,
+      | keyof HTMLAttributes<CStartScreen.Ref>
+      | keyof ClassAttributes<CStartScreen.Ref>
+    >;
     /*
       interface Event {
         [EVENT_ONE]: CustomEvent<EventOneProp>

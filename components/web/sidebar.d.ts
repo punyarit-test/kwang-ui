@@ -1,3 +1,4 @@
+import { ClassAttributes, HTMLAttributes } from 'react';
 import { SidebarPositionAttr } from '../types/sidebar.type';
 import { BarBase } from '../base/bar-base';
 declare const ELEMENT_NAME = "c-sidebar";
@@ -9,6 +10,7 @@ declare global {
     namespace CSidebar {
         interface Ref extends CBar.Ref, SidebarPositionAttr {
         }
+        type Key = keyof Omit<CSidebar.Ref, keyof HTMLAttributes<CSidebar.Ref> | keyof ClassAttributes<CSidebar.Ref>>;
     }
     namespace JSX {
         interface IntrinsicElements {

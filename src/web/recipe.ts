@@ -1,5 +1,6 @@
 import {css, html} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
+import {ClassAttributes, HTMLAttributes} from 'react';
 import {ElementBase} from '../base/element-base';
 
 const ELEMENT_NAME = 'c-recipe';
@@ -19,7 +20,11 @@ export class Recipe extends ElementBase {
 
 declare global {
   namespace CRecipe {
-    interface Ref extends CElementBase.Ref<any,any> {}
+    interface Ref extends CElementBase.Ref<any, any> {}
+    type Key = keyof Omit<
+      CRecipe.Ref,
+      keyof HTMLAttributes<CRecipe.Ref> | keyof ClassAttributes<CRecipe.Ref>
+    >;
     /*
       interface Event {
         [EVENT_ONE]: CustomEvent<EventOneProp>

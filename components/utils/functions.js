@@ -51,7 +51,7 @@ const clr = (component, eventName, callback) => {
 exports.clr = clr;
 const attr = (attrs) => {
     let attrObj = {};
-    for (const key of attrs.split(' ')) {
+    for (const key of attrs) {
         attrObj[key] = true;
     }
     return attrObj;

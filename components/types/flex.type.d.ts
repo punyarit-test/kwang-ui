@@ -11,3 +11,9 @@ export declare type FlexShrinkAttr = Partial<Record<`shrink-${typeof SIZES[numbe
 export declare type FlexBasisAttr = Partial<Record<`basis-${typeof SIZES[number]}`, boolean>>;
 export interface FlexAttr extends JustifyAttr, FlexLayoutAttr, JustifyAttr, ItemsAttr, ColGapAttr, RowGapAttr, FlexGrowAttr, FlexWrapAttr, FlexShrinkAttr, FlexBasisAttr {
 }
+export declare type FlexKey = keyof FlexAttr;
+declare global {
+    namespace CX {
+        type Flex = FlexKey;
+    }
+}

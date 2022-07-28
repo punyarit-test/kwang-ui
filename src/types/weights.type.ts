@@ -11,3 +11,13 @@ export type WeightAttr = Partial<
     Boolean
   >
 >;
+
+export type WeightKey = keyof WeightAttr;
+
+declare global {
+  namespace CX {
+    type Weight = WeightKey;
+  }
+}
+
+export {};

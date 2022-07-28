@@ -9,9 +9,11 @@
 @import './font-weights.css';
 @import './fonts.registry.css';
 @import './grid.css';
+@import './width.css';
 @import './height.css';
 @import './icons.registry.css';
 @import './left.css';
+@import './icon.css';
 @import './margin.css';
 @import './padding.css';
 @import './inline.css';

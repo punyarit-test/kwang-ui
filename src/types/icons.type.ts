@@ -1,7 +1,7 @@
 // wating for fix like below
 // export type BaseColorAttr = Partial<Record<'white' | 'black', Boolean>>;
 
-export interface IconName {
+export interface IconAttr {
   ['add-patient']?: boolean;
   ['assessment']?: boolean;
   ['badge-check']?: boolean;
@@ -173,4 +173,10 @@ export interface IconName {
   ['x-circle-input']?: boolean;
 }
 
-export type IconNameKey = keyof IconName;
+export type IconKey = keyof IconAttr;
+
+declare global {
+  namespace CX {
+    type Icon = IconKey;
+  }
+}

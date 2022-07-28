@@ -1,3 +1,4 @@
+import { ClassAttributes, HTMLAttributes } from 'react';
 import { ElementBase } from '../base/element-base';
 declare const ELEMENT_NAME = "c-badge";
 export declare class Badge extends ElementBase {
@@ -8,6 +9,7 @@ declare global {
     namespace CBadge {
         interface Ref extends CElementBase.Ref<any, any> {
         }
+        type Key = keyof Omit<CBadge.Ref, keyof HTMLAttributes<CBadge.Ref> | keyof ClassAttributes<CBadge.Ref>>;
     }
     namespace JSX {
         interface IntrinsicElements {

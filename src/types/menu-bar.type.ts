@@ -1,12 +1,18 @@
-import {IconNameKey} from './icons.type';
+import {IconKey} from './icons.type';
 
-export interface MenuBar {
+export interface MenuBarAttr {
   name: string;
   path: string;
-  icon: IconNameKey;
+  icon: IconKey;
   disabled?: boolean;
   visible?: boolean;
   active?: string[];
   service?: string;
   permission?: string;
+}
+
+declare global {
+  namespace CX {
+    type MenuBar = MenuBarAttr;
+  }
 }

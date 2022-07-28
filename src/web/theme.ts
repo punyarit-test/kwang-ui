@@ -4,12 +4,13 @@ import {colors} from '../theme/colors.theme';
 import {sizes} from '../theme/sizes.theme';
 import {fontWeights} from '../theme/font-weights.theme';
 import {
-  ColorThemeAttr,
-  SizeThemeAttr,
+  ThemeColorAttr,
+  ThemeSizeAttr,
   ThemeAttr,
   ThemeIndex,
 } from '../types/theme.type';
 import {ElementBase} from '../base/element-base';
+import {ClassAttributes, HTMLAttributes} from 'react';
 
 const ELEMENT_NAME = 'c-theme';
 
@@ -24,35 +25,35 @@ export class Theme extends ElementBase {
     this.setThemeStyles();
   }
 
-  public onSetSize(size: keyof SizeThemeAttr): void {
-    const currentColor = this.getClassName(
+  public onSetSize(size: keyof ThemeSizeAttr): void {
+    const currentColor = this.getThemeClassName(
       ThemeIndex.color
-    ) as keyof ColorThemeAttr;
+    ) as keyof ThemeColorAttr;
     this.setClassName(size, currentColor);
   }
 
-  public onSetTheme(color: keyof ColorThemeAttr): void {
-    const currentSize = this.getClassName(
+  public onSetTheme(color: keyof ThemeColorAttr): void {
+    const currentSize = this.getThemeClassName(
       ThemeIndex.size
-    ) as keyof SizeThemeAttr;
+    ) as keyof ThemeSizeAttr;
     this.setClassName(currentSize, color);
   }
 
-  private getClassName(index: number): keyof ThemeAttr {
+  private getThemeClassName(index: number): keyof ThemeAttr {
     return this.className.split(' ')[index] as keyof ThemeAttr;
   }
 
   private setThemeStyles(): void {
     const [sizeTheme, colorTheme] = this.attributes;
     this.setClassName(
-      sizeTheme?.name as keyof SizeThemeAttr,
-      colorTheme?.name as keyof ColorThemeAttr
+      sizeTheme?.name as keyof ThemeSizeAttr,
+      colorTheme?.name as keyof ThemeColorAttr
     );
   }
 
   private setClassName(
-    sizeTheme?: keyof SizeThemeAttr,
-    colorTheme?: keyof ColorThemeAttr
+    sizeTheme?: keyof ThemeSizeAttr,
+    colorTheme?: keyof ThemeColorAttr
   ): void {
     this.className = `${sizeTheme || 'normal'} ${colorTheme || 'light'}`;
   }
@@ -61,9 +62,13 @@ export class Theme extends ElementBase {
 declare global {
   namespace CTheme {
     interface Ref extends CElementBase.Ref<any, any>, ThemeAttr {
-      onSetTheme?: (color: keyof ColorThemeAttr) => void;
-      onSetSize?: (size: keyof SizeThemeAttr) => void;
+      onSetTheme?: (color: keyof ThemeColorAttr) => void;
+      onSetSize?: (size: keyof ThemeSizeAttr) => void;
     }
+    type Key = keyof Omit<
+      CTheme.Ref,
+      keyof HTMLAttributes<CTheme.Ref> | keyof ClassAttributes<CTheme.Ref>
+    >;
   }
   namespace JSX {
     interface IntrinsicElements {

@@ -101,3 +101,11 @@ export interface ColorAttr
     AlarmOrangeAttr,
     WarningYellowAttr,
     BlueStateAttr {}
+
+export type ColorKey = keyof ColorAttr;
+
+declare global {
+  namespace CX {
+    type Color = ColorKey;
+  }
+}

@@ -25,14 +25,14 @@ let Theme = class Theme extends element_base_1.ElementBase {
         this.setThemeStyles();
     }
     onSetSize(size) {
-        const currentColor = this.getClassName(theme_type_1.ThemeIndex.color);
+        const currentColor = this.getThemeClassName(theme_type_1.ThemeIndex.color);
         this.setClassName(size, currentColor);
     }
     onSetTheme(color) {
-        const currentSize = this.getClassName(theme_type_1.ThemeIndex.size);
+        const currentSize = this.getThemeClassName(theme_type_1.ThemeIndex.size);
         this.setClassName(currentSize, color);
     }
-    getClassName(index) {
+    getThemeClassName(index) {
         return this.className.split(' ')[index];
     }
     setThemeStyles() {

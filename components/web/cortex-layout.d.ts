@@ -1,3 +1,4 @@
+import { ClassAttributes, HTMLAttributes } from 'react';
 import { ElementBase } from '../base/element-base';
 declare const ELEMENT_NAME = "cortex-layout";
 export declare class Layout extends ElementBase {
@@ -9,6 +10,7 @@ declare global {
     namespace CLayout {
         interface Ref extends CElementBase.Ref<any, any> {
         }
+        type Key = keyof Omit<CLayout.Ref, keyof HTMLAttributes<CLayout.Ref> | keyof ClassAttributes<CLayout.Ref>>;
     }
     namespace JSX {
         interface IntrinsicElements {

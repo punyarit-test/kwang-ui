@@ -1,5 +1,6 @@
 import {css, html} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
+import {ClassAttributes, HTMLAttributes} from 'react';
 import {ElementBase} from '../base/element-base';
 
 const ELEMENT_NAME = 'menu-bar';
@@ -19,7 +20,11 @@ export class MenuBar extends ElementBase {
 
 declare global {
   namespace CMenuBar {
-    interface Ref extends CElementBase.Ref<any,any> {}
+    interface Ref extends CElementBase.Ref<any, any> {}
+    type Key = keyof Omit<
+      CMenuBar.Ref,
+      keyof HTMLAttributes<CMenuBar.Ref> | keyof ClassAttributes<CMenuBar.Ref>
+    >;
     /*
       interface Event {
         [EVENT_ONE]: CustomEvent<EventOneProp>

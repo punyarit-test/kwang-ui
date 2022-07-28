@@ -77,9 +77,9 @@ export const clr = <Y>(
   );
 };
 
-export const attr = (attrs: string): Record<string, boolean> => {
+export const attr = (attrs: CAttr.Key[]): Record<string, boolean> => {
   let attrObj: Record<string, boolean> = {};
-  for (const key of attrs.split(' ')) {
+  for (const key of attrs) {
     attrObj[key] = true;
   }
   return attrObj;

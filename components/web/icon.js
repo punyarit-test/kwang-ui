@@ -9,30 +9,21 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Icon = void 0;
 const lit_1 = require("lit");
 const decorators_js_1 = require("lit/decorators.js");
-const element_base_1 = require("../base/element-base");
+const div_base_1 = require("../base/div-base");
 const ELEMENT_NAME = 'c-icon';
-let Icon = class Icon extends element_base_1.ElementBase {
+let Icon = class Icon extends div_base_1.DivBase {
     constructor() {
         super(...arguments);
-        this.render = () => (0, lit_1.html) ` <span class="icon">&#xe800;</span> `;
+        this.render = () => (0, lit_1.html) `&#xe800;`;
     }
     connectedCallback() {
         super.connectedCallback();
-    }
-    firstUpdated() {
         this.setIconAttr();
     }
     setIconAttr() {
-        const [icon, attr1, attr2] = this.attributes;
-        this.style.setProperty(`--icon`, icon?.name || '');
-        this.className = `${attr1?.name ? '' + attr1?.name : ''}${attr2?.name ? ' tx-' + attr2?.name : ''}`;
+        this.className = this.concatenatedClassName();
     }
 };
-Icon.styles = (0, lit_1.css) `
-    .icon {
-      font-family: var(--icon);
-    }
-  `;
 Icon = __decorate([
     (0, decorators_js_1.customElement)(ELEMENT_NAME)
 ], Icon);

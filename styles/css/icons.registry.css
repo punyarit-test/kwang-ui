@@ -103,7 +103,3 @@
   font-family: 'chevron-right';
   src: url('../../assets/icons/chevron-right.woff2') format('woff2');
 }
-
-c-icon {
-  display: inline-flex;
-}

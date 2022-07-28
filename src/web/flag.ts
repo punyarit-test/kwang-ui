@@ -2,6 +2,7 @@ import {css, html} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
 import {FlagAttr} from '../types/flag.type';
 import {ElementBase} from '../base/element-base';
+import {ClassAttributes, HTMLAttributes} from 'react';
 
 const ELEMENT_NAME = 'c-flag';
 
@@ -31,6 +32,10 @@ export class Flag extends ElementBase {
 declare global {
   namespace CFlag {
     interface Ref extends CElementBase.Ref<any, any>, FlagAttr {}
+    type Key = keyof Omit<
+      CFlag.Ref,
+      keyof HTMLAttributes<CFlag.Ref> | keyof ClassAttributes<CFlag.Ref>
+    >;
   }
   namespace JSX {
     interface IntrinsicElements {

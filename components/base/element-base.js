@@ -27,6 +27,13 @@ class ElementBase extends lit_1.LitElement {
         }
         super.willUpdate(changedProperties);
     }
+    concatenatedClassName() {
+        let className = '';
+        for (const attr of this.attributes) {
+            className = className + attr.name + ' ';
+        }
+        return className;
+    }
     checkAttributesLength(expectedLength) {
         if (this.attributes.length > expectedLength) {
             throw new Error(`${this.tagName.toLowerCase()}: Expected ${expectedLength} attribute${expectedLength > 1 ? 's' : ''}, but got ${this.attributes.length}.`);

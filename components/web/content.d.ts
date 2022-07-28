@@ -1,3 +1,4 @@
+import { ClassAttributes, HTMLAttributes } from 'react';
 import { ElementBase } from '../base/element-base';
 declare const ELEMENT_NAME = "c-content";
 export declare class Content extends ElementBase {
@@ -8,6 +9,7 @@ declare global {
     namespace CContent {
         interface Ref extends CElementBase.Ref<any, any> {
         }
+        type Key = keyof Omit<CButton.Ref, keyof HTMLAttributes<CButton.Ref> | keyof ClassAttributes<CButton.Ref>>;
     }
     namespace JSX {
         interface IntrinsicElements {

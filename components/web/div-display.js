@@ -18,14 +18,7 @@ class DivDisplay extends div_base_1.DivBase {
         this.setClassName();
     }
     setClassName() {
-        this.className = this.getClassName();
-    }
-    getClassName() {
-        let className = '';
-        for (const attr of this.attributes) {
-            className = className + attr.name + ' ';
-        }
-        return className;
+        this.className = this.concatenatedClassName();
     }
     createRenderRoot() {
         return this;

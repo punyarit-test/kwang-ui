@@ -21,6 +21,14 @@ export abstract class ElementBase extends LitElement {
     super.willUpdate(changedProperties);
   }
 
+  protected concatenatedClassName(): string {
+    let className = '';
+    for (const attr of this.attributes) {
+      className = className + attr.name + ' ';
+    }
+    return className;
+  }
+
   protected checkAttributesLength(expectedLength: number): void {
     if (this.attributes.length > expectedLength) {
       throw new Error(

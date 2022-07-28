@@ -1,4 +1,4 @@
-export interface IconName {
+export interface IconAttr {
     ['add-patient']?: boolean;
     ['assessment']?: boolean;
     ['badge-check']?: boolean;
@@ -169,4 +169,9 @@ export interface IconName {
     ['whiteboard']?: boolean;
     ['x-circle-input']?: boolean;
 }
-export declare type IconNameKey = keyof IconName;
+export declare type IconKey = keyof IconAttr;
+declare global {
+    namespace CX {
+        type Icon = IconKey;
+    }
+}

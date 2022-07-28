@@ -1,20 +1,17 @@
-import { ColorAttr } from '../types/colors.type';
-import { TxSizeAttr } from '../types/tx-sizes.type';
-import { IconName } from '../types/icons.type';
-import { WeightAttr } from '../types/weights.type';
-import { ElementBase } from '../base/element-base';
+import { IconAttr } from '../types/icons.type';
+import { ClassAttributes, HTMLAttributes } from 'react';
+import { DivBase } from '../base/div-base';
 declare const ELEMENT_NAME = "c-icon";
-export declare class Icon extends ElementBase {
-    static styles: import("lit").CSSResult;
+export declare class Icon extends DivBase {
     render: () => import("lit-html").TemplateResult<1>;
     connectedCallback(): void;
-    firstUpdated(): void;
     private setIconAttr;
 }
 declare global {
     namespace CIcon {
-        interface Ref extends CElementBase.Ref<any, any>, IconName, ColorAttr, WeightAttr, TxSizeAttr {
+        interface Ref extends CDivElement.Ref, IconAttr {
         }
+        type Key = keyof Omit<CIcon.Ref, keyof HTMLAttributes<CIcon.Ref> | keyof ClassAttributes<CIcon.Ref>>;
     }
     namespace JSX {
         interface IntrinsicElements {

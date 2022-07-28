@@ -29,6 +29,10 @@ export class Sidebar extends BarBase {
 declare global {
   namespace CSidebar {
     interface Ref extends CBar.Ref, SidebarPositionAttr {}
+    type Key = keyof Omit<
+      CSidebar.Ref,
+      keyof HTMLAttributes<CSidebar.Ref> | keyof ClassAttributes<CSidebar.Ref>
+    >;
     /*
       interface Event {
         [EVENT_ONE]: CustomEvent<EventOneProp>

@@ -3,7 +3,7 @@ import {customElement, property, state} from 'lit/decorators.js';
 import {ClassAttributes, HTMLAttributes} from 'react';
 import {ElementBase} from '../base/element-base';
 import {attr} from '../utils/functions';
-import {SizeThemeAttr} from '../types/theme.type';
+import {ThemeSizeAttr} from '../types/theme.type';
 import {SizeAttr} from '../types/sizes.types';
 import {ColorAttr} from '../types/colors.type';
 import {BorderRadiusAttr} from '../types/div-base.type';
@@ -147,6 +147,10 @@ declare global {
       test1?: any;
       ['primary-25']?: boolean;
     }
+    type Key = keyof Omit<
+      CExample.Ref,
+      keyof HTMLAttributes<CExample.Ref> | keyof ClassAttributes<CExample.Ref>
+    >;
 
     interface EventOne extends CustomEvent<EventOneProp> {}
   }

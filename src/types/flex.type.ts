@@ -57,3 +57,11 @@ export interface FlexAttr
     FlexWrapAttr,
     FlexShrinkAttr,
     FlexBasisAttr {}
+
+export type FlexKey = keyof FlexAttr;
+
+declare global {
+  namespace CX {
+    type Flex = FlexKey;
+  }
+}
