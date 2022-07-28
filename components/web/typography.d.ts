@@ -1,5 +1,5 @@
 import { ColorAttr } from '../types/colors.type';
-import { TxSizeAttr } from '../types/tx-sizes.type';
+import { TxSizeAttr, TxSizeKey } from '../types/tx-sizes.type';
 import { WeightAttr } from '../types/weights.type';
 import { ClassAttributes, HTMLAttributes } from 'react';
 import { DivBase } from '../base/div-base';
@@ -61,7 +61,7 @@ export declare class BodyXs extends Typography {
 }
 declare global {
     namespace CTypography {
-        interface Ref extends CDivElement.Ref, ColorAttr, WeightAttr {
+        interface Ref extends Omit<CDivElement.Ref, TxSizeKey>, ColorAttr, WeightAttr {
             p?: string;
         }
         type Key = keyof Omit<CTypography.Ref, keyof HTMLAttributes<CTypography.Ref> | keyof ClassAttributes<CTypography.Ref>>;

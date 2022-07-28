@@ -4,7 +4,7 @@ import {ElementBase} from '../base/element-base';
 import {BlockAttr} from '../types/block.type';
 import {FlexAttr} from '../types/flex.type';
 import {GridAttr} from '../types/grid.type';
-import {IconAttr, IconKey} from '../types/icons.type';
+import {IconAttr} from '../types/icons.type';
 import {ThemeColorAttr, ThemeSizeAttr} from '../types/theme.type';
 
 const ELEMENT_NAME = 'c-attr';
