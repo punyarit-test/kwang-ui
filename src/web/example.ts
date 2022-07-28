@@ -2,11 +2,10 @@ import {css, html, LitElement} from 'lit';
 import {customElement, property, state} from 'lit/decorators.js';
 import {ClassAttributes, HTMLAttributes} from 'react';
 import {ElementBase} from '../base/element-base';
-import {attr} from '../utils/functions';
-import {ThemeSizeAttr} from '../types/theme.type';
-import {SizeAttr} from '../types/sizes.types';
-import {ColorAttr} from '../types/colors.type';
-import {BorderRadiusAttr} from '../types/div-base.type';
+import {SizeAttr, SizeKey} from '../types/sizes.types';
+import {ColorAttr, ColorKey} from '../types/colors.type';
+import {BorderRadiusAttr, BorderRadiusKey} from '../types/div-base.type';
+import {FunctionStore} from '../utils/functions';
 
 const ELEMENT_NAME = 'c-example';
 const EVENT_ONE = 'event-1';
@@ -91,21 +90,19 @@ export class Example extends ElementBase {
   }
 
   onEvent1() {
-    (window as any)['$cortex']['onEvent1'](10);
+    FunctionStore.call('onEvent1', 10);
   }
 
   onEvent2() {
-    (window as any)['$cortex']['onEvent2'](20);
+    FunctionStore.call('onEvent2', 20);
   }
 
   onEvent3() {
-    (window as any)['$cortex']['onEvent3'](30);
+    FunctionStore.call('onEvent3');
   }
 
   onEvent4() {
-    if ((window as any)['$cortex']['onEvent4']) {
-      (window as any)['$cortex']['onEvent4'](40);
-    }
+    FunctionStore.call('onEvent4', 40);
   }
 }
 
@@ -119,10 +116,10 @@ declare global {
     }
 
     interface SX {
-      height?: keyof SizeAttr;
-      backgroundColor?: keyof ColorAttr;
-      borderRadius?: keyof BorderRadiusAttr;
-      width?: keyof SizeAttr;
+      height?: SizeKey;
+      backgroundColor?: ColorKey;
+      borderRadius?: BorderRadiusKey;
+      width?: SizeKey;
     }
 
     interface CFX {
@@ -137,15 +134,12 @@ declare global {
     }
 
     interface Ref extends CElementBase.Ref<SX, CFX> {
-      onTest?: () => void;
+      onEvent?: () => void;
       p?: string;
-      onTest1?: string;
-      onTest2?: string;
-      onTest3?: string;
-      onTest4?: string;
-      testClick?: any;
-      test1?: any;
-      ['primary-25']?: boolean;
+      onEvent1?: () => void;
+      onEvent2?: () => void;
+      onEvent3?: () => void;
+      onEvent4?: () => void;
     }
     type Key = keyof Omit<
       CExample.Ref,
@@ -153,6 +147,9 @@ declare global {
     >;
 
     interface EventOne extends CustomEvent<EventOneProp> {}
+
+    // Parameter For FunctionStore
+    type OnEvent1 = number;
   }
 
   namespace JSX {

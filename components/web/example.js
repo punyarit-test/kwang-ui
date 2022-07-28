@@ -14,6 +14,7 @@ exports.Example = void 0;
 const lit_1 = require("lit");
 const decorators_js_1 = require("lit/decorators.js");
 const element_base_1 = require("../base/element-base");
+const functions_1 = require("../utils/functions");
 const ELEMENT_NAME = 'c-example';
 const EVENT_ONE = 'event-1';
 let Example = Example_1 = class Example extends element_base_1.ElementBase {
@@ -69,18 +70,16 @@ let Example = Example_1 = class Example extends element_base_1.ElementBase {
         super.willUpdate(changedProperties);
     }
     onEvent1() {
-        window['$cortex']['onEvent1'](10);
+        functions_1.FunctionStore.call('onEvent1', 10);
     }
     onEvent2() {
-        window['$cortex']['onEvent2'](20);
+        functions_1.FunctionStore.call('onEvent2', 20);
     }
     onEvent3() {
-        window['$cortex']['onEvent3'](30);
+        functions_1.FunctionStore.call('onEvent3');
     }
     onEvent4() {
-        if (window['$cortex']['onEvent4']) {
-            window['$cortex']['onEvent4'](40);
-        }
+        functions_1.FunctionStore.call('onEvent4', 40);
     }
 };
 Example.defaultStyles = {

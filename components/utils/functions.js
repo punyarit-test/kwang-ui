@@ -1,12 +1,29 @@
 "use strict";
+var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (receiver, state, kind, f) {
+    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
+    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
+    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
+};
+var _a, _FunctionStore_store;
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.shake = exports.asyncClr = exports.asyncEvt = exports.attr = exports.clr = exports.evt = exports.cx = exports.sx = exports.ex = exports.val = void 0;
-window['$cortex'] = {};
+exports.shake = exports.asyncClr = exports.asyncEvt = exports.attr = exports.clr = exports.evt = exports.cx = exports.sx = exports.ex = exports.val = exports.FunctionStore = void 0;
+class FunctionStore {
+    static set(event) {
+        for (const key in event) {
+            __classPrivateFieldGet(FunctionStore, _a, "f", _FunctionStore_store)[key] = event[key];
+        }
+    }
+    static call(event, value = null) {
+        __classPrivateFieldGet(FunctionStore, _a, "f", _FunctionStore_store)[event](value);
+    }
+}
+exports.FunctionStore = FunctionStore;
+_a = FunctionStore;
+_FunctionStore_store = { value: {} };
 // Async Event
 const asyncComponent = (component, timeout, errorText, callback) => {
     const expire = Date.now() + timeout;
     const asyncComponent = setInterval(() => {
-        //@ts-ignore
         if (component.current) {
             clearAsyncComponent(asyncComponent);
             callback();
@@ -20,17 +37,10 @@ const asyncComponent = (component, timeout, errorText, callback) => {
 const clearAsyncComponent = (asyncComponent) => {
     clearInterval(asyncComponent);
 };
-// export
 const val = (value) => JSON.stringify(value);
 exports.val = val;
 const ex = (events) => {
-    let a = {};
-    for (const key in events) {
-        window['$cortex'][key] = events[key];
-        // @ts-ignore
-        a[key] = events[key].name;
-    }
-    // เด้วจะเอา a ไปทำต่อในส่วนของการเรียกใช้ฟังชั่นแบบนี้ใน web component
+    FunctionStore.set(events);
 };
 exports.ex = ex;
 const sx = (component, styles) => {

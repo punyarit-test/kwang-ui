@@ -1,16 +1,26 @@
-(window as any)['$cortex'] = {};
+import {FunctionPacks} from '../types/functions.type';
+
+export class FunctionStore {
+  static #store = {} as FunctionPacks;
+  public static set<T extends FunctionPacks>(event: T): void {
+    for (const key in event) {
+      FunctionStore.#store[key] = event[key];
+    }
+  }
+  public static call(event: string, value: unknown = null): void {
+    FunctionStore.#store[event](value);
+  }
+}
 
 // Async Event
-
 const asyncComponent = (
-  component: any,
-  timeout: any,
-  errorText: any,
-  callback: any
+  component: React.RefObject<unknown>,
+  timeout: number,
+  errorText: string,
+  callback: Function
 ) => {
   const expire = Date.now() + timeout;
   const asyncComponent = setInterval(() => {
-    //@ts-ignore
     if (component.current) {
       clearAsyncComponent(asyncComponent);
       callback();
@@ -27,18 +37,10 @@ const clearAsyncComponent = (
   clearInterval(asyncComponent);
 };
 
-// export
-
 export const val = <T>(value: T): string => JSON.stringify(value);
-export const ex = <T>(events: T): void => {
-  let a: any = {};
-  for (const key in events) {
-    (window as any)['$cortex'][key] = events[key];
-    // @ts-ignore
-    a[key] = events[key].name;
-  }
 
-  // เด้วจะเอา a ไปทำต่อในส่วนของการเรียกใช้ฟังชั่นแบบนี้ใน web component
+export const ex = <T>(events: T | FunctionPacks): void => {
+  FunctionStore.set(events as FunctionPacks);
 };
 
 export const sx = <SX = void | undefined>(
@@ -107,7 +109,7 @@ export const asyncEvt = <Y>(
 };
 
 export const asyncClr = <Y>(
-  component: React.RefObject<any>,
+  component: React.RefObject<unknown>,
   eventName: keyof Y,
   callback: (e: CustomEvent) => void,
   timeout = 5000

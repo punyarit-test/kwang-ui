@@ -1,8 +1,8 @@
 import { ClassAttributes, HTMLAttributes } from 'react';
 import { ElementBase } from '../base/element-base';
-import { SizeAttr } from '../types/sizes.types';
-import { ColorAttr } from '../types/colors.type';
-import { BorderRadiusAttr } from '../types/div-base.type';
+import { SizeKey } from '../types/sizes.types';
+import { ColorKey } from '../types/colors.type';
+import { BorderRadiusKey } from '../types/div-base.type';
 declare const ELEMENT_NAME = "c-example";
 declare const EVENT_ONE = "event-1";
 interface EventOneProp {
@@ -30,10 +30,10 @@ declare global {
             onEvent4?: (e: any) => any;
         }
         interface SX {
-            height?: keyof SizeAttr;
-            backgroundColor?: keyof ColorAttr;
-            borderRadius?: keyof BorderRadiusAttr;
-            width?: keyof SizeAttr;
+            height?: SizeKey;
+            backgroundColor?: ColorKey;
+            borderRadius?: BorderRadiusKey;
+            width?: SizeKey;
         }
         interface CFX {
             button1?: boolean;
@@ -45,19 +45,17 @@ declare global {
             [EVENT_ONE]: CustomEvent<EventOneProp>;
         }
         interface Ref extends CElementBase.Ref<SX, CFX> {
-            onTest?: () => void;
+            onEvent?: () => void;
             p?: string;
-            onTest1?: string;
-            onTest2?: string;
-            onTest3?: string;
-            onTest4?: string;
-            testClick?: any;
-            test1?: any;
-            ['primary-25']?: boolean;
+            onEvent1?: () => void;
+            onEvent2?: () => void;
+            onEvent3?: () => void;
+            onEvent4?: () => void;
         }
         type Key = keyof Omit<CExample.Ref, keyof HTMLAttributes<CExample.Ref> | keyof ClassAttributes<CExample.Ref>>;
         interface EventOne extends CustomEvent<EventOneProp> {
         }
+        type OnEvent1 = number;
     }
     namespace JSX {
         interface IntrinsicElements {
