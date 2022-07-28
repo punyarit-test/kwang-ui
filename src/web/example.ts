@@ -4,8 +4,8 @@ import {ClassAttributes, HTMLAttributes} from 'react';
 import {ElementBase} from '../base/element-base';
 import {attr} from '../utils/functions';
 import {SizeThemeAttr} from '../types/theme.type';
-import {SizesAttr} from '../types/sizes.types';
-import {ColorsAttr} from '../types/colors.type';
+import {SizeAttr} from '../types/sizes.types';
+import {ColorAttr} from '../types/colors.type';
 import {BorderRadiusAttr} from '../types/div-base.type';
 
 const ELEMENT_NAME = 'c-example';
@@ -119,10 +119,10 @@ declare global {
     }
 
     interface SX {
-      height?: keyof SizesAttr;
-      backgroundColor?: keyof ColorsAttr;
+      height?: keyof SizeAttr;
+      backgroundColor?: keyof ColorAttr;
       borderRadius?: keyof BorderRadiusAttr;
-      width?: keyof SizesAttr;
+      width?: keyof SizeAttr;
     }
 
     interface CFX {

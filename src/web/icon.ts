@@ -1,8 +1,8 @@
 import {css, html} from 'lit';
 import {customElement} from 'lit/decorators.js';
-import {ColorsAttr} from '../types/colors.type';
-import {TySizesAttr} from '../types/tx-sizes.type';
-import {IconNames} from '../types/icons.type';
+import {ColorAttr} from '../types/colors.type';
+import {TxSizeAttr} from '../types/tx-sizes.type';
+import {IconName} from '../types/icons.type';
 import {WeightAttr} from '../types/weights.type';
 import {ElementBase} from '../base/element-base';
 
@@ -39,10 +39,10 @@ declare global {
   namespace CIcon {
     interface Ref
       extends CElementBase.Ref<any, any>,
-        IconNames,
-        ColorsAttr,
+        IconName,
+        ColorAttr,
         WeightAttr,
-        TySizesAttr {}
+        TxSizeAttr {}
   }
   namespace JSX {
     interface IntrinsicElements {

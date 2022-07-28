@@ -1,6 +1,6 @@
-import { ColorsAttr } from '../types/colors.type';
-import { TySizesAttr } from '../types/tx-sizes.type';
-import { IconNames } from '../types/icons.type';
+import { ColorAttr } from '../types/colors.type';
+import { TxSizeAttr } from '../types/tx-sizes.type';
+import { IconName } from '../types/icons.type';
 import { WeightAttr } from '../types/weights.type';
 import { ElementBase } from '../base/element-base';
 declare const ELEMENT_NAME = "c-icon";
@@ -13,7 +13,7 @@ export declare class Icon extends ElementBase {
 }
 declare global {
     namespace CIcon {
-        interface Ref extends CElementBase.Ref<any, any>, IconNames, ColorsAttr, WeightAttr, TySizesAttr {
+        interface Ref extends CElementBase.Ref<any, any>, IconName, ColorAttr, WeightAttr, TxSizeAttr {
         }
     }
     namespace JSX {

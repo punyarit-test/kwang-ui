@@ -1,6 +1,6 @@
 import { ElementBase } from '../base/element-base';
-import { SizesAttr } from '../types/sizes.types';
-import { ColorsAttr } from '../types/colors.type';
+import { SizeAttr } from '../types/sizes.types';
+import { ColorAttr } from '../types/colors.type';
 import { BorderRadiusAttr } from '../types/div-base.type';
 declare const ELEMENT_NAME = "c-example";
 declare const EVENT_ONE = "event-1";
@@ -29,10 +29,10 @@ declare global {
             onEvent4?: (e: any) => any;
         }
         interface SX {
-            height?: keyof SizesAttr;
-            backgroundColor?: keyof ColorsAttr;
+            height?: keyof SizeAttr;
+            backgroundColor?: keyof ColorAttr;
             borderRadius?: keyof BorderRadiusAttr;
-            width?: keyof SizesAttr;
+            width?: keyof SizeAttr;
         }
         interface CFX {
             button1?: boolean;

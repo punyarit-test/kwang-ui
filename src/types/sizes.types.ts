@@ -183,6 +183,8 @@ export const SIZES = [
   '1000',
 ] as const;
 
-export type SizesAttr = Partial<
+export type SizeAttr = Partial<
   Record<`size-${typeof SIZES[number]}` | 'size-full', boolean>
 >;
+
+export type SizeAttrKey = keyof SizeAttr;

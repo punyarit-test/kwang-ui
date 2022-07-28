@@ -82,7 +82,7 @@ export type BlueStateAttr = Partial<
   Record<`bluestate-${typeof SHADES[number]}`, boolean>
 >;
 
-export interface ColorsAttr
+export interface ColorAttr
   extends BaseColorAttr,
     GrayAttr,
     PrimaryAttr,

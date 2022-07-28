@@ -1,3 +1,3 @@
-import { ColorsAttr } from './colors.type';
-export declare type TxColorKeys = `tx-${keyof ColorsAttr}`;
-export declare type TxColorAttr = Partial<Record<TxColorKeys, boolean>>;
+import { ColorAttr } from './colors.type';
+export declare type TxColorKey = `tx-${keyof ColorAttr}`;
+export declare type TxColorAttr = Partial<Record<TxColorKey, boolean>>;

@@ -1,4 +1,4 @@
-import {ColorsAttr} from './colors.type';
+import {ColorAttr} from './colors.type';
 import {ActiveColorAttr, HoverColorAttr} from './pseudo-classes.type';
 import {SIZES} from './sizes.types';
 import {TxColorAttr} from './tx-colors.type';
@@ -46,7 +46,7 @@ export interface ElementBaseAttr
     LeftAttr,
     WidthAttr,
     HeightAttr,
-    ColorsAttr,
+    ColorAttr,
     TxColorAttr,
     HoverColorAttr,
     ActiveColorAttr {}

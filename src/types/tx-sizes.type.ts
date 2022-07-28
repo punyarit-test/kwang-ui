@@ -1,5 +1,5 @@
 import {SIZES} from './sizes.types';
 
-export type TySizesAttr = Partial<
-  Record<`tx-${typeof SIZES[number]}`, boolean>
->;
+export type TxSizeAttr = Partial<Record<`tx-${typeof SIZES[number]}`, boolean>>;
+
+export type TxSizeAttrKey = keyof TxSizeAttr;

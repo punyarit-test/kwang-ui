@@ -1,4 +1,4 @@
-export interface IconNames {
+export interface IconName {
     ['add-patient']?: boolean;
     ['assessment']?: boolean;
     ['badge-check']?: boolean;
@@ -169,4 +169,4 @@ export interface IconNames {
     ['whiteboard']?: boolean;
     ['x-circle-input']?: boolean;
 }
-export declare type IconNameKeys = keyof IconNames;
+export declare type IconNameKey = keyof IconName;

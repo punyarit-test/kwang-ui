@@ -1,5 +1,5 @@
-import { ColorsAttr } from '../types/colors.type';
-import { TySizesAttr } from '../types/tx-sizes.type';
+import { ColorAttr } from '../types/colors.type';
+import { TxSizeAttr } from '../types/tx-sizes.type';
 import { WeightAttr } from '../types/weights.type';
 import { ElementBase } from '../base/element-base';
 declare const DISPLAY_SM_NAME = "display-sm";
@@ -16,7 +16,7 @@ declare const BODY_SM_NAME = "body-sm";
 declare const BODY_MD_NAME = "body-md";
 declare const BODY_LG_NAME = "body-lg";
 declare abstract class Typography extends ElementBase {
-    protected setFontStyle(fontSize: keyof TySizesAttr): void;
+    protected setFontStyle(fontSize: keyof TxSizeAttr): void;
     createRenderRoot(): this;
 }
 export declare class DisplayMd extends Typography {
@@ -60,7 +60,7 @@ export declare class BodyXs extends Typography {
 }
 declare global {
     namespace CTypography {
-        interface Ref extends CElementBase.Ref<any, any>, ColorsAttr, WeightAttr {
+        interface Ref extends CElementBase.Ref<any, any>, ColorAttr, WeightAttr {
             p?: string;
         }
     }

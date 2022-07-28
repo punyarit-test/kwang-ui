@@ -17,5 +17,5 @@ export declare type RedFlagAttr = Partial<Record<`red-flag-${typeof SHADES[numbe
 export declare type AlarmOrangeAttr = Partial<Record<`alarm-orange-${typeof SHADES[number]}`, boolean>>;
 export declare type WarningYellowAttr = Partial<Record<`warning-yellow-${typeof SHADES[number]}`, boolean>>;
 export declare type BlueStateAttr = Partial<Record<`bluestate-${typeof SHADES[number]}`, boolean>>;
-export interface ColorsAttr extends BaseColorAttr, GrayAttr, PrimaryAttr, ErrorAttr, WarningAttr, SuccessAttr, ModermGreenAttr, SurgeonGreenAttr, WellnessGreenAttr, SafeBlueAttr, BlueprintAttr, VioletAlertAttr, PurpleAttr, PinkyAttr, RedFlagAttr, AlarmOrangeAttr, WarningYellowAttr, BlueStateAttr {
+export interface ColorAttr extends BaseColorAttr, GrayAttr, PrimaryAttr, ErrorAttr, WarningAttr, SuccessAttr, ModermGreenAttr, SurgeonGreenAttr, WellnessGreenAttr, SafeBlueAttr, BlueprintAttr, VioletAlertAttr, PurpleAttr, PinkyAttr, RedFlagAttr, AlarmOrangeAttr, WarningYellowAttr, BlueStateAttr {
 }
