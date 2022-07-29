@@ -8,10 +8,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ElementBase = void 0;
 const lit_1 = require("lit");
 const decorators_js_1 = require("lit/decorators.js");
+const FunctionStore_1 = __importDefault(require("../utils/FunctionStore"));
 class ElementBase extends lit_1.LitElement {
     constructor() {
         super(...arguments);
@@ -26,6 +30,9 @@ class ElementBase extends lit_1.LitElement {
             this.defaultConfig = this.updateAttributes(this.cfx, this.defaultConfig);
         }
         super.willUpdate(changedProperties);
+    }
+    callFunctionStore(event, value) {
+        FunctionStore_1.default.call(event, value);
     }
     concatenatedClassName() {
         let className = '';
@@ -50,6 +57,10 @@ __decorate([
     (0, decorators_js_1.property)({ type: Object }),
     __metadata("design:type", Object)
 ], ElementBase.prototype, "sx", void 0);
+__decorate([
+    (0, decorators_js_1.property)({ type: Object }),
+    __metadata("design:type", Object)
+], ElementBase.prototype, "ex", void 0);
 __decorate([
     (0, decorators_js_1.property)({ type: Object }),
     __metadata("design:type", Object)

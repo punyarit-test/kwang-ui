@@ -4,30 +4,29 @@ import { SizeKey } from '../types/sizes.types';
 import { ColorKey } from '../types/colors.type';
 import { BorderRadiusKey } from '../types/div-base.type';
 declare const ELEMENT_NAME = "c-example";
-declare const EVENT_ONE = "event-1";
+declare const EVENT_1 = "exampleEvent1";
+declare const EVENT_2 = "exampleEvent2";
+declare const EVENT_3 = "exampleEvent3";
+declare const EVENT_4 = "exampleEvent4";
 interface EventOneProp {
     test: string;
 }
 export declare class Example extends ElementBase {
     p: string;
-    private static defaultStyles;
-    private static defaultConfig;
+    static defaultStyles: CExample.SX;
+    static defaultConfig: CExample.CFX;
     static styles: import("lit").CSSResult;
     render(): import("lit-html").TemplateResult<1>;
     connectedCallback(): void;
     willUpdate(changedProperties: any): void;
-    onEvent1(): void;
-    onEvent2(): void;
-    onEvent3(): void;
-    onEvent4(): void;
 }
 declare global {
     namespace CExample {
         interface EX {
-            onEvent1?: (e: any) => any;
-            onEvent2?: (e: any) => any;
-            onEvent3?: (e: any) => any;
-            onEvent4?: (e: any) => any;
+            [EVENT_1]?: Function;
+            [EVENT_2]?: Function;
+            [EVENT_3]?: Function;
+            [EVENT_4]?: Function;
         }
         interface SX {
             height?: SizeKey;
@@ -42,15 +41,13 @@ declare global {
             button4?: boolean;
         }
         interface EVT {
-            [EVENT_ONE]: CustomEvent<EventOneProp>;
+            [EVENT_1]: CustomEvent<EventOneProp>;
+            [EVENT_2]: CustomEvent<EventOneProp>;
+            [EVENT_3]: CustomEvent<EventOneProp>;
+            [EVENT_4]: CustomEvent<EventOneProp>;
         }
         interface Ref extends CElementBase.Ref<SX, CFX> {
-            onEvent?: () => void;
             p?: string;
-            onEvent1?: () => void;
-            onEvent2?: () => void;
-            onEvent3?: () => void;
-            onEvent4?: () => void;
         }
         type Key = keyof Omit<CExample.Ref, keyof HTMLAttributes<CExample.Ref> | keyof ClassAttributes<CExample.Ref>>;
         interface EventOne extends CustomEvent<EventOneProp> {

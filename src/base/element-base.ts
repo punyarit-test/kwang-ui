@@ -2,9 +2,12 @@ import {LitElement} from 'lit';
 import {property, state} from 'lit/decorators.js';
 import {ClassAttributes, HTMLAttributes} from 'react';
 import {ElementBaseAttr} from '../types/element-base.type';
+import {FunctionBind} from '../types/FunctionStore.type';
+import FunctionStore from '../utils/FunctionStore';
 
 export abstract class ElementBase extends LitElement {
-  @property({type: Object}) public sx?: any;
+  @property({type: Object}) public sx?: Record<string, string>;
+  @property({type: Object}) public ex?: Record<string, FunctionBind>;
   @property({type: Object}) public cfx?: Record<string, string>;
 
   @state() protected defaultStyles: Record<string, any> = {};
@@ -19,6 +22,10 @@ export abstract class ElementBase extends LitElement {
       this.defaultConfig = this.updateAttributes(this.cfx, this.defaultConfig);
     }
     super.willUpdate(changedProperties);
+  }
+
+  protected callFunctionStore(event: FunctionBind, value: unknown) {
+    FunctionStore.call(event, value);
   }
 
   protected concatenatedClassName(): string {
@@ -53,7 +60,7 @@ declare global {
       extends Omit<HTMLAttributes<Ref<SX, CFX>>, 'color' | 'placeholder'>,
         ClassAttributes<Ref<SX, CFX>>,
         ElementBaseAttr {
-      ex?: void;
+      ex?: void | string;
       sx?: SX | string;
       cfx?: CFX | string;
     }

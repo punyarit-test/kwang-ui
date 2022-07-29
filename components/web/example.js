@@ -14,9 +14,11 @@ exports.Example = void 0;
 const lit_1 = require("lit");
 const decorators_js_1 = require("lit/decorators.js");
 const element_base_1 = require("../base/element-base");
-const functions_1 = require("../utils/functions");
 const ELEMENT_NAME = 'c-example';
-const EVENT_ONE = 'event-1';
+const EVENT_1 = 'exampleEvent1';
+const EVENT_2 = 'exampleEvent2';
+const EVENT_3 = 'exampleEvent3';
+const EVENT_4 = 'exampleEvent4';
 let Example = Example_1 = class Example extends element_base_1.ElementBase {
     constructor() {
         super(...arguments);
@@ -36,25 +38,25 @@ let Example = Example_1 = class Example extends element_base_1.ElementBase {
       <div style="font-family:var(--regular)">
         <button
           .hidden="${!this.defaultConfig.button1}"
-          @click="${this.onEvent1}"
+          @click="${() => this.callFunctionStore(this.ex[EVENT_1], 10)}"
         >
           event1
         </button>
         <button
           .hidden="${!this.defaultConfig.button2}"
-          @click="${this.onEvent2}"
+          @click="${() => this.callFunctionStore(this.ex[EVENT_2], 20)}"
         >
           event2
         </button>
         <button
           .hidden="${!this.defaultConfig.button3}"
-          @click="${this.onEvent3}"
+          @click="${() => this.callFunctionStore(this.ex[EVENT_3], 30)}"
         >
           event3
         </button>
         <button
           .hidden="${!this.defaultConfig.button4}"
-          @click="${this.onEvent4}"
+          @click="${() => this.callFunctionStore(this.ex[EVENT_4], 40)}"
         >
           event4
         </button>
@@ -68,18 +70,6 @@ let Example = Example_1 = class Example extends element_base_1.ElementBase {
     }
     willUpdate(changedProperties) {
         super.willUpdate(changedProperties);
-    }
-    onEvent1() {
-        functions_1.FunctionStore.call('onEvent1', 10);
-    }
-    onEvent2() {
-        functions_1.FunctionStore.call('onEvent2', 20);
-    }
-    onEvent3() {
-        functions_1.FunctionStore.call('onEvent3');
-    }
-    onEvent4() {
-        functions_1.FunctionStore.call('onEvent4', 40);
     }
 };
 Example.defaultStyles = {

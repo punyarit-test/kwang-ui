@@ -1,4 +1,4 @@
-export declare type FunctionFlags = {
+export declare type FunctionBind = {
     event: string;
     trigger: string;
 };

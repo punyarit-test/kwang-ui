@@ -1,14 +1,17 @@
-import {css, html, LitElement} from 'lit';
-import {customElement, property, state} from 'lit/decorators.js';
+import {css, html} from 'lit';
+import {customElement, property} from 'lit/decorators.js';
 import {ClassAttributes, HTMLAttributes} from 'react';
 import {ElementBase} from '../base/element-base';
-import {SizeAttr, SizeKey} from '../types/sizes.types';
-import {ColorAttr, ColorKey} from '../types/colors.type';
-import {BorderRadiusAttr, BorderRadiusKey} from '../types/div-base.type';
-import {FunctionStore} from '../utils/functions';
+import {SizeKey} from '../types/sizes.types';
+import {ColorKey} from '../types/colors.type';
+import {BorderRadiusKey} from '../types/div-base.type';
 
 const ELEMENT_NAME = 'c-example';
-const EVENT_ONE = 'event-1';
+
+const EVENT_1 = 'exampleEvent1';
+const EVENT_2 = 'exampleEvent2';
+const EVENT_3 = 'exampleEvent3';
+const EVENT_4 = 'exampleEvent4';
 interface EventOneProp {
   test: string;
 }
@@ -16,14 +19,15 @@ interface EventOneProp {
 @customElement(ELEMENT_NAME)
 export class Example extends ElementBase {
   @property({type: String}) public p = '';
-  private static defaultStyles: CExample.SX = {
+
+  static defaultStyles: CExample.SX = {
     backgroundColor: 'primary-100',
     borderRadius: 'round-12',
     height: 'size-10',
     width: 'size-124',
   };
 
-  private static defaultConfig: CExample.CFX = {
+  static defaultConfig: CExample.CFX = {
     button1: true,
     button2: true,
     button3: true,
@@ -53,25 +57,25 @@ export class Example extends ElementBase {
       <div style="font-family:var(--regular)">
         <button
           .hidden="${!this.defaultConfig.button1}"
-          @click="${this.onEvent1}"
+          @click="${() => this.callFunctionStore(this.ex![EVENT_1], 10)}"
         >
           event1
         </button>
         <button
           .hidden="${!this.defaultConfig.button2}"
-          @click="${this.onEvent2}"
+          @click="${() => this.callFunctionStore(this.ex![EVENT_2], 20)}"
         >
           event2
         </button>
         <button
           .hidden="${!this.defaultConfig.button3}"
-          @click="${this.onEvent3}"
+          @click="${() => this.callFunctionStore(this.ex![EVENT_3], 30)}"
         >
           event3
         </button>
         <button
           .hidden="${!this.defaultConfig.button4}"
-          @click="${this.onEvent4}"
+          @click="${() => this.callFunctionStore(this.ex![EVENT_4], 40)}"
         >
           event4
         </button>
@@ -88,31 +92,15 @@ export class Example extends ElementBase {
   willUpdate(changedProperties: any) {
     super.willUpdate(changedProperties);
   }
-
-  onEvent1() {
-    FunctionStore.call('onEvent1', 10);
-  }
-
-  onEvent2() {
-    FunctionStore.call('onEvent2', 20);
-  }
-
-  onEvent3() {
-    FunctionStore.call('onEvent3');
-  }
-
-  onEvent4() {
-    FunctionStore.call('onEvent4', 40);
-  }
 }
 
 declare global {
   namespace CExample {
     interface EX {
-      onEvent1?: (e: any) => any;
-      onEvent2?: (e: any) => any;
-      onEvent3?: (e: any) => any;
-      onEvent4?: (e: any) => any;
+      [EVENT_1]?: Function;
+      [EVENT_2]?: Function;
+      [EVENT_3]?: Function;
+      [EVENT_4]?: Function;
     }
 
     interface SX {
@@ -130,16 +118,14 @@ declare global {
     }
 
     interface EVT {
-      [EVENT_ONE]: CustomEvent<EventOneProp>;
+      [EVENT_1]: CustomEvent<EventOneProp>;
+      [EVENT_2]: CustomEvent<EventOneProp>;
+      [EVENT_3]: CustomEvent<EventOneProp>;
+      [EVENT_4]: CustomEvent<EventOneProp>;
     }
 
     interface Ref extends CElementBase.Ref<SX, CFX> {
-      onEvent?: () => void;
       p?: string;
-      onEvent1?: () => void;
-      onEvent2?: () => void;
-      onEvent3?: () => void;
-      onEvent4?: () => void;
     }
     type Key = keyof Omit<
       CExample.Ref,

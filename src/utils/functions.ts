@@ -1,16 +1,5 @@
-import {FunctionPacks} from '../types/functions.type';
-
-export class FunctionStore {
-  static #store = {} as FunctionPacks;
-  public static set<T extends FunctionPacks>(event: T): void {
-    for (const key in event) {
-      FunctionStore.#store[key] = event[key];
-    }
-  }
-  public static call(event: string, value: unknown = null): void {
-    FunctionStore.#store[event](value);
-  }
-}
+import {FunctionPacks} from '../types/FunctionStore.type';
+import FunctionStore from './FunctionStore';
 
 // Async Event
 const asyncComponent = (
@@ -39,9 +28,8 @@ const clearAsyncComponent = (
 
 export const val = <T>(value: T): string => JSON.stringify(value);
 
-export const ex = <T>(events: T | FunctionPacks): void => {
-  FunctionStore.set(events as FunctionPacks);
-};
+export const ex = <T>(events: T | FunctionPacks<Function>) =>
+  val(FunctionStore.set(events as FunctionPacks<Function>));
 
 export const sx = <SX = void | undefined>(
   component: React.RefObject<unknown>,
