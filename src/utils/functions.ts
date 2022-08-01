@@ -1,5 +1,5 @@
 import {FunctionPacks} from '../types/FunctionStore.type';
-import FunctionStore from './FunctionStore';
+import ShadowEventStore from '../shadow/ShadowEvent';
 
 // Async Event
 const asyncComponent = (
@@ -29,7 +29,7 @@ const clearAsyncComponent = (
 export const val = <T>(value: T): string => JSON.stringify(value);
 
 export const ex = <T>(events: T | FunctionPacks<Function>) =>
-  val(FunctionStore.set(events as FunctionPacks<Function>));
+  val(ShadowEventStore.set(events as FunctionPacks<Function>));
 
 export const sx = <SX = void | undefined>(
   component: React.RefObject<unknown>,

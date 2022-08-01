@@ -3,7 +3,7 @@ import {property, state} from 'lit/decorators.js';
 import {ClassAttributes, HTMLAttributes} from 'react';
 import {ElementBaseAttr} from '../types/element-base.type';
 import {FunctionBind} from '../types/FunctionStore.type';
-import FunctionStore from '../utils/FunctionStore';
+import ShadowEventStore from '../shadow/ShadowEvent';
 
 export abstract class ElementBase extends LitElement {
   @property({type: Object}) public sx?: Record<string, string>;
@@ -25,7 +25,7 @@ export abstract class ElementBase extends LitElement {
   }
 
   protected callFunctionStore(event: FunctionBind, value: unknown) {
-    FunctionStore.call(event, value);
+    ShadowEventStore.call(event, value);
   }
 
   protected concatenatedClassName(): string {

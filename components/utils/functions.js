@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.shake = exports.asyncClr = exports.asyncEvt = exports.attr = exports.clr = exports.evt = exports.cx = exports.sx = exports.ex = exports.val = void 0;
-const FunctionStore_1 = __importDefault(require("./FunctionStore"));
+const ShadowEvent_1 = __importDefault(require("../shadow/ShadowEvent"));
 // Async Event
 const asyncComponent = (component, timeout, errorText, callback) => {
     const expire = Date.now() + timeout;
@@ -24,7 +24,7 @@ const clearAsyncComponent = (asyncComponent) => {
 };
 const val = (value) => JSON.stringify(value);
 exports.val = val;
-const ex = (events) => (0, exports.val)(FunctionStore_1.default.set(events));
+const ex = (events) => (0, exports.val)(ShadowEvent_1.default.set(events));
 exports.ex = ex;
 const sx = (component, styles) => {
     component.current.sx = styles;

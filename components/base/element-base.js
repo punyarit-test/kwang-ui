@@ -15,7 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ElementBase = void 0;
 const lit_1 = require("lit");
 const decorators_js_1 = require("lit/decorators.js");
-const FunctionStore_1 = __importDefault(require("../utils/FunctionStore"));
+const ShadowEvent_1 = __importDefault(require("../shadow/ShadowEvent"));
 class ElementBase extends lit_1.LitElement {
     constructor() {
         super(...arguments);
@@ -32,7 +32,7 @@ class ElementBase extends lit_1.LitElement {
         super.willUpdate(changedProperties);
     }
     callFunctionStore(event, value) {
-        FunctionStore_1.default.call(event, value);
+        ShadowEvent_1.default.call(event, value);
     }
     concatenatedClassName() {
         let className = '';

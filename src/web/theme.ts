@@ -1,8 +1,8 @@
 import {html} from 'lit';
 import {customElement} from 'lit/decorators.js';
-import {colors} from '../theme/colors.theme';
-import {sizes} from '../theme/sizes.theme';
-import {fontWeights} from '../theme/font-weights.theme';
+import {colors} from '../themes/colors.theme';
+import {sizes} from '../themes/sizes.theme';
+import {fontWeights} from '../themes/font-weights.theme';
 import {
   ThemeColorAttr,
   ThemeSizeAttr,

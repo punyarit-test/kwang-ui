@@ -4,26 +4,26 @@ var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (
     if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
     return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
 };
-var _a, _FunctionStore_store;
+var _a, _ShadowEventStore_eventStore;
 Object.defineProperty(exports, "__esModule", { value: true });
-class FunctionStore {
+class ShadowEventStore {
     static set(events) {
         let fnFlags = {};
         for (const key in events) {
-            if (!__classPrivateFieldGet(FunctionStore, _a, "f", _FunctionStore_store)[key]) {
-                __classPrivateFieldGet(FunctionStore, _a, "f", _FunctionStore_store)[key] = {};
+            if (!__classPrivateFieldGet(ShadowEventStore, _a, "f", _ShadowEventStore_eventStore)[key]) {
+                __classPrivateFieldGet(ShadowEventStore, _a, "f", _ShadowEventStore_eventStore)[key] = {};
             }
-            __classPrivateFieldGet(FunctionStore, _a, "f", _FunctionStore_store)[key][events[key].name] = events[key];
+            __classPrivateFieldGet(ShadowEventStore, _a, "f", _ShadowEventStore_eventStore)[key][events[key].name] = events[key];
             fnFlags[key] = { event: key, trigger: events[key].name };
         }
         return fnFlags;
     }
     static call(ex, value = null) {
-        if (__classPrivateFieldGet(FunctionStore, _a, "f", _FunctionStore_store)[ex.event][ex.trigger]) {
-            __classPrivateFieldGet(FunctionStore, _a, "f", _FunctionStore_store)[ex.event][ex.trigger](value);
+        if (__classPrivateFieldGet(ShadowEventStore, _a, "f", _ShadowEventStore_eventStore)[ex.event][ex.trigger]) {
+            __classPrivateFieldGet(ShadowEventStore, _a, "f", _ShadowEventStore_eventStore)[ex.event][ex.trigger](value);
         }
     }
 }
-exports.default = FunctionStore;
-_a = FunctionStore;
-_FunctionStore_store = { value: {} };
+exports.default = ShadowEventStore;
+_a = ShadowEventStore;
+_ShadowEventStore_eventStore = { value: {} };

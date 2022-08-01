@@ -28,23 +28,24 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.useStx = void 0;
 const react_1 = __importStar(require("react"));
-const StateKey_1 = __importDefault(require("./StateKey"));
-const StateObserve_1 = __importDefault(require("./StateObserve"));
-const useStx = (stx) => {
+const ShadowState_1 = __importDefault(require("../shadow/ShadowState"));
+const useStx = (svxId, stx) => {
     const [state, setState] = react_1.default.useState(stx);
     const isUpdated = (0, react_1.useRef)(false);
     if (!isUpdated.current) {
-        StateObserve_1.default.set(state);
+        ShadowState_1.default.setId(svxId);
+        ShadowState_1.default.setStx(state, svxId);
         isUpdated.current = true;
     }
     const set = (newState) => {
+        ShadowState_1.default.setId(svxId);
+        ShadowState_1.default.setStxKeys(newState);
         let cloneState = { ...state };
         for (const key in newState) {
-            StateKey_1.default.set(key);
             cloneState[key] = newState[key];
         }
         setState(cloneState);
-        StateObserve_1.default.set(cloneState);
+        ShadowState_1.default.setStx(cloneState, svxId);
     };
     return { ...state, set };
 };
