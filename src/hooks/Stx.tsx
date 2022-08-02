@@ -1,8 +1,6 @@
 import React, {useRef, useId} from 'react';
 import ShadowState from '../shadow/ShadowState';
 
-type STX<T> = T & {svx: string};
-
 export const useStx = <T,>(svxId: string, stx: T) => {
   const [state, setState] = React.useState(stx);
 

@@ -1,12 +1,19 @@
 import {useStx} from './Stx';
 
+const beforeFn = () => {};
+
+const afterFn = (e: any) => {};
+
+export const FCX_SVX_ID = 'FcxSvx';
+
 export const useFcx = <T,>(svxId: string, fcx: T): T => {
-  const stx = useStx('ShadowFunction', {
+  const stx = useStx(FCX_SVX_ID, {
     fcxCount: 0,
     fnName: '',
     svxId: '',
   });
   let fnWrapper = {} as any;
+
   for (const key in fcx) {
     fnWrapper[key] = () => {
       stx.set({
@@ -15,8 +22,13 @@ export const useFcx = <T,>(svxId: string, fcx: T): T => {
         svxId,
       });
 
-      // @ts-ignore
-      fcx[key]();
+      // set timeout(0) becoz waiting for WFC init inter function
+      setTimeout(() => {
+        const beforeValue = beforeFn();
+        // @ts-ignore
+        let fnValue = fcx[key](beforeValue || undefined);
+        afterFn(fnValue || undefined);
+      }, 0);
     };
   }
 

@@ -1,28 +1,57 @@
 import {useEffect} from 'react';
 import ShadowState from '../shadow/ShadowState';
+import {FCX_SVX_ID} from './Fcx';
 
 export type WFC<SVX> = Partial<{
   [T in keyof SVX]: (fcx: {
-    after?: {
+    inter?: {
       [P in keyof SVX[T][Extract<keyof SVX[T], 'fcx'>]]: (
-        e?: (e?: unknown) => void
+        e?: (e?: any) => void
       ) => void;
     };
   }) => void;
 }>;
 
+export class FCX {
+  static #fcx: any;
+  static #returnValue: any;
+  static #parameterValue: any;
+
+  static setFcx(fn: any) {
+    this.#fcx = fn;
+  }
+
+  static inter(param?: any) {
+    if (this.#fcx) {
+      this.#fcx(param || undefined);
+      return this.#returnValue;
+    }
+  }
+
+  static setReturnValue(returnValue: any) {
+    this.#returnValue = returnValue;
+  }
+
+  static setParameter(parameterValue: any) {
+    this.#parameterValue = parameterValue;
+  }
+
+  static getParameter() {
+    return this.#parameterValue;
+  }
+}
+
 export const WfcEffect = (fcx: any) => {
   const {newValue} = new ShadowState().getAll();
-
   useEffect(() => {
     if (
-      fcx[newValue?.['ShadowFunction']?.['svxId']] &&
-      newValue?.['ShadowFunction']?.['fnName']
+      fcx[newValue?.[FCX_SVX_ID]?.['svxId']] &&
+      newValue?.[FCX_SVX_ID]?.['fnName']
     ) {
-      const fnString = fcx[newValue?.['ShadowFunction']?.['svxId']].toString();
+      const fnString = fcx[newValue?.[FCX_SVX_ID]?.['svxId']].toString();
 
-      const findAfter = /(?<=after.?)\w+/g;
-      const found = fnString.match(findAfter);
+      const findinterFn = /(?<=inter.?)\w+/g;
+      const found = fnString.match(findinterFn);
       const fnNames = [...new Set(found)];
 
       const fnStore = {} as any;
@@ -31,15 +60,18 @@ export const WfcEffect = (fcx: any) => {
         fnStore[fnName] = () => {};
       }
 
-      fnStore[newValue?.['ShadowFunction']?.['fnName']] = (
-        fnc: () => unknown
-      ) => {
-        fnc();
+      fnStore[newValue?.[FCX_SVX_ID]?.['fnName']] = (fnc: (e?: any) => any) => {
+        const returnValue = fnc(FCX.getParameter() || undefined);
+        FCX.setReturnValue(returnValue);
+      };
+      const fcxFn = (e: any) => {
+        FCX.setParameter(e);
+        fcx[newValue?.[FCX_SVX_ID]?.['svxId']]({
+          inter: fnStore,
+        });
       };
 
-      fcx[newValue?.['ShadowFunction']?.['svxId']]({
-        after: fnStore,
-      });
+      FCX.setFcx(fcxFn);
     }
-  }, [newValue['ShadowFunction']['fcxCount']]);
+  }, [newValue[FCX_SVX_ID]['fcxCount']]);
 };

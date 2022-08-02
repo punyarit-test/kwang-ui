@@ -1,9 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.useFcx = void 0;
+exports.useFcx = exports.FCX_SVX_ID = void 0;
 const Stx_1 = require("./Stx");
+const beforeFn = () => { };
+const afterFn = (e) => { };
+exports.FCX_SVX_ID = 'FcxSvx';
 const useFcx = (svxId, fcx) => {
-    const stx = (0, Stx_1.useStx)('ShadowFunction', {
+    const stx = (0, Stx_1.useStx)(exports.FCX_SVX_ID, {
         fcxCount: 0,
         fnName: '',
         svxId: '',
@@ -16,8 +19,13 @@ const useFcx = (svxId, fcx) => {
                 fnName: key,
                 svxId,
             });
-            // @ts-ignore
-            fcx[key]();
+            // set timeout(0) becoz waiting for WFC init inter function
+            setTimeout(() => {
+                const beforeValue = beforeFn();
+                // @ts-ignore
+                let fnValue = fcx[key](beforeValue || undefined);
+                afterFn(fnValue || undefined);
+            }, 0);
         };
     }
     return fnWrapper;
