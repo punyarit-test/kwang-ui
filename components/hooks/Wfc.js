@@ -16,7 +16,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 var _a, _FCX_fcx, _FCX_returnValue, _FCX_parameterValue;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.WfcEffect = exports.FCX = void 0;
-const react_1 = require("react");
+const react_1 = __importDefault(require("react"));
 const ShadowState_1 = __importDefault(require("../shadow/ShadowState"));
 const Fcx_1 = require("./Fcx");
 class FCX {
@@ -25,7 +25,7 @@ class FCX {
     }
     static inter(param) {
         if (__classPrivateFieldGet(this, _a, "f", _FCX_fcx)) {
-            __classPrivateFieldGet(this, _a, "f", _FCX_fcx).call(this, param || undefined);
+            __classPrivateFieldGet(this, _a, "f", _FCX_fcx)?.call(this, param || undefined);
             return __classPrivateFieldGet(this, _a, "f", _FCX_returnValue);
         }
     }
@@ -46,30 +46,29 @@ _FCX_returnValue = { value: void 0 };
 _FCX_parameterValue = { value: void 0 };
 const WfcEffect = (fcx) => {
     const { newValue } = new ShadowState_1.default().getAll();
-    (0, react_1.useEffect)(() => {
+    react_1.default.useEffect(() => {
         if (fcx[newValue?.[Fcx_1.FCX_SVX_ID]?.['svxId']] &&
             newValue?.[Fcx_1.FCX_SVX_ID]?.['fnName']) {
-            const fnString = fcx[newValue?.[Fcx_1.FCX_SVX_ID]?.['svxId']].toString();
-            const findinterFn = /(?<=inter.?)\w+/g;
-            const found = fnString.match(findinterFn);
-            const fnNames = [...new Set(found)];
-            const fnStore = {};
-            for (const fnName of fnNames) {
-                // @ts-ignore
-                fnStore[fnName] = () => { };
-            }
-            fnStore[newValue?.[Fcx_1.FCX_SVX_ID]?.['fnName']] = (fnc) => {
-                const returnValue = fnc(FCX.getParameter() || undefined);
-                FCX.setReturnValue(returnValue);
-            };
-            const fcxFn = (e) => {
-                FCX.setParameter(e);
-                fcx[newValue?.[Fcx_1.FCX_SVX_ID]?.['svxId']]({
-                    inter: fnStore,
-                });
-            };
+            const fcxStore = storeFcx(newValue);
+            const fcxFn = wrapFcx(fcx, newValue, fcxStore);
             FCX.setFcx(fcxFn);
         }
     }, [newValue[Fcx_1.FCX_SVX_ID]['fcxCount']]);
 };
 exports.WfcEffect = WfcEffect;
+const wrapFcx = (fcx, newValue, fcxStore) => {
+    return (e) => {
+        FCX.setParameter(e);
+        fcx[newValue?.[Fcx_1.FCX_SVX_ID]?.['svxId']]?.({
+            inter: fcxStore,
+        });
+    };
+};
+const storeFcx = (newValue) => {
+    const fcxStore = {};
+    fcxStore[newValue?.[Fcx_1.FCX_SVX_ID]?.['fnName']] = (fnc) => {
+        const returnValue = fnc(FCX.getParameter() || undefined);
+        FCX.setReturnValue(returnValue);
+    };
+    return fcxStore;
+};

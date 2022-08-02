@@ -1,7 +1,13 @@
 export declare type WFC<SVX> = Partial<{
     [T in keyof SVX]: (fcx: {
+        before?: {
+            [P in keyof SVX[T][Extract<keyof SVX[T], 'fcx'>]]?: (e?: (e?: any) => void) => void;
+        };
         inter?: {
-            [P in keyof SVX[T][Extract<keyof SVX[T], 'fcx'>]]: (e?: (e?: any) => void) => void;
+            [P in keyof SVX[T][Extract<keyof SVX[T], 'fcx'>]]?: (e?: (e?: any) => void) => void;
+        };
+        after?: {
+            [P in keyof SVX[T][Extract<keyof SVX[T], 'fcx'>]]?: (e?: (e?: any) => void) => void;
         };
     }) => void;
 }>;

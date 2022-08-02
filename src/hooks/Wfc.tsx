@@ -1,11 +1,21 @@
-import {useEffect} from 'react';
+import React from 'react';
 import ShadowState from '../shadow/ShadowState';
 import {FCX_SVX_ID} from './Fcx';
 
 export type WFC<SVX> = Partial<{
   [T in keyof SVX]: (fcx: {
+    before?: {
+      [P in keyof SVX[T][Extract<keyof SVX[T], 'fcx'>]]?: (
+        e?: (e?: any) => void
+      ) => void;
+    };
     inter?: {
-      [P in keyof SVX[T][Extract<keyof SVX[T], 'fcx'>]]: (
+      [P in keyof SVX[T][Extract<keyof SVX[T], 'fcx'>]]?: (
+        e?: (e?: any) => void
+      ) => void;
+    };
+    after?: {
+      [P in keyof SVX[T][Extract<keyof SVX[T], 'fcx'>]]?: (
         e?: (e?: any) => void
       ) => void;
     };
@@ -23,7 +33,7 @@ export class FCX {
 
   static inter(param?: any) {
     if (this.#fcx) {
-      this.#fcx(param || undefined);
+      this.#fcx?.(param || undefined);
       return this.#returnValue;
     }
   }
@@ -43,35 +53,32 @@ export class FCX {
 
 export const WfcEffect = (fcx: any) => {
   const {newValue} = new ShadowState().getAll();
-  useEffect(() => {
+  React.useEffect(() => {
     if (
       fcx[newValue?.[FCX_SVX_ID]?.['svxId']] &&
       newValue?.[FCX_SVX_ID]?.['fnName']
     ) {
-      const fnString = fcx[newValue?.[FCX_SVX_ID]?.['svxId']].toString();
-
-      const findinterFn = /(?<=inter.?)\w+/g;
-      const found = fnString.match(findinterFn);
-      const fnNames = [...new Set(found)];
-
-      const fnStore = {} as any;
-      for (const fnName of fnNames) {
-        // @ts-ignore
-        fnStore[fnName] = () => {};
-      }
-
-      fnStore[newValue?.[FCX_SVX_ID]?.['fnName']] = (fnc: (e?: any) => any) => {
-        const returnValue = fnc(FCX.getParameter() || undefined);
-        FCX.setReturnValue(returnValue);
-      };
-      const fcxFn = (e: any) => {
-        FCX.setParameter(e);
-        fcx[newValue?.[FCX_SVX_ID]?.['svxId']]({
-          inter: fnStore,
-        });
-      };
-
+      const fcxStore = storeFcx(newValue);
+      const fcxFn = wrapFcx(fcx, newValue, fcxStore);
       FCX.setFcx(fcxFn);
     }
   }, [newValue[FCX_SVX_ID]['fcxCount']]);
+};
+
+const wrapFcx = (fcx: any, newValue: any, fcxStore: any) => {
+  return (e: any) => {
+    FCX.setParameter(e);
+    fcx[newValue?.[FCX_SVX_ID]?.['svxId']]?.({
+      inter: fcxStore,
+    });
+  };
+};
+
+const storeFcx = (newValue: any) => {
+  const fcxStore = {} as any;
+  fcxStore[newValue?.[FCX_SVX_ID]?.['fnName']] = (fnc: (e?: any) => any) => {
+    const returnValue = fnc(FCX.getParameter() || undefined);
+    FCX.setReturnValue(returnValue);
+  };
+  return fcxStore;
 };

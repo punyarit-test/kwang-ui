@@ -1,8 +1,8 @@
 import {useStx} from './Stx';
 
-const beforeFn = () => {};
+const beforeFcx = () => {};
 
-const afterFn = (e: any) => {};
+const afterFcx = (e: any) => {};
 
 export const FCX_SVX_ID = 'FcxSvx';
 
@@ -24,10 +24,10 @@ export const useFcx = <T,>(svxId: string, fcx: T): T => {
 
       // set timeout(0) becoz waiting for WFC init inter function
       setTimeout(() => {
-        const beforeValue = beforeFn();
+        const beforeValue = beforeFcx();
         // @ts-ignore
         let fnValue = fcx[key](beforeValue || undefined);
-        afterFn(fnValue || undefined);
+        afterFcx(fnValue || undefined);
       }, 0);
     };
   }
