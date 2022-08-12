@@ -13,10 +13,17 @@ export declare type WFC<SVX> = Partial<{
 }>;
 export declare class FCX {
     #private;
-    static setFcx(fn: any): void;
+    static before(): any;
     static inter(param?: any): any;
-    static setReturnValue(returnValue: any): void;
-    static setParameter(parameterValue: any): void;
-    static getParameter(): any;
+    static after(param?: any): void;
+    static setInterFn(fn: any): void;
+    static setBeforeFn(fn: any): void;
+    static setAfterFn(fn: any): void;
+    static setInterReturn(returnValue: any): void;
+    static setBeforeReturn(returnValue: any): void;
+    static setInterParameter(parameterValue: any): void;
+    static setAfterParameter(parameterValue: any): void;
+    static getInterParameter(): any;
+    static getAfterParameter(): any;
 }
 export declare const WfcEffect: (fcx: any) => void;
