@@ -8,7 +8,8 @@
     "dev": "tsc -w --declaration",
     "public": "npm publish --acess=publish",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "chromatic": "npx chromatic --project-token=c9baf40c5a98"
   },
   "repository": {
     "type": "git",
@@ -17,7 +18,9 @@
   "keywords": [
     "Cortex-UI"
   ],
-  "author": "Punyarit",
+  "author": {
+    "name": "Punyarit"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Punyarit/cortex-ui/issues"
@@ -46,5 +49,7 @@
     "babel-loader": "^8.3.0",
     "chromatic": "^6.11.4",
     "lit-html": "^2.4.0"
-  }
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "@cortex-ui/core@0.0.37"
 }
