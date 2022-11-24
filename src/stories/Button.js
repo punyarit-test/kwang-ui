@@ -27,7 +27,7 @@ export const Button = ({
       style=${styleMap({backgroundColor})}
       @click=${onClick}
     >
-      ${label} 555
+      ${label} 555 6666
     </button>
   `;
 };
