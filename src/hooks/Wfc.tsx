@@ -100,11 +100,8 @@ export const WfcEffect = (fcx: any) => {
       fcx[newValue?.[FCX_SVX_ID]?.['svxId']] &&
       newValue?.[FCX_SVX_ID]?.['fnName']
     ) {
-      // before
       FCX.setBeforeFn(wrapBeforeFcx(fcx, newValue, storeBeforeFcx(newValue)));
-      // inter
       FCX.setInterFn(wrapInterFcx(fcx, newValue, storeInterFcx(newValue)));
-      // after
       FCX.setAfterFn(wrapAfterFcx(fcx, newValue, storeAfterFcx(newValue)));
     }
   }, [newValue[FCX_SVX_ID]['fcxCount']]);
@@ -137,28 +134,23 @@ const storeInterFcx = (newValue: any) => {
 };
 
 const wrapInterFcx =
-  (fcx: any, newValue: any, fcxInterStore: any) => (e: any) => {
-    FCX.setInterParameter(e);
-    setFcxWithParam(fcx, newValue, 'inter', fcxInterStore);
+  (fcx: any, newValue: any, fcxInterStore: any) => (wfcParam: any) => {
+    FCX.setInterParameter(wfcParam);
+    fcx[newValue?.[FCX_SVX_ID]?.['svxId']]?.({
+      inter: fcxInterStore,
+    });
   };
 
 const wrapBeforeFcx = (fcx: any, newValue: any, fcxBeforeStore: any) => () => {
-  setFcxWithParam(fcx, newValue, 'before', fcxBeforeStore);
+  fcx[newValue?.[FCX_SVX_ID]?.['svxId']]?.({
+    before: fcxBeforeStore,
+  });
 };
 
 const wrapAfterFcx =
-  (fcx: any, newValue: any, fcxAftereStore: any) => (e: any) => {
-    FCX.setAfterParameter(e);
-    setFcxWithParam(fcx, newValue, 'after', fcxAftereStore);
+  (fcx: any, newValue: any, fcxAftereStore: any) => (wfcParam: any) => {
+    FCX.setAfterParameter(wfcParam);
+    fcx[newValue?.[FCX_SVX_ID]?.['svxId']]?.({
+      after: fcxAftereStore,
+    });
   };
-
-const setFcxWithParam = (
-  fcx: any,
-  newValue: any,
-  param: 'before' | 'inter' | 'after',
-  fcxStore: any
-) => {
-  fcx[newValue?.[FCX_SVX_ID]?.['svxId']]?.({
-    [param]: fcxStore,
-  });
-};

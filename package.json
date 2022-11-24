@@ -6,7 +6,9 @@
   "scripts": {
     "build": "tsc --declaration",
     "dev": "tsc -w --declaration",
-    "public": "npm publish --acess=publish"
+    "public": "npm publish --acess=publish",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "repository": {
     "type": "git",
@@ -32,7 +34,17 @@
     "lit": "^2.2.7"
   },
   "devDependencies": {
+    "@babel/core": "^7.20.2",
+    "@storybook/addon-actions": "^6.5.13",
+    "@storybook/addon-essentials": "^6.5.13",
+    "@storybook/addon-links": "^6.5.13",
+    "@storybook/builder-webpack4": "^6.5.13",
+    "@storybook/manager-webpack4": "^6.5.13",
+    "@storybook/web-components": "^6.5.13",
     "@types/react": "^18.0.14",
-    "@types/react-dom": "^18.0.6"
+    "@types/react-dom": "^18.0.6",
+    "babel-loader": "^8.3.0",
+    "chromatic": "^6.11.4",
+    "lit-html": "^2.4.0"
   }
 }

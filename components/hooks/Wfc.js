@@ -82,11 +82,8 @@ const WfcEffect = (fcx) => {
     react_1.default.useEffect(() => {
         if (fcx[newValue?.[Fcx_1.FCX_SVX_ID]?.['svxId']] &&
             newValue?.[Fcx_1.FCX_SVX_ID]?.['fnName']) {
-            // before
             FCX.setBeforeFn(wrapBeforeFcx(fcx, newValue, storeBeforeFcx(newValue)));
-            // inter
             FCX.setInterFn(wrapInterFcx(fcx, newValue, storeInterFcx(newValue)));
-            // after
             FCX.setAfterFn(wrapAfterFcx(fcx, newValue, storeAfterFcx(newValue)));
         }
     }, [newValue[Fcx_1.FCX_SVX_ID]['fcxCount']]);
@@ -113,19 +110,20 @@ const storeInterFcx = (newValue) => {
     };
     return fcxStore;
 };
-const wrapInterFcx = (fcx, newValue, fcxInterStore) => (e) => {
-    FCX.setInterParameter(e);
-    setFcxWithParam(fcx, newValue, 'inter', fcxInterStore);
+const wrapInterFcx = (fcx, newValue, fcxInterStore) => (wfcParam) => {
+    FCX.setInterParameter(wfcParam);
+    fcx[newValue?.[Fcx_1.FCX_SVX_ID]?.['svxId']]?.({
+        inter: fcxInterStore,
+    });
 };
 const wrapBeforeFcx = (fcx, newValue, fcxBeforeStore) => () => {
-    setFcxWithParam(fcx, newValue, 'before', fcxBeforeStore);
-};
-const wrapAfterFcx = (fcx, newValue, fcxAftereStore) => (e) => {
-    FCX.setAfterParameter(e);
-    setFcxWithParam(fcx, newValue, 'after', fcxAftereStore);
-};
-const setFcxWithParam = (fcx, newValue, param, fcxStore) => {
     fcx[newValue?.[Fcx_1.FCX_SVX_ID]?.['svxId']]?.({
-        [param]: fcxStore,
+        before: fcxBeforeStore,
+    });
+};
+const wrapAfterFcx = (fcx, newValue, fcxAftereStore) => (wfcParam) => {
+    FCX.setAfterParameter(wfcParam);
+    fcx[newValue?.[Fcx_1.FCX_SVX_ID]?.['svxId']]?.({
+        after: fcxAftereStore,
     });
 };
