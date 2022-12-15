@@ -22,12 +22,13 @@ export const Button = ({
       class=${[
         'storybook-button',
         `storybook-button--${size || 'medium'}`,
+        'test55555555555',
         mode,
       ].join(' ')}
       style=${styleMap({backgroundColor})}
       @click=${onClick}
     >
-      ${label} 55 666666666 test 2
+      ${label} 55 666666666 test
     </button>
   `;
 };
