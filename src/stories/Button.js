@@ -22,7 +22,7 @@ export const Button = ({
       class=${[
         'storybook-button',
         `storybook-button--${size || 'medium'}`,
-        'test5555',
+        'test55555555555',
         mode,
       ].join(' ')}
       style=${styleMap({backgroundColor})}
