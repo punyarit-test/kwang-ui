@@ -9,3 +9,7 @@ c-block.inline {
 c-block.inline-block {
   display: inline-block !important;
 }
+
+c-block.test {
+  display: block;
+}
