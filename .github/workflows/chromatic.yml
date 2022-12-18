@@ -6,6 +6,8 @@ on:
   workflow_dispatch:
   pull_request:
     branches: [develop]
+    paths:
+      - src/**
 
 jobs:
   chromatic-deployment:
