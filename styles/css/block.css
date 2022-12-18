@@ -11,5 +11,5 @@ c-block.inline-block {
 }
 
 c-block.test {
-  display: flex;
+  display: grid;
 }
