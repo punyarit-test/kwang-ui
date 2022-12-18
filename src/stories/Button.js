@@ -28,7 +28,7 @@ export const Button = ({
       style=${styleMap({backgroundColor})}
       @click=${onClick}
     >
-      ${label}
+      ${label} fix button!
     </button>
   `;
 };
