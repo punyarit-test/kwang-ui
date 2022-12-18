@@ -5,7 +5,7 @@
 on:
   workflow_dispatch:
   pull_request:
-    branches: [develop]
+    branches: [cortex-ui/workspace]
     paths:
       - src/**
 
