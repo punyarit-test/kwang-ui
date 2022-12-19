@@ -28,7 +28,7 @@ export const Button = ({
       style=${styleMap({backgroundColor})}
       @click=${onClick}
     >
-      ${label}
+      ${label} test-ci-1
     </button>
   `;
 };
